@@ -65,64 +65,64 @@ export const IntellideaLanding: React.FC = () => {
 
         <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60 z-0" />
 
-<div className="container mx-auto px-4 lg:px-8 pt-34 z-10">
-  <div className="max-w-4xl">
-    <h1 className="font-display text-[43px] md:text-[56px] leading-tight font-extrabold text-white mb-3 text-left">
-      Insight
-      <span className="font-sans text-[11px] md:text-[14px] font-light align-middle px-1 opacity-90 tracking-wide uppercase relative -top-1">
-        to
-      </span>
-      Innovate
-      <span className="font-sans text-[11px] md:text-[14px] font-light align-middle px-1 opacity-90 tracking-wide uppercase relative -top-1">
-        for
-      </span>
-      Impact
-    </h1>
+        <div className="container mx-auto px-4 lg:px-8 pt-15 z-10">
+          <div className="max-w-4xl">
+            <h1 className="font-display text-[43px] md:text-[56px] leading-tight font-extrabold text-white mb-8 text-left">
+              Insight
+              <span className="font-sans text-[11px] md:text-[16px] font-medium align-middle px-4 opacity-90 tracking-wide uppercase relative -top-1">
+                to
+              </span>
+              Innovate
+              <span className="font-sans text-[11px] md:text-[16px] font-medium align-middle px-4 opacity-90 tracking-wide uppercase relative -top-1">
+                for
+              </span>
+              Impact
+            </h1>
 
-    {/* Properly styled tagline with bottom border line */}
-    <div className=" pb-6 mb-8">
-      <p className="text-sm sm:text-base md:text-lg font-medium text-white/90 tracking-wider flex flex-wrap items-center gap-2 sm:gap-3">
-        <span>Business Transformation</span>
-        <span className="text-[#F9C100] font-bold">|</span>
-        <span>Technology</span>
-        <span className="text-[#F9C100] font-bold">|</span>
-        <span>People</span>
-        <span className="text-[#F9C100] font-bold">|</span>
-        <span>Strategy</span>
-        <span className="text-[#F9C100] font-bold">|</span>
-        <span>Risk</span>
-        <span className="text-[#F9C100] font-bold">|</span>
-        <span>Growth</span>
-      </p>
-    </div>
+            {/* Properly styled tagline with bottom border line */}
+            <div className=" pb-6 mb-8">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-white/90 tracking-wider flex flex-wrap items-center gap-2 sm:gap-3">
+                <span>Business Transformation</span>
+                <span className="text-[#f7bf22] font-bold">|</span>
+                <span>Technology</span>
+                <span className="text-[#f7bf22] font-bold">|</span>
+                <span>People</span>
+                <span className="text-[#f7bf22] font-bold">|</span>
+                <span>Strategy</span>
+                <span className="text-[#f7bf22] font-bold">|</span>
+                <span>Risk</span>
+                <span className="text-[#f7bf22] font-bold">|</span>
+                <span>Growth</span>
+              </p>
+            </div>
 
-    <div className="flex items-center gap-4">
-      <a
-        href="#offerings"
-        id="learnMoreBtn"
-        className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-8 py-3 rounded-full transition duration-300"
-      >
-        Learn More
-      </a>
-      <button
-        id="audioToggle"
-        onClick={toggleAudio}
-        aria-pressed={!isMuted}
-        aria-label={isMuted ? "Unmute video" : "Mute video"}
-        className="inline-flex items-center gap-3 border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-6 py-3 rounded-full transition duration-300"
-      >
-        <i
-          id="audioIcon"
-          className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"} text-lg`}
-        />
-        <span id="audioLabel" className="hidden md:inline">
-          {isMuted ? "Unmute" : "Mute"}
-        </span>
-        <audio id="heroAudio" src="./Corporate RF.mp3" loop />
-      </button>
-    </div>
-  </div>
-</div>
+            <div className="flex items-center gap-4">
+              <a
+                href="#offerings"
+                id="learnMoreBtn"
+                className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-8 py-3 rounded-full transition duration-300"
+              >
+                Learn More
+              </a>
+              <button
+                id="audioToggle"
+                onClick={toggleAudio}
+                aria-pressed={!isMuted}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+                className="inline-flex items-center gap-3 border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-6 py-3 rounded-full transition duration-300"
+              >
+                <i
+                  id="audioIcon"
+                  className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"} text-lg`}
+                />
+                <span id="audioLabel" className="hidden md:inline">
+                  {isMuted ? "Unmute" : "Mute"}
+                </span>
+                <audio id="heroAudio" src="./Corporate RF.mp3" loop />
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* WhatsApp Float CTA */}
         <a
@@ -144,10 +144,10 @@ export const IntellideaLanding: React.FC = () => {
         className="pt-16 pb-20 lg:pt-24 lg:pb-32 bg-[#2C466D]"
       >
         <div className="mx-auto px-4 lg:px-8 max-w-7xl">
-          <h3 className="font-display font-bold text-center text-white mb-12 lg:mb-16 leading-tight text-[28px] md:text-[32px] lg:text-[28px]">
-            We bring together the insight, expertise, technology and ecosystem 
-            <br className="hidden md:block" /> required to turn complex challenges into sustainable business outcomes
-          </h3>
+          <h2 className="font-display font-bold text-center text-white mb-12 lg:mb-16 leading-tight text-[28px] md:text-[32px] lg:text-[38px]">
+            We provide in-depth support through
+            <br className="hidden md:block" />a bouquet of offerings
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
             <div className="bg-white rounded-xl p-8 flex flex-col shadow-lg h-full min-h-80">
               <h3 className="font-display font-bold text-[#2C466D] mb-4 leading-tight text-[28px]">
