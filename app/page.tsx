@@ -1,25 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Header from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export const IntellideaLanding: React.FC = () => {
-  // Mobile menu states
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(
-    null,
-  );
-
   // Audio state
   const [isMuted, setIsMuted] = useState(true);
 
   // Modal states
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [brochureType, setBrochureType] = useState<number | null>(null);
-
-  const toggleSubmenu = (menuKey: string) => {
-    setOpenMobileSubmenu((prev) => (prev === menuKey ? null : menuKey));
-  };
 
   const handleOpenModal = (type: number) => {
     setBrochureType(type);
@@ -45,12 +33,9 @@ export const IntellideaLanding: React.FC = () => {
   };
 
   return (
-    <div className="font-sans antialiased text-gray-900 bg-white selection:bg-[#F9C100] selection:text-[#2C466D]">
-      {/* EY-STYLE NAVBAR */}
-      <Header />
-
+    <div className="antialiased text-gray-900 bg-white selection:bg-[#F9C100] selection:text-[#2C466D]">
       {/* HERO SECTION */}
-      <section className="hero-section relative min-h-screen flex items-start justify-start overflow-hidden pt-20">
+      <section className="hero-section relative min-h-screen flex items-center justify-start overflow-hidden pt-28 pb-20">
         <video
           id="heroVideo"
           autoPlay
@@ -63,25 +48,33 @@ export const IntellideaLanding: React.FC = () => {
           Your browser does not support the video tag.
         </video>
 
-        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60 z-0" />
+        {/* Corporate Deep Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/40 z-0" />
 
-        <div className="container mx-auto px-4 lg:px-8 pt-15 z-10">
-          <div className="max-w-4xl">
-            <h1 className="font-display text-[43px] md:text-[56px] leading-tight font-extrabold text-white mb-8 text-left">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="max-w-3xl">
+            {/* Top Corporate Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#f7bf22] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#f7bf22] animate-pulse"></span>
+              Strategic Advisory &amp; Enterprise Growth
+            </div>
+
+            {/* Primary Heading */}
+            <h1 className="font-display text-[40px] sm:text-[50px] md:text-[62px] leading-[1.1] font-extrabold text-white mb-6 text-left tracking-tight">
               Insight
-              <span className="font-sans text-[11px] md:text-[16px] font-medium align-middle px-4 opacity-90 tracking-wide uppercase relative -top-1">
+              <span className="font-sans text-[12px] sm:text-[14px] md:text-[18px] font-semibold align-middle px-3 md:px-4 opacity-90 tracking-widest uppercase relative -top-1 text-[#f7bf22]">
                 to
               </span>
               Innovate
-              <span className="font-sans text-[11px] md:text-[16px] font-medium align-middle px-4 opacity-90 tracking-wide uppercase relative -top-1">
+              <span className="font-sans text-[12px] sm:text-[14px] md:text-[18px] font-semibold align-middle px-3 md:px-4 opacity-90 tracking-widest uppercase relative -top-1 text-[#f7bf22]">
                 for
               </span>
               Impact
             </h1>
 
-            {/* Properly styled tagline with bottom border line */}
-            <div className=" pb-6 mb-8">
-              <p className="text-sm sm:text-base md:text-lg font-medium text-white/90 tracking-wider flex flex-wrap items-center gap-2 sm:gap-3">
+            {/* Tagline Pills / Segments */}
+            <div className="mb-8 border-l-2 border-[#f7bf22] pl-4 py-1">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-white/90 tracking-wide leading-relaxed flex flex-wrap items-center gap-x-2.5 gap-y-1">
                 <span>Business Transformation</span>
                 <span className="text-[#f7bf22] font-bold">|</span>
                 <span>Technology</span>
@@ -96,30 +89,68 @@ export const IntellideaLanding: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-4">
+            {/* CTAs and Audio Control */}
+            <div className="flex flex-wrap items-center gap-4 pt-2 mb-12">
               <a
                 href="#offerings"
                 id="learnMoreBtn"
-                className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-8 py-3 rounded-full transition duration-300"
+                className="inline-flex items-center justify-center bg-[#f7bf22] text-[#2C466D] hover:bg-white hover:text-[#2C466D] font-semibold text-base sm:text-lg px-8 py-3.5 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-0.5"
               >
-                Learn More
+                Explore Offerings
+                <i className="fas fa-arrow-right ml-2 text-sm"></i>
               </a>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-semibold text-base sm:text-lg px-7 py-3 rounded-full transition duration-300"
+              >
+                Get In Touch
+              </a>
+
               <button
                 id="audioToggle"
                 onClick={toggleAudio}
                 aria-pressed={!isMuted}
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
-                className="inline-flex items-center gap-3 border-2 border-white text-white hover:bg-white hover:text-[#2C466D] font-medium text-lg px-6 py-3 rounded-full transition duration-300"
+                className="inline-flex items-center gap-2.5 border border-white/40 bg-black/30 backdrop-blur-sm text-white hover:bg-white hover:text-[#2C466D] font-medium text-sm sm:text-base px-5 py-3 rounded-full transition duration-300 ml-auto sm:ml-0"
               >
                 <i
                   id="audioIcon"
-                  className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"} text-lg`}
+                  className={`fa-solid ${
+                    isMuted ? "fa-volume-xmark" : "fa-volume-high"
+                  } text-base`}
                 />
-                <span id="audioLabel" className="hidden md:inline">
-                  {isMuted ? "Unmute" : "Mute"}
-                </span>
+                <span id="audioLabel">{isMuted ? "Unmute" : "Mute"}</span>
                 <audio id="heroAudio" src="./Corporate RF.mp3" loop />
               </button>
+            </div>
+
+            {/* Corporate Mini Stat Highlights */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/20 max-w-xl">
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-white">
+                  30+<span className="text-[#f7bf22]"> Yrs</span>
+                </p>
+                <p className="text-xs sm:text-sm text-gray-300 font-medium">
+                  Advisory Heritage
+                </p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-white">
+                  4+<span className="text-[#f7bf22]"> Pillars</span>
+                </p>
+                <p className="text-xs sm:text-sm text-gray-300 font-medium">
+                  End-to-End Solutions
+                </p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-white">
+                  Global
+                </p>
+                <p className="text-xs sm:text-sm text-gray-300 font-medium">
+                  Expert Network
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -130,72 +161,129 @@ export const IntellideaLanding: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 group"
+          aria-label="Chat on WhatsApp"
         >
-          <div className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg cursor-pointer transition transform hover:scale-105">
+          <div className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2.5 rounded-full flex items-center gap-2 shadow-xl cursor-pointer transition transform hover:scale-105">
             <i className="fab fa-whatsapp text-2xl" />
             <span className="font-medium text-sm">Chat on WhatsApp</span>
           </div>
         </a>
       </section>
 
-      {/* OFFERINGS */}
+      {/* OFFERINGS SECTION - Cards now navigate to their respective pages */}
       <section
         id="offerings"
         className="pt-16 pb-20 lg:pt-24 lg:pb-32 bg-[#2C466D]"
       >
         <div className="mx-auto px-4 lg:px-8 max-w-7xl">
-          <h2 className="font-display font-bold text-center text-white mb-12 lg:mb-16 leading-tight text-[28px] md:text-[32px] lg:text-[38px]">
-            We provide in-depth support through
-            <br className="hidden md:block" />a bouquet of offerings
-          </h2>
+          <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-18">
+            <span className="text-[#f7bf22] font-semibold text-sm uppercase tracking-widest mb-2 block">
+              What We Do
+            </span>
+            <h2 className="font-display font-bold text-white leading-tight text-[28px] md:text-[34px] lg:text-[40px]">
+              We provide in-depth support through
+              <br className="hidden md:block" /> a bouquet of offerings
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
-            <div className="bg-white rounded-xl p-8 flex flex-col shadow-lg h-full min-h-80">
-              <h3 className="font-display font-bold text-[#2C466D] mb-4 leading-tight text-[28px]">
-                IntEllev8
-              </h3>
-              <p className="font-sans text-[#2C466D] opacity-90 text-[17px] leading-relaxed mt-2">
-                We deliver strategic guidance to drive efficiency and growth;
-                ensuring businesses, leaders and aspiring entrepreneurs overcome
-                their unique challenges.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-8 flex flex-col shadow-lg h-full min-h-80">
-              <h3 className="font-display font-bold text-[#2C466D] mb-4 leading-tight text-[28px]">
-                IntellXperia
-              </h3>
-              <p className="font-sans text-[#2C466D] opacity-90 text-[17px] leading-relaxed mt-2">
-                As a collaborative partner, we provide expertise with rich
-                experience and a proven track record, ensuring the respective
-                function is led with the highest level of strategic clarity.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-8 flex flex-col shadow-lg h-full min-h-80">
-              <h3 className="font-display font-bold text-[#2C466D] mb-4 leading-tight text-[28px]">
-                <a
-                  href="http://www.intelliwiseacademy.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
+            {/* IntEllev8 */}
+            <a
+              href="/intellev8"
+              className="group bg-white rounded-2xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-transparent hover:border-[#f7bf22]"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-lg bg-[#2C466D]/10 flex items-center justify-center mb-6 group-hover:bg-[#2C466D] transition-colors">
+                  <i className="fas fa-chart-line text-xl text-[#2C466D] group-hover:text-[#f7bf22] transition-colors" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] mb-4 text-[26px]">
+                  IntEllev8
+                </h3>
+                <p className="font-sans text-[#2C466D]/85 text-[16px] leading-relaxed">
+                  We deliver strategic guidance to drive efficiency and growth;
+                  ensuring businesses, leaders, and aspiring entrepreneurs
+                  overcome their unique challenges.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-sm font-bold text-[#2C466D] group-hover:text-[#f7bf22]">
+                <span>Discover IntEllev8</span>
+                <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1" />
+              </div>
+            </a>
+
+            {/* IntellXperia */}
+            <a
+              href="/intellxperia"
+              className="group bg-white rounded-2xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-transparent hover:border-[#f7bf22]"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-lg bg-[#2C466D]/10 flex items-center justify-center mb-6 group-hover:bg-[#2C466D] transition-colors">
+                  <i className="fas fa-handshake text-xl text-[#2C466D] group-hover:text-[#f7bf22] transition-colors" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] mb-4 text-[26px]">
+                  IntellXperia
+                </h3>
+                <p className="font-sans text-[#2C466D]/85 text-[16px] leading-relaxed">
+                  As a collaborative partner, we provide expertise with rich
+                  experience and a proven track record, ensuring functions are
+                  led with strategic clarity.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-sm font-bold text-[#2C466D] group-hover:text-[#f7bf22]">
+                <span>Discover IntellXperia</span>
+                <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1" />
+              </div>
+            </a>
+
+            {/* IntelliWise */}
+            <a
+              href="http://www.intelliwiseacademy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-transparent hover:border-[#f7bf22]"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-lg bg-[#2C466D]/10 flex items-center justify-center mb-6 group-hover:bg-[#2C466D] transition-colors">
+                  <i className="fas fa-graduation-cap text-xl text-[#2C466D] group-hover:text-[#f7bf22] transition-colors" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] mb-4 text-[26px]">
                   IntelliWise
-                </a>
-              </h3>
-              <p className="font-sans text-[#2C466D] opacity-90 text-[17px] leading-relaxed mt-2">
-                Empower learners with essential training and development
-                programs that enhance knowledge and skills, foster leadership,
-                promote innovation for progress and growth.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-8 flex flex-col shadow-lg h-full min-h-80">
-              <h3 className="font-display font-bold text-[#2C466D] mb-4 leading-tight text-[28px]">
-                IntelliCircle
-              </h3>
-              <p className="font-sans text-[#2C466D] opacity-90 text-[17px] leading-relaxed mt-2">
-                Build and nurture a vibrant community of leaders and
-                entrepreneurs offering continuous support through collaboration
-                and shared learning for growth.
-              </p>
-            </div>
+                </h3>
+                <p className="font-sans text-[#2C466D]/85 text-[16px] leading-relaxed">
+                  Empower learners with essential training and development
+                  programs that enhance knowledge, foster leadership, and
+                  promote innovation for continuous progress.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-sm font-bold text-[#2C466D] group-hover:text-[#f7bf22]">
+                <span>Visit Academy</span>
+                <i className="fas fa-external-link-alt ml-2 text-xs transition-transform group-hover:translate-x-0.5" />
+              </div>
+            </a>
+
+            {/* IntelliCircle */}
+            <a
+              href="/intellicircle"
+              className="group bg-white rounded-2xl p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-transparent hover:border-[#f7bf22]"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-lg bg-[#2C466D]/10 flex items-center justify-center mb-6 group-hover:bg-[#2C466D] transition-colors">
+                  <i className="fas fa-users-cog text-xl text-[#2C466D] group-hover:text-[#f7bf22] transition-colors" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] mb-4 text-[26px]">
+                  IntelliCircle
+                </h3>
+                <p className="font-sans text-[#2C466D]/85 text-[16px] leading-relaxed">
+                  Build and nurture a vibrant community of leaders and
+                  entrepreneurs offering continuous support through
+                  collaboration and shared learning for growth.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center text-sm font-bold text-[#2C466D] group-hover:text-[#f7bf22]">
+                <span>Join Community</span>
+                <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1" />
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -338,7 +426,7 @@ export const IntellideaLanding: React.FC = () => {
         className="w-full bg-white flex flex-col justify-center items-center py-16 px-4 overflow-hidden"
       >
         <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="font-display font-bold text-[#2C466D] text-[22px] md:text-[28px] lg:text-[32px] leading-tight max-w-4xl mx-auto mb-16">
+          <h2 className="font-display font-bold text-[#2C466D] text-[22px] md:text-[28px] lg:text-[32px] leading-tight tracking-tight max-w-4xl mx-auto mb-16 text-center">
             We believe in a collaborative approach, offering customized
             solutions based on the unique challenges and goals of each customer
             we work with
@@ -418,12 +506,12 @@ export const IntellideaLanding: React.FC = () => {
             With a deep understanding of the challenges that our clients face,
             we offer tailored solutions to enable them to navigate challenges,
             seize opportunities, unlock their potential, grow sustainably,
-            innovate continuously, and achieve lasting success. Our team consist
+            innovate continuously, and achieve lasting success. Our team consists
             of experts, thought leaders, and experienced business advisors with
-            rich experience in different domains, diverse functions and
+            rich experience in different domains, diverse functions, and
             geographies. Whether you’re looking to build a sustainable business
-            model, enter new markets, or looking to secure funding, we are here
-            to guide you every step of the way.
+            model, enter new markets, or secure funding, we are here to guide
+            you every step of the way.
           </p>
         </div>
         <div className="w-full lg:w-1/2 h-64 md:h-96 lg:h-full relative order-2">
@@ -568,7 +656,7 @@ export const IntellideaLanding: React.FC = () => {
                   decades of excellence and strategic leadership.
                 </p>
                 <a
-                  href="./team/1.html"
+                  href="/team/rajnikant-patel"
                   className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline"
                 >
                   Read More
@@ -1091,75 +1179,140 @@ export const IntellideaLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* CLIENTS & PARTNERS */}
-      <section className="w-full bg-[#F8FAFC] flex flex-col justify-center items-center py-16 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="font-display font-bold text-[#2C466D] text-[28px] md:text-[32px] lg:text-[42px] mb-12 lg:mb-16 text-center">
-            Our Clients
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/images.jpeg"
-                alt="Client 1 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/alphamed.png"
-                alt="Client 2 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/bk.png"
-                alt="Client 3 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/Kenilworth Logo.jpeg"
-                alt="Client 4 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/mmb.png"
-                alt="Client 5 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/recharge.png"
-                alt="Client 6 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4">
-              <img
-                src="./assets/divergent.jpg"
-                alt="Client 7 Logo"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
+      {/* PARTNERS ECOSYSTEM SECTION (Replaces old clients/partners layout) */}
+      <section
+        id="partners"
+        className="w-full bg-[#F8FAFC] py-16 lg:py-24 border-t border-b border-gray-100"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-[#2C466D] font-bold text-sm uppercase tracking-widest bg-[#2C466D]/10 px-3.5 py-1 rounded-full">
+              Collaborative Ecosystem
+            </span>
+            <h2 className="font-display font-bold text-[#2C466D] text-[28px] md:text-[34px] lg:text-[42px] mt-4 mb-4">
+              Our Strategic Partner Network
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg">
+              Partnering with global academic, technology, and industry leaders
+              to engineer high-value impact across verticals.
+            </p>
           </div>
 
-          <div className="mt-20">
-            <h2 className="font-display font-bold text-[#2C466D] text-[28px] md:text-[32px] lg:text-[42px] mb-12 lg:mb-16 text-center">
-              Our Partners
-            </h2>
-            <div className="flex justify-center">
-              <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex justify-center items-center h-32 p-4 w-65">
-                <img
-                  src="./assets/auriga.png"
-                  alt="Partner Logo"
-                  className="object-contain w-55 h-17.5"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Technology Partners */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#f7bf22] flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#2C466D]/10 text-[#2C466D] group-hover:bg-[#2C466D] group-hover:text-[#f7bf22] flex items-center justify-center text-xl transition-all duration-300 mb-5">
+                  <i className="fas fa-microchip" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] text-xl mb-2">
+                  Technology Partners
+                </h3>
+                <p className="text-sm font-semibold text-[#f7bf22] mb-3">
+                  AI | Cloud | Cybersecurity | SaaS
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Driving digital resilience and technological superiority
+                  through next-generation software, cognitive platforms, and
+                  secure infrastructure.
+                </p>
+              </div>
+              <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Enterprise Architecture</span>
+                <i className="fas fa-arrow-right text-[#2C466D]" />
+              </div>
+            </div>
+
+            {/* Knowledge Partners */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#f7bf22] flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#2C466D]/10 text-[#2C466D] group-hover:bg-[#2C466D] group-hover:text-[#f7bf22] flex items-center justify-center text-xl transition-all duration-300 mb-5">
+                  <i className="fas fa-university" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] text-xl mb-2">
+                  Knowledge Partners
+                </h3>
+                <p className="text-sm font-semibold text-[#f7bf22] mb-3">
+                  Universities | Institutions | Research Organizations
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Bridging frontier academic research with practical execution
+                  to fuel evidence-based methodologies and continuous learning.
+                </p>
+              </div>
+              <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Research &amp; Academia</span>
+                <i className="fas fa-arrow-right text-[#2C466D]" />
+              </div>
+            </div>
+
+            {/* Business Partners */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#f7bf22] flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#2C466D]/10 text-[#2C466D] group-hover:bg-[#2C466D] group-hover:text-[#f7bf22] flex items-center justify-center text-xl transition-all duration-300 mb-5">
+                  <i className="fas fa-briefcase" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] text-xl mb-2">
+                  Business Partners
+                </h3>
+                <p className="text-sm font-semibold text-[#f7bf22] mb-3">
+                  Consulting | HR | Finance | Legal
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Delivering end-to-end corporate competence, corporate
+                  structuring, fiscal governance, and regulatory compliance.
+                </p>
+              </div>
+              <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Corporate Strategy</span>
+                <i className="fas fa-arrow-right text-[#2C466D]" />
+              </div>
+            </div>
+
+            {/* Global Partners */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#f7bf22] flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#2C466D]/10 text-[#2C466D] group-hover:bg-[#2C466D] group-hover:text-[#f7bf22] flex items-center justify-center text-xl transition-all duration-300 mb-5">
+                  <i className="fas fa-globe-americas" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] text-xl mb-2">
+                  Global Partners
+                </h3>
+                <p className="text-sm font-semibold text-[#f7bf22] mb-3">
+                  International Organizations &amp; Market-Entry
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Facilitating cross-border pathways, global expansion, market
+                  entry solutions, and worldwide investor connectivity.
+                </p>
+              </div>
+              <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Global Alliances</span>
+                <i className="fas fa-arrow-right text-[#2C466D]" />
+              </div>
+            </div>
+
+            {/* Community Partners */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#f7bf22] flex flex-col justify-between group md:col-span-2 lg:col-span-2">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#2C466D]/10 text-[#2C466D] group-hover:bg-[#2C466D] group-hover:text-[#f7bf22] flex items-center justify-center text-xl transition-all duration-300 mb-5">
+                  <i className="fas fa-hands-helping" />
+                </div>
+                <h3 className="font-display font-bold text-[#2C466D] text-xl mb-2">
+                  Community Partners
+                </h3>
+                <p className="text-sm font-semibold text-[#f7bf22] mb-3">
+                  Entrepreneur | Youth | Social Impact | Leadership Networks
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed max-w-2xl">
+                  Fostering inclusive, high-potential ecosystems that empower
+                  emerging entrepreneurs, empower youth leadership, and catalyze
+                  measurable socio-economic change.
+                </p>
+              </div>
+              <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <span>Inclusive Growth</span>
+                <i className="fas fa-arrow-right text-[#2C466D]" />
               </div>
             </div>
           </div>
@@ -1251,7 +1404,6 @@ export const IntellideaLanding: React.FC = () => {
                 id="brochureForm"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  // Perform brochure form submission
                   handleCloseModal();
                 }}
               >
@@ -1339,7 +1491,6 @@ export const IntellideaLanding: React.FC = () => {
               className="space-y-4"
               onSubmit={(e) => {
                 e.preventDefault();
-                // Perform contact submission
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1384,7 +1535,7 @@ export const IntellideaLanding: React.FC = () => {
               />
               <button
                 type="submit"
-                className="border border-[#F9C100] text-[#F9C100] px-6 py-2 rounded-full hover:bg-[#F9C100] hover:text-[#2C466D] transition duration-300 font-bold uppercase tracking-wide"
+                className="border border-[#F9C100] text-[#F9C100] px-6 py-2 rounded-full hover:bg-[#F9C100] hover:text-[#2C466D] transition duration-300 font-bold uppercase tracking-wide cursor-pointer"
               >
                 Submit
               </button>
@@ -1392,9 +1543,6 @@ export const IntellideaLanding: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <Footer />
     </div>
   );
 };

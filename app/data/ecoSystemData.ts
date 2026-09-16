@@ -13,9 +13,18 @@ export interface PillarStat {
   value: string;
 }
 
+export interface CommunityPillar {
+  title: string;
+  description: string;
+}
+
 export interface PillarData {
   slug: string;
   title: string;
+  /** Large hero H1. Falls back to `title` when omitted. */
+  heroHeadline?: string;
+  /** One-line sentence under the hero H1. Falls back to `tagline` when omitted. */
+  heroSubhead?: string;
   tagline: string;
   description: string;
   badge: string;
@@ -25,12 +34,19 @@ export interface PillarData {
   stats: PillarStat[];
   focusAreas: FocusArea[];
   valueProps: ValueProp[];
+  /** Short engagement model tags, e.g. Consulting | Advisory | Managed Services */
+  engagementModel?: string[];
+  /** Four-step community model, used on IntelliCircle */
+  communityPillars?: CommunityPillar[];
+  ctaLabel: string;
 }
 
 export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
   intellev8: {
     slug: "intellev8",
     title: "IntEllev8",
+    heroHeadline: "Elevate the Way You Think, Lead and Grow.",
+    heroSubhead: "IntEllev8 is Intellidea's strategy and business transformation ecosystem.",
     tagline: "Business & Growth Transformation",
     description:
       "Helping organizations, entrepreneurs, and leaders make better strategic decisions, improve performance, and unlock exponential growth through data-driven advisory.",
@@ -77,11 +93,15 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "CEO Advisory", icon: "fa-user-gear" },
       { name: "Board Advisory", icon: "fa-people-roof" },
     ],
+    ctaLabel: "Explore IntEllev8",
   },
 
   intellxperia: {
     slug: "intellxperia",
     title: "IntellXperia",
+    heroHeadline: "The Right Expertise. When You Need It.",
+    heroSubhead:
+      "IntellXperia connects organizations with specialist expertise, practitioners and strategic capabilities to solve complex business challenges.",
     tagline: "Expertise-as-a-Service",
     description:
       "Access specialized, expert-led consulting and capability architecture on demand without the high overhead of building internal domain teams.",
@@ -133,6 +153,14 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Project & Program Management", icon: "fa-list-check" },
       { name: "Business Process Advisory", icon: "fa-diagram-project" },
     ],
+    engagementModel: [
+      "Consulting",
+      "Advisory",
+      "Specialist Deployment",
+      "Managed Services",
+      "Strategic Partnerships",
+    ],
+    ctaLabel: "Access Specialist Expertise",
   },
 
   intelliwise: {
@@ -190,55 +218,66 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Interview Panel Assessment", icon: "fa-comments" },
       { name: "Coaching & Mentoring", icon: "fa-handshake" },
     ],
+    ctaLabel: "Visit IntelliWise Academy",
   },
 
-intellicircle: {
-  slug: "intellicircle",
-  title: "IntelliCircle",
-  tagline: "Community, Ecosystem & Collaboration",
-  description:
-    "Fostering strategic connections among enterprise leaders, entrepreneurs, and subject experts to drive peer learning and shared growth.",
-  badge: "Ecosystem & Network",
-  // Primary Hero: High-end executive global summit and enterprise network event
-  heroImage:
-    "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80",
-  // Secondary: Modern boardroom executive strategy & leadership discussion
-  secondaryImage:
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-  stats: [
-    { value: "Global", label: "Cross-Border Business Connect" },
-    { value: "Peer-to-Peer", label: "Advisory Councils & Forums" },
-    { value: "Curated", label: "Conferences & Mentorship" },
-  ],
-  valueProps: [
-    {
-      title: "Peer Leadership Communities",
-      description:
-        "Engage in confidential forums, founder networks, and executive advisory councils with top-tier industry peers.",
-    },
-    {
-      title: "Cross-Border Partnerships",
-      description:
-        "Unlock international joint ventures, market access programs, and strategic ecosystem alliances.",
-    },
-    {
-      title: "Knowledge Exchange Forums",
-      description:
-        "Participate in curated industry summits, specialized working groups, and global business connect events.",
-    },
-  ],
-  focusAreas: [
-    { name: "Business Networking", icon: "fa-network-wired" },
-    { name: "Industry Forums", icon: "fa-users-line" },
-    { name: "Leadership Communities", icon: "fa-crown" },
-    { name: "Entrepreneur Networks", icon: "fa-lightbulb" },
-    { name: "Mentoring", icon: "fa-hands-holding-child" },
-    { name: "Advisory Councils", icon: "fa-people-roof" },
-    { name: "Knowledge Communities", icon: "fa-book-open-reader" },
-    { name: "Strategic Partnerships", icon: "fa-handshake-angle" },
-    { name: "Global Business Connect", icon: "fa-earth-americas" },
-    { name: "Cross-border Collaboration", icon: "fa-arrows-spin" },
-    { name: "Events & Conferences", icon: "fa-calendar-days" },
-  ],
-},
+  intellicircle: {
+    slug: "intellicircle",
+    title: "IntelliCircle",
+    heroHeadline: "Connect. Collaborate. Learn. Grow.",
+    heroSubhead:
+      "IntelliCircle brings together leaders, entrepreneurs, professionals, experts and ecosystem partners to create meaningful connections and shared learning.",
+    tagline: "Community, Ecosystem & Collaboration",
+    description:
+      "Fostering strategic connections among enterprise leaders, entrepreneurs, and subject experts to drive peer learning and shared growth.",
+    badge: "Ecosystem & Network",
+    heroImage:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80",
+    secondaryImage:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+    stats: [
+      { value: "Global", label: "Cross-Border Business Connect" },
+      { value: "Peer-to-Peer", label: "Advisory Councils & Forums" },
+      { value: "Curated", label: "Conferences & Mentorship" },
+    ],
+    valueProps: [
+      {
+        title: "Peer Leadership Communities",
+        description:
+          "Engage in confidential forums, founder networks, and executive advisory councils with top-tier industry peers.",
+      },
+      {
+        title: "Cross-Border Partnerships",
+        description:
+          "Unlock international joint ventures, market access programs, and strategic ecosystem alliances.",
+      },
+      {
+        title: "Knowledge Exchange Forums",
+        description:
+          "Participate in curated industry summits, specialized working groups, and global business connect events.",
+      },
+    ],
+    focusAreas: [
+      { name: "Business Networking", icon: "fa-network-wired" },
+      { name: "Industry Forums", icon: "fa-users-line" },
+      { name: "Leadership Communities", icon: "fa-crown" },
+      { name: "Entrepreneur Networks", icon: "fa-lightbulb" },
+      { name: "Mentoring", icon: "fa-hands-holding-child" },
+      { name: "Advisory Councils", icon: "fa-people-roof" },
+      { name: "Knowledge Communities", icon: "fa-book-open-reader" },
+      { name: "Strategic Partnerships", icon: "fa-handshake-angle" },
+      { name: "Global Business Connect", icon: "fa-earth-americas" },
+      { name: "Cross-border Collaboration", icon: "fa-arrows-spin" },
+      { name: "Events & Conferences", icon: "fa-calendar-days" },
+    ],
+    communityPillars: [
+      { title: "Connect", description: "Build meaningful relationships." },
+      { title: "Collaborate", description: "Create partnerships and opportunities." },
+      { title: "Learn", description: "Exchange knowledge and perspectives." },
+      { title: "Grow", description: "Create business, professional and social impact." },
+    ],
+    ctaLabel: "Join the Ecosystem",
+  },
 };
+
+export const ECOSYSTEM_SLUGS = Object.keys(ECOSYSTEM_PAGES);

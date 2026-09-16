@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Header from "../components/Navbar";
+import Footer from "../components/Footer";
 
 interface MenuItem {
   name: string;
@@ -28,94 +30,7 @@ export default function PrivacyAndCookiePolicy() {
 
   return (
     <div className="min-h-screen flex flex-col pt-20">
-      {/* Header / Navbar */}
-      <header
-        id="navbar"
-        className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#2C466D] shadow-md"
-      >
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="index.html" className="flex items-center gap-3" aria-label="Home">
-              <img
-                src="intellidea.png"
-                alt="Intellidea"
-                className="h-10 md:h-14 w-auto object-contain"
-              />
-            </a>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-10" aria-label="Primary">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-lg font-semibold text-white hover:text-[#F9C100] transition"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <a
-                href="https://calendly.com/hello-intellidea/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#F9C100] hover:bg-[#ffcd36] text-[#2C466D] font-bold text-sm py-2.5 px-6 rounded-sm transition shadow-lg transform hover:scale-105"
-              >
-                Book an appointment
-              </a>
-            </nav>
-
-            {/* Mobile menu button */}
-            <button
-              type="button"
-              className="lg:hidden text-white focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-label="Toggle menu"
-              onClick={toggleMobileMenu}
-            >
-              <i
-                className={`text-3xl ${
-                  isMobileMenuOpen ? "fas fa-times" : "fas fa-bars"
-                }`}
-                aria-hidden="true"
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="lg:hidden bg-[#2C466D] border-t border-white/20 absolute w-full left-0 shadow-xl"
-            role="dialog"
-            aria-modal="false"
-          >
-            <div className="flex flex-col p-4 space-y-4">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className="text-base font-semibold text-white py-2 border-b border-white/10 hover:text-[#F9C100] transition"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <a
-                href="https://calendly.com/hello-intellidea/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobileMenu}
-                className="bg-[#F9C100] text-[#2C466D] font-bold py-3 text-center rounded mt-2"
-              >
-                Book an appointment
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
+      <Header />
 
       {/* Main Content Area */}
       <main className="grow">
@@ -135,8 +50,8 @@ export default function PrivacyAndCookiePolicy() {
             </p>
             <p className="italic text-sm text-gray-600">
               Note: Our privacy policy is subject to change at any time without
-              notice. By visiting this Website, you agree to be bound by the terms
-              and conditions of this Privacy Policy.
+              notice. By visiting this Website, you agree to be bound by the
+              terms and conditions of this Privacy Policy.
             </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
@@ -161,9 +76,9 @@ export default function PrivacyAndCookiePolicy() {
               2. Use of Collected Information
             </h2>
             <p>
-              We use your data to improve our services, diagnose server
-              issues, identify users, and conduct internal analytics. Cookies help
-              with session management and personalizing your experience.
+              We use your data to improve our services, diagnose server issues,
+              identify users, and conduct internal analytics. Cookies help with
+              session management and personalizing your experience.
             </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
@@ -175,7 +90,9 @@ export default function PrivacyAndCookiePolicy() {
               faith for legal obligations or protection of rights.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#2C466D]">4. User Rights</h2>
+            <h2 className="text-xl font-semibold text-[#2C466D]">
+              4. User Rights
+            </h2>
             <p>
               You have the right to access, modify, or delete your data. Contact
               us through the designated channels to exercise your rights.
@@ -186,10 +103,13 @@ export default function PrivacyAndCookiePolicy() {
             </h2>
             <p>
               We retain data only as long as necessary for service delivery and
-              legal compliance, after which it is securely deleted or anonymized.
+              legal compliance, after which it is securely deleted or
+              anonymized.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#2C466D]">6. Security</h2>
+            <h2 className="text-xl font-semibold text-[#2C466D]">
+              6. Security
+            </h2>
             <p>
               We implement robust security protocols including encryption and
               secure servers to protect your data from unauthorized access.
@@ -200,8 +120,8 @@ export default function PrivacyAndCookiePolicy() {
             </h2>
             <p>
               Users can opt out of receiving non-essential communications.
-              Instructions are available in your account settings or by contacting
-              support.
+              Instructions are available in your account settings or by
+              contacting support.
             </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
@@ -220,10 +140,12 @@ export default function PrivacyAndCookiePolicy() {
               collect non-identifiable data for ad targeting.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#2C466D]">10. Consent</h2>
+            <h2 className="text-xl font-semibold text-[#2C466D]">
+              10. Consent
+            </h2>
             <p>
-              By using our website and services, you consent to the collection and
-              use of information as described in this policy.
+              By using our website and services, you consent to the collection
+              and use of information as described in this policy.
             </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
@@ -247,9 +169,9 @@ export default function PrivacyAndCookiePolicy() {
               Cookie Policy
             </h2>
             <p>
-              This Cookie Policy applies to all websites, apps, and branded pages
-              managed by Intellidea. By continuing to use our sites, you agree to
-              our use of cookies.
+              This Cookie Policy applies to all websites, apps, and branded
+              pages managed by Intellidea. By continuing to use our sites, you
+              agree to our use of cookies.
             </p>
 
             <h3 className="text-xl font-semibold text-[#2C466D]">
@@ -284,8 +206,8 @@ export default function PrivacyAndCookiePolicy() {
                 session.
               </li>
               <li>
-                <strong>Persistent Cookies:</strong> Stored for a longer period to
-                remember preferences.
+                <strong>Persistent Cookies:</strong> Stored for a longer period
+                to remember preferences.
               </li>
             </ul>
 
@@ -309,37 +231,7 @@ export default function PrivacyAndCookiePolicy() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2C466D] text-gray-200 py-6 border-t border-white/20">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
-          <div className="mb-4 md:mb-0 text-center md:text-left">
-            Copyright – 2026 |{" "}
-            <span className="text-white font-medium">
-              Intellidea Consultancy Services Pvt. Ltd.
-            </span>
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 items-center">
-            <a href="privacy.html" className="hover:text-[#F9C100] transition">
-              Privacy Policy
-            </a>
-            <a href="cookie.html" className="hover:text-[#F9C100] transition">
-              Cookie Policy
-            </a>
-            <a href="terms.html" className="hover:text-[#F9C100] transition">
-              Terms & Conditions
-            </a>
-            <a
-              href="https://wa.me/919082378708"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 text-white px-4 py-1.5 rounded-full flex items-center gap-2 hover:bg-green-600 transition shadow-sm"
-            >
-              <i className="fa-brands fa-whatsapp" />
-              Chat on WhatsApp
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import type { Metadata } from "next";
 
+
 export const metadata: Metadata = {
   title: "Intellidea - Innovation & Enterprise Solutions",
   description: "Transforming ideas into scalable business solutions.",
@@ -22,8 +23,10 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
       </head>
-      <body className="antialiased flex flex-col min-h-screen bg-white text-gray-900">
+      <body className="antialiased flex flex-col min-h-screen bg-white text-gray-900 font-sans">
+        <Navbar />
         <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

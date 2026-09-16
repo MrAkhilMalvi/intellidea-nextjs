@@ -1,14 +1,17 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+
 import { NAV_ITEMS } from "../constants/navconst";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [displayedMenu, setDisplayedMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
   const [expandedAccordion, setExpandedAccordion] = useState<string | null>(null);
-  const navRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   const toggleMenu = (name: string) => {
     setOpenMenu((prev) => (prev === name ? null : name));
@@ -20,6 +23,12 @@ export default function Header() {
     setActiveMobileCategory(null);
     setExpandedAccordion(null);
   }, []);
+
+  // Keep the last opened mega-menu's content mounted while it fades out,
+  // so the closing transition doesn't flash an empty panel.
+  useEffect(() => {
+    if (openMenu) setDisplayedMenu(openMenu);
+  }, [openMenu]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -44,11 +53,7 @@ export default function Header() {
   }, [closeAllMenus]);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -56,7 +61,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1280) {
         setIsMobileMenuOpen(false);
         setActiveMobileCategory(null);
         setExpandedAccordion(null);
@@ -76,58 +81,71 @@ export default function Header() {
     });
   };
 
+  const isMegaMenuOpen = openMenu !== null;
+  const menuToRender = NAV_ITEMS.find((item) => item.name === displayedMenu);
   const activeCategoryData = NAV_ITEMS.find((item) => item.name === activeMobileCategory);
 
   return (
     <header
       id="navbar"
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#2C466D] shadow-md h-20"
+      className="fixed left-0 top-0 z-50 h-20 w-full bg-[#2C466D] shadow-md"
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-3" aria-label="Home" onClick={closeAllMenus}>
-            <picture>
-              <img
-                src="intellidea.png"
-                alt="Intellidea"
-                className="h-10 md:h-12 w-auto object-contain"
-                width="220"
-                height="56"
-                loading="eager"
-              />
-            </picture>
-          </a>
+        <div className="flex h-20 items-center justify-between">
+          <Link
+            href="/"
+            className="flex items-center gap-3"
+            aria-label="Intellidea home"
+            onClick={closeAllMenus}
+          >
+            <img
+              src="/intellidea.png"
+              alt="Intellidea"
+              className="h-10 w-auto object-contain md:h-12"
+              width={220}
+              height={56}
+              loading="eager"
+            />
+          </Link>
 
-          <nav className="hidden lg:flex items-center gap-8 h-full" aria-label="Primary">
+          {/* Desktop nav */}
+          <nav className="hidden h-full items-center gap-5 xl:flex" aria-label="Primary">
             {NAV_ITEMS.map((item) => {
               const isOpen = openMenu === item.name;
 
               return (
-                <div key={item.name} className="relative h-full flex items-center">
-                  {isOpen && <div className="absolute top-0 left-0 right-0 h-1 bg-[#F9C100]" />}
+                <div key={item.name} className="relative flex h-full items-center">
+                  <span
+                    className={`absolute left-0 right-0 top-0 h-0.5 bg-[#F9C100] transition-opacity duration-200 ${
+                      isOpen ? "opacity-100" : "opacity-0"
+                    }`}
+                    aria-hidden="true"
+                  />
 
                   {item.href ? (
-                    <a
+                    <Link
                       href={item.href}
                       onClick={closeAllMenus}
-                      className="text-base font-semibold text-white hover:text-[#F9C100] transition"
+                      className="text-sm font-semibold text-white transition-colors hover:text-[#F9C100]"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ) : (
                     <button
                       type="button"
+                      id={`nav-trigger-${item.name}`}
                       onClick={() => toggleMenu(item.name)}
                       aria-expanded={isOpen}
                       aria-haspopup="true"
-                      className={`text-base font-semibold flex items-center gap-1.5 transition focus:outline-none ${
+                      aria-controls="desktop-mega-menu"
+                      className={`flex items-center gap-1.5 text-sm font-semibold transition-colors focus:outline-none ${
                         isOpen ? "text-[#F9C100]" : "text-white hover:text-[#F9C100]"
                       }`}
                     >
                       <span>{item.name}</span>
                       <i
-                        className={`fas fa-chevron-down text-xs transition-transform duration-200 ${
+                        className={`fas fa-chevron-down text-[10px] transition-transform duration-200 ${
                           isOpen ? "rotate-180 text-[#F9C100]" : ""
                         }`}
                         aria-hidden="true"
@@ -142,207 +160,246 @@ export default function Header() {
               href="https://calendly.com/hello-intellidea/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#F9C100] hover:bg-[#ffcd36] text-[#2C466D] font-bold text-sm py-2.5 px-5 rounded-sm transition shadow-lg transform hover:scale-105"
+              className="transform rounded-sm bg-[#F9C100] px-5 py-2.5 text-xs font-bold text-[#2C466D] shadow-lg transition hover:scale-105 hover:bg-[#ffcd36]"
             >
               Book an appointment
             </a>
           </nav>
 
+          {/* Mobile trigger */}
           <button
             type="button"
-            className="lg:hidden text-white focus:outline-none p-2"
+            className="p-2 text-white focus:outline-none xl:hidden"
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             onClick={toggleMobileMenu}
           >
-            <i className={`text-2xl ${isMobileMenuOpen ? "fas fa-times" : "fas fa-bars"}`} aria-hidden="true" />
+            <i className={`text-xl ${isMobileMenuOpen ? "fas fa-times" : "fas fa-bars"}`} aria-hidden="true" />
           </button>
         </div>
       </div>
 
-      {openMenu && (
-        <div className="hidden lg:block absolute top-20 left-0 w-full bg-[#1C2C45] border-t border-white/10 text-white shadow-2xl z-40">
-          {NAV_ITEMS.filter((item) => item.name === openMenu && item.megaMenu).map((item) => {
-            const menu = item.megaMenu!;
-            return (
-              <div key={item.name} className="container mx-auto px-8 py-10">
-                <div className="grid grid-cols-12 gap-12 items-start">
-                  <div className="col-span-4 border-r border-white/10 pr-8">
-                    <h3 className="text-3xl font-normal text-white mb-4">{item.name}</h3>
-                    <p className="text-sm text-white/80 leading-relaxed mb-8">{menu.description}</p>
-                    <a
-                      href={menu.exploreHref}
-                      onClick={closeAllMenus}
-                      className="inline-block border border-white text-white hover:bg-[#F9C100] hover:text-[#2C466D] hover:border-[#F9C100] font-semibold text-sm py-2.5 px-8 transition"
-                    >
-                      Explore
-                    </a>
-                  </div>
-
-                  <div className="col-span-8 pl-4">
-                    <div className="divide-y divide-white/15 border-t border-b border-white/15 grid grid-cols-1 md:grid-cols-2 gap-x-8">
-                      {menu.items.map((subItem) => (
-                        <a
-                          key={subItem.title}
-                          href={subItem.href}
-                          target={subItem.external ? "_blank" : "_self"}
-                          rel={subItem.external ? "noopener noreferrer" : undefined}
-                          onClick={closeAllMenus}
-                          className="group flex items-center justify-between py-3.5 text-lg font-semibold text-white hover:text-[#F9C100] transition border-b border-white/15"
-                        >
-                          <span className="pr-2">{subItem.title}</span>
-                          <i
-                            className={`fas ${
-                              subItem.external ? "fa-external-link-alt" : "fa-arrow-right"
-                            } text-xs text-white group-hover:text-[#F9C100] group-hover:translate-x-1 transition-transform`}
-                          />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex justify-center mt-6">
-                  <button
-                    type="button"
-                    onClick={() => setOpenMenu(null)}
-                    aria-label="Close mega menu"
-                    className="text-white/60 hover:text-[#F9C100] transition p-2 focus:outline-none"
-                  >
-                    <i className="fas fa-chevron-up text-sm" />
-                  </button>
-                </div>
+      {/* Desktop mega menu — always mounted, animated with opacity/translate so
+          both open and close transitions are smooth (no content flash). */}
+      <div
+        id="desktop-mega-menu"
+        role="region"
+        aria-hidden={!isMegaMenuOpen}
+        className={`absolute left-0 top-20 hidden w-full border-t border-white/10 bg-[#1C2C45] text-white shadow-2xl transition-all duration-200 ease-out xl:block ${
+          isMegaMenuOpen
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+      >
+        {menuToRender?.megaMenu && (
+          <div className="container mx-auto px-8 py-10">
+            <div className="grid grid-cols-12 items-start gap-12">
+              <div className="col-span-4 border-r border-white/10 pr-8">
+                <h3 className="mb-4 text-2xl font-normal text-white">{menuToRender.name}</h3>
+                <p className="mb-8 text-sm leading-relaxed text-white/80">
+                  {menuToRender.megaMenu.description}
+                </p>
+                <Link
+                  href={menuToRender.megaMenu.exploreHref}
+                  onClick={closeAllMenus}
+                  className="inline-block border border-white px-8 py-2.5 text-sm font-semibold text-white transition hover:border-[#F9C100] hover:bg-[#F9C100] hover:text-[#2C466D]"
+                >
+                  Explore
+                </Link>
               </div>
-            );
-          })}
-        </div>
-      )}
 
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden fixed top-20 left-0 w-full h-[calc(100vh-5rem)] bg-[#1C2C45] text-white z-50 overflow-y-auto"
-        >
-          {activeMobileCategory === null ? (
-            <div className="flex flex-col p-6 space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <div key={item.name} className="border-b border-white/10">
-                  {item.megaMenu ? (
-                    <button
-                      type="button"
-                      onClick={() => setActiveMobileCategory(item.name)}
-                      className="w-full flex items-center justify-between py-4 text-xl font-semibold text-white hover:text-[#F9C100] transition text-left"
-                    >
-                      <span>{item.name}</span>
-                      <i className="fas fa-chevron-right text-xs text-white/60" aria-hidden="true" />
-                    </button>
-                  ) : (
-                    <a
-                      href={item.href}
-                      onClick={closeAllMenus}
-                      className="block py-4 text-xl font-semibold text-white hover:text-[#F9C100] transition"
-                    >
-                      {item.name}
-                    </a>
+              <div className="col-span-8 pl-4">
+                <div className="grid grid-cols-1 divide-y divide-white/15 border-b border-t border-white/15 md:grid-cols-2 md:gap-x-8">
+                  {menuToRender.megaMenu.items.map((subItem) =>
+                    subItem.external ? (
+                      <a
+                        key={subItem.title}
+                        href={subItem.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeAllMenus}
+                        className="group flex items-center justify-between border-b border-white/15 py-3.5 text-base font-semibold text-white transition hover:text-[#F9C100]"
+                      >
+                        <span className="pr-2">{subItem.title}</span>
+                        <i
+                          className="fas fa-external-link-alt text-xs text-white transition-transform group-hover:translate-x-1 group-hover:text-[#F9C100]"
+                          aria-hidden="true"
+                        />
+                      </a>
+                    ) : (
+                      <Link
+                        key={subItem.title}
+                        href={subItem.href}
+                        onClick={closeAllMenus}
+                        className="group flex items-center justify-between border-b border-white/15 py-3.5 text-base font-semibold text-white transition hover:text-[#F9C100]"
+                      >
+                        <span className="pr-2">{subItem.title}</span>
+                        <i
+                          className="fas fa-arrow-right text-xs text-white transition-transform group-hover:translate-x-1 group-hover:text-[#F9C100]"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    ),
                   )}
                 </div>
-              ))}
-
-              <div className="pt-6">
-                <a
-                  href="https://calendly.com/hello-intellidea/new-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeAllMenus}
-                  className="block w-full bg-[#F9C100] text-[#2C466D] font-bold py-3.5 text-center rounded-sm shadow-md"
-                >
-                  Book an appointment
-                </a>
               </div>
             </div>
-          ) : (
-            <div className="p-6">
+
+            <div className="mt-6 flex justify-center">
               <button
                 type="button"
-                onClick={() => setActiveMobileCategory(null)}
-                className="flex items-center gap-2 text-white/80 hover:text-[#F9C100] font-medium text-sm mb-6 transition focus:outline-none"
+                onClick={() => setOpenMenu(null)}
+                aria-label="Close mega menu"
+                className="p-2 text-white/60 transition hover:text-[#F9C100] focus:outline-none"
               >
-                <i className="fas fa-chevron-left text-xs" aria-hidden="true" />
-                <span>Back</span>
+                <i className="fas fa-chevron-up text-sm" aria-hidden="true" />
               </button>
+            </div>
+          </div>
+        )}
+      </div>
 
-              {activeCategoryData?.megaMenu && (
-                <div>
-                  <h2 className="text-2xl font-semibold text-white mb-3">{activeCategoryData.name}</h2>
-                  <p className="text-sm text-white/80 leading-relaxed mb-5">
-                    {activeCategoryData.megaMenu.description}
-                  </p>
-
-                  <a
-                    href={activeCategoryData.megaMenu.exploreHref}
-                    onClick={closeAllMenus}
-                    className="inline-block border border-white text-white hover:bg-[#F9C100] hover:text-[#2C466D] hover:border-[#F9C100] font-semibold text-sm py-2 px-8 mb-8 transition"
+      {/* Mobile drawer — always mounted, slides in/out via transform so closing
+          is animated instead of an instant unmount. */}
+      <div
+        id="mobile-menu"
+        aria-hidden={!isMobileMenuOpen}
+        className={`fixed left-0 top-20 z-50 h-[calc(100vh-5rem)] w-full overflow-y-auto bg-[#1C2C45] text-white transition-transform duration-300 ease-out xl:hidden ${
+          isMobileMenuOpen ? "translate-x-0" : "pointer-events-none translate-x-full"
+        }`}
+      >
+        {activeMobileCategory === null ? (
+          <div className="flex flex-col space-y-1 p-6">
+            {NAV_ITEMS.map((item) => (
+              <div key={item.name} className="border-b border-white/10">
+                {item.megaMenu ? (
+                  <button
+                    type="button"
+                    onClick={() => setActiveMobileCategory(item.name)}
+                    className="flex w-full items-center justify-between py-4 text-left text-lg font-semibold text-white transition hover:text-[#F9C100]"
                   >
-                    Explore
-                  </a>
+                    <span>{item.name}</span>
+                    <i className="fas fa-chevron-right text-xs text-white/60" aria-hidden="true" />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href ?? "/"}
+                    onClick={closeAllMenus}
+                    className="block py-4 text-lg font-semibold text-white transition hover:text-[#F9C100]"
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
 
-                  <div className="border-t border-b border-white/15 divide-y divide-white/15 mb-8">
-                    {activeCategoryData.megaMenu.items.map((subItem) => {
-                      const isExpanded = expandedAccordion === subItem.title;
-                      const hasSubItems = subItem.subItems && subItem.subItems.length > 0;
+            <div className="pt-6">
+              <a
+                href="https://calendly.com/hello-intellidea/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeAllMenus}
+                className="block w-full rounded-sm bg-[#F9C100] py-3.5 text-center text-sm font-bold text-[#2C466D] shadow-md"
+              >
+                Book an appointment
+              </a>
+            </div>
+          </div>
+        ) : (
+          <div className="p-6">
+            <button
+              type="button"
+              onClick={() => setActiveMobileCategory(null)}
+              className="mb-6 flex items-center gap-2 text-sm font-medium text-white/80 transition hover:text-[#F9C100] focus:outline-none"
+            >
+              <i className="fas fa-chevron-left text-xs" aria-hidden="true" />
+              <span>Back</span>
+            </button>
 
-                      return (
-                        <div key={subItem.title} className="py-1">
-                          <div className="flex items-center justify-between py-3">
+            {activeCategoryData?.megaMenu && (
+              <div>
+                <h2 className="mb-3 text-xl font-semibold text-white">{activeCategoryData.name}</h2>
+                <p className="mb-5 text-sm leading-relaxed text-white/80">
+                  {activeCategoryData.megaMenu.description}
+                </p>
+
+                <Link
+                  href={activeCategoryData.megaMenu.exploreHref}
+                  onClick={closeAllMenus}
+                  className="mb-8 inline-block border border-white px-8 py-2 text-sm font-semibold text-white transition hover:border-[#F9C100] hover:bg-[#F9C100] hover:text-[#2C466D]"
+                >
+                  Explore
+                </Link>
+
+                <div className="mb-8 divide-y divide-white/15 border-b border-t border-white/15">
+                  {activeCategoryData.megaMenu.items.map((subItem) => {
+                    const isExpanded = expandedAccordion === subItem.title;
+                    const hasSubItems = Boolean(subItem.subItems?.length);
+
+                    return (
+                      <div key={subItem.title} className="py-1">
+                        <div className="flex items-center justify-between py-3">
+                          {subItem.external ? (
                             <a
                               href={subItem.href}
-                              target={subItem.external ? "_blank" : "_self"}
-                              rel={subItem.external ? "noopener noreferrer" : undefined}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               onClick={closeAllMenus}
-                              className="text-base font-bold text-white hover:text-[#F9C100] transition pr-2 flex items-center gap-2"
+                              className="flex items-center gap-2 pr-2 text-sm font-bold text-white transition hover:text-[#F9C100]"
                             >
                               <span>{subItem.title}</span>
-                              {subItem.external && <i className="fas fa-external-link-alt text-xs opacity-75" />}
+                              <i className="fas fa-external-link-alt text-xs opacity-75" aria-hidden="true" />
                             </a>
+                          ) : (
+                            <Link
+                              href={subItem.href}
+                              onClick={closeAllMenus}
+                              className="pr-2 text-sm font-bold text-white transition hover:text-[#F9C100]"
+                            >
+                              {subItem.title}
+                            </Link>
+                          )}
 
-                            {hasSubItems && (
-                              <button
-                                type="button"
-                                onClick={() => setExpandedAccordion(isExpanded ? null : subItem.title)}
-                                aria-label={`Toggle ${subItem.title}`}
-                                aria-expanded={isExpanded}
-                                className="text-white hover:text-[#F9C100] p-1 focus:outline-none"
-                              >
-                                <i className={`fas ${isExpanded ? "fa-minus" : "fa-plus"} text-sm`} aria-hidden="true" />
-                              </button>
-                            )}
-                          </div>
-
-                          {hasSubItems && isExpanded && (
-                            <div className="pl-4 pb-3 space-y-2.5 border-l border-[#F9C100]/40 my-1">
-                              {subItem.subItems!.map((nested) => (
-                                <a
-                                  key={nested.title}
-                                  href={nested.href}
-                                  onClick={closeAllMenus}
-                                  className="block text-sm text-white/90 hover:text-[#F9C100] transition"
-                                >
-                                  {nested.title}
-                                </a>
-                              ))}
-                            </div>
+                          {hasSubItems && (
+                            <button
+                              type="button"
+                              onClick={() => setExpandedAccordion(isExpanded ? null : subItem.title)}
+                              aria-label={`Toggle ${subItem.title}`}
+                              aria-expanded={isExpanded}
+                              className="p-1 text-white transition hover:text-[#F9C100] focus:outline-none"
+                            >
+                              <i
+                                className={`fas ${isExpanded ? "fa-minus" : "fa-plus"} text-sm`}
+                                aria-hidden="true"
+                              />
+                            </button>
                           )}
                         </div>
-                      );
-                    })}
-                  </div>
+
+                        {hasSubItems && isExpanded && (
+                          <div className="my-1 space-y-2.5 border-l border-[#F9C100]/40 pb-3 pl-4">
+                            {subItem.subItems!.map((nested) => (
+                              <Link
+                                key={nested.title}
+                                href={nested.href}
+                                onClick={closeAllMenus}
+                                className="block text-xs text-white/90 transition hover:text-[#F9C100]"
+                              >
+                                {nested.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </header>
   );
 }

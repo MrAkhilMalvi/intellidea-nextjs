@@ -1,0 +1,49 @@
+-Home
+
+-->hero section to set some deisng left side to set in this hero section.
+--> in IntEllev8, IntellXperia, IntelliWise, IntelliCircle this card to click the navigate the pages.
+--> out clients logo to remove it .
+--> our partners logo remove add from the docx.
+--> working for testing to test they working or not.
+--> fix the footer also in this.
+
+- services
+
+--> explore button clcihte the first service page to navigate.- DONE
+--> remove the Intellidea - DONE
+>
+Services
+>
+Practice 01
+Service 01 of 08 this part remove in all services in ok and also images to proer and professional use.
+---> in the font size som atter have in font size to fix it in allaover pages in services to match with font size in home page with and stylling or allof thet font relatd ok
+
+- ecosystem
+
+---> to click the ecosystmeto naviaget in intell card ok
+---> in four have eco ssytem to adoone our partners to also addin ecosystem part ok
+--> explore button clcihte the first ecosystem page to navigate.
+---> ecosystem apge have to roemv ethe Ecosystem
+>
+Strategy & Advisory this lie badge to remove it ok and font manage and also images to mkae place prfessioan 
+
+-industries
+
+--->explore button clcihte the first industries page to navigate.
+---> Intellidea
+>
+Industries this badge to remove it
+---> (13) this tag to rmeove it  in notindustircy out sectores to show likethatok in title have in industries page ok
+
+---> Cross-Industry Capabilities
+Every Industry Page Connects the Same Core Capabilities thipart complert to remove it.
+
+
+-about us
+
+-->make all cmaple case
+--> in to add have is Why Intellidea?, Leadership, Engagement Models,our Proposition, out mission, our mission, our Purpose, our core vlaue, out clients
+
+-contact 
+
+---> to clchte navigatein conat us page in hoepagehaveok 
