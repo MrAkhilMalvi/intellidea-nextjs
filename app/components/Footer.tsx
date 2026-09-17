@@ -12,9 +12,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <h3 className="font-display font-bold text-white text-2xl mb-4">
-              Intellidea
-            </h3>
+          <Link
+            href="/"
+            className="flex items-center gap-3 mb-2"
+            aria-label="Intellidea home"
+          >
+            <img
+              src="/intellidea.png"
+              alt="Intellidea"
+              className="h-10 w-auto object-contain md:h-12"
+              width={220}
+              height={56}
+              loading="eager"
+            />
+          </Link>
             <p className="font-sans text-sm leading-relaxed text-gray-300/90 max-w-sm mb-6">
               Insight to Innovate for Impact — strategy, technology, people and
               managed-services support for businesses navigating growth, risk

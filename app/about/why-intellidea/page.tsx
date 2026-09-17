@@ -117,7 +117,7 @@ export default function WhyIntellideaPage() {
             priority
             className="object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#12203A]/90 via-[#12203A]/95 to-[#12203A]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[#12203A]/90 via-[#12203A]/95 to-[#12203A]" />
         </div>
 
         <div className="container relative z-10 mx-auto px-6 lg:px-12">
@@ -156,7 +156,7 @@ export default function WhyIntellideaPage() {
                 >
                   {/* IMAGE CONTAINER WITH HOVER EFFECT */}
                   <div className="w-full lg:w-1/2">
-                    <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[#12203A]/10 bg-[#12203A]/5 shadow-xl">
+                    <div className="group relative aspect-16/10 w-full overflow-hidden rounded-2xl border border-[#12203A]/10 bg-[#12203A]/5 shadow-xl">
                       <Image
                         src={item.image}
                         alt={item.alt}

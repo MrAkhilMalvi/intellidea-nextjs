@@ -17,7 +17,7 @@ export default function IndustriesPageLayout() {
         {/* 1. HERO                                                      */}
         {/* ------------------------------------------------------------ */}
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-20">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[20px_20px] opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-12">
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -62,14 +62,14 @@ export default function IndustriesPageLayout() {
                 key={industry.slug}
                 id={industry.slug}
                 tabIndex={0}
-                className="group relative block aspect-[4/5] scroll-mt-24 overflow-hidden rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:-translate-y-1 focus-visible:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9C100]"
+                className="group relative block aspect-4/5 scroll-mt-24 overflow-hidden rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:-translate-y-1 focus-visible:shadow-xl  focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#F9C100]"
               >
                 <img
                   src={industry.image}
                   alt={industry.name}
                   className="h-full w-full transform object-cover object-center transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/95 via-[#2C466D]/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#2C466D]/95 via-[#2C466D]/20 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <h3 className="text-lg font-bold leading-snug text-white">
@@ -84,8 +84,8 @@ export default function IndustriesPageLayout() {
         {/* ------------------------------------------------------------ */}
         {/* 4. CTA BANNER                                                */}
         {/* ------------------------------------------------------------ */}
-        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:16px_16px] opacity-20" />
+        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-linear-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[16px_16px] opacity-20" />
           <div className="relative z-10 flex flex-col items-center justify-between gap-8 md:flex-row">
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-2xl font-extrabold text-white sm:text-3xl">

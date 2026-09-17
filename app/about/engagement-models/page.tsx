@@ -158,7 +158,7 @@ export default function EngagementModelsPage() {
             priority
             className="object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#12203A]/90 via-[#12203A]/95 to-[#12203A]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[#12203A]/90 via-[#12203A]/95 to-[#12203A]" />
         </div>
 
         <div className="container relative z-10 mx-auto px-6 lg:px-12">
@@ -197,7 +197,7 @@ export default function EngagementModelsPage() {
                 >
                   {/* IMAGE CONTAINER WITH ZOOM HOVER */}
                   <div className="w-full lg:w-1/2">
-                    <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-[#12203A]/10 bg-[#12203A]/5 shadow-xl">
+                    <div className="group relative aspect-16/10 w-full overflow-hidden rounded-2xl border border-[#12203A]/10 bg-[#12203A]/5 shadow-xl">
                       <Image
                         src={model.image}
                         alt={model.alt}
@@ -205,7 +205,7 @@ export default function EngagementModelsPage() {
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#12203A]/50 via-transparent to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-linear-to-t from-[#12203A]/50 via-transparent to-transparent opacity-60" />
 
 
                     </div>

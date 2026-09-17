@@ -46,8 +46,8 @@ export const HeroSection: React.FC = () => {
       <audio ref={audioRef} src="./Corporate RF.mp3" loop preload="auto" />
 
       {/* ── GRADIENT OVERLAYS (EXECUTIVE NAVY DEPTH) ── */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0a121e]/95 via-[#12203A]/90 to-[#1e3352]/60" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0a121e] via-transparent to-transparent opacity-80" />
+      <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0a121e]/95 via-[#12203A]/90 to-[#1e3352]/60" />
+      <div className="absolute inset-0 z-0 bg-linear-to-t from-[#0a121e] via-transparent to-transparent opacity-80" />
 
       {/* ── MAIN CONTENT CONTAINER ── */}
       <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">

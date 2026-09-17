@@ -13,7 +13,7 @@ export default function ServicesIndexPage() {
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-20">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[20px_20px] opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-12">
             <nav
@@ -80,8 +80,8 @@ export default function ServicesIndexPage() {
           </div>
         </section>
 
-        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:16px_16px] opacity-20" />
+        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-linear-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[16px_16px] opacity-20" />
           <div className="relative z-10 flex flex-col items-center justify-between gap-8 md:flex-row">
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-2xl font-extrabold text-white sm:text-3xl">

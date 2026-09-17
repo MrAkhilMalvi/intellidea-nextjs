@@ -16,7 +16,7 @@ export function BioLayout({
   children,
 }: BioLayoutProps) {
   return (
-    <div className="bg-white scroll-smooth text-[#2C466D] min-h-screen pt-[80px]">
+    <div className="bg-white scroll-smooth text-[#2C466D] min-h-screen pt-20">
       <section className="bg-gray-50 text-[#2C466D] px-6 sm:px-12 py-12">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
           {/* LEFT TEXT */}

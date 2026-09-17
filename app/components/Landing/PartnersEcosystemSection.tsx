@@ -149,7 +149,7 @@ export const PartnersEcosystemSection: React.FC = () => {
           ))}
 
           {/* 6th Slot: Become a Partner CTA Card (Completes the Grid) */}
-          <div className="relative rounded-2xl p-7 bg-gradient-to-br from-[#2C466D] to-[#1e314d] text-white shadow-md flex flex-col justify-between group overflow-hidden border border-[#2C466D]">
+          <div className="relative rounded-2xl p-7 bg-linear-to-br from-[#2C466D] to-[#1e314d] text-white shadow-md flex flex-col justify-between group overflow-hidden border border-[#2C466D]">
             {/* Background Accent glow */}
             <div className="absolute -right-12 -bottom-12 w-40 h-40 bg-[#f7bf22]/10 rounded-full blur-2xl pointer-events-none" />
 

@@ -28,7 +28,7 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
         {/* 1. HERO                                                      */}
         {/* ------------------------------------------------------------ */}
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-24">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[20px_20px] opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -78,15 +78,15 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
               {/* Hero image */}
               <div className="relative lg:col-span-5">
                 <div className="relative mx-auto max-w-md lg:max-w-none">
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#F9C100] to-amber-500 opacity-30 blur-lg" />
+                  <div className="absolute -inset-2 rounded-2xl bg-linear-to-r from-[#F9C100] to-amber-500 opacity-30 blur-lg" />
 
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-white/20 shadow-2xl lg:aspect-square">
+                  <div className="relative aspect-4/3 overflow-hidden rounded-2xl border-2 border-white/20 shadow-2xl lg:aspect-square">
                     <img
                       src={data.heroImage}
                       alt={data.title}
                       className="h-full w-full transform object-cover object-center transition-transform duration-700 hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#2C466D]/80 via-transparent to-transparent" />
 
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur-md">
                       <div className="flex items-center gap-3">
@@ -199,9 +199,9 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                 <img
                   src={data.secondaryImage}
                   alt={data.title}
-                  className="h-[380px] w-full transform object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:h-[440px]"
+                  className="h-95 w-full transform object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:h-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/40 via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#2C466D]/40 via-transparent to-transparent opacity-70" />
               </div>
             </div>
           </div>
@@ -331,7 +331,7 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                   key={area.name}
                   className="group flex cursor-default items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-[#2C466D] hover:bg-[#2C466D] hover:shadow-xl"
                 >
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-slate-100 text-lg text-[#2C466D] shadow-sm transition-colors duration-200 group-hover:bg-[#F9C100]">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-lg text-[#2C466D] shadow-sm transition-colors duration-200 group-hover:bg-[#F9C100]">
                     <i className={`fas ${area.icon}`} aria-hidden="true" />
                   </div>
                   <span className="text-sm font-bold leading-snug text-slate-800 transition-colors group-hover:text-white">
@@ -363,8 +363,8 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
         {/* ------------------------------------------------------------ */}
         {/* 7. CTA BANNER                                                */}
         {/* ------------------------------------------------------------ */}
-        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:16px_16px] opacity-20" />
+        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-linear-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[16px_16px] opacity-20" />
           <div className="relative z-10 flex flex-col items-center justify-between gap-8 md:flex-row">
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-2xl font-extrabold text-white sm:text-3xl">

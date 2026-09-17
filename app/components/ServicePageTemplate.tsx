@@ -53,7 +53,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       <div>
         {/* HERO */}
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-24">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[20px_20px] opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -94,14 +94,14 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
 
               <div className="relative lg:col-span-5">
                 <div className="relative mx-auto max-w-md lg:max-w-none">
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#F9C100] to-amber-500 opacity-30 blur-lg" />
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-white/20 shadow-2xl lg:aspect-square">
+                  <div className="absolute -inset-2 rounded-2xl bg-linear-to-r from-[#F9C100] to-amber-500 opacity-30 blur-lg" />
+                  <div className="relative aspect-4/3 overflow-hidden rounded-2xl border-2 border-white/20 shadow-2xl lg:aspect-square">
                     <img
                       src={service.heroImage}
                       alt={service.title}
                       className="h-full w-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#2C466D]/80 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur-md">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2C466D] text-lg font-bold text-[#F9C100]">
@@ -208,9 +208,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
                 <img
                   src={service.secondaryImage}
                   alt={`${service.title} advisory`}
-                  className="h-[380px] w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:h-[440px]"
+                  className="h-95 w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 sm:h-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/40 via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#2C466D]/40 via-transparent to-transparent opacity-70" />
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
                 Specialized practice areas
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-[#2C466D]">
-                Capabilities ({capabilityCount})
+                Capabilities
               </h2>
             </div>
 
@@ -407,9 +407,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
                   href={`/services/${other.slug}`}
                   className="group flex h-full flex-col rounded-xl border border-slate-200 bg-[#F8FAFC] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F9C100] hover:bg-white hover:shadow-xl"
                 >
-                  <span className="mb-4 font-mono text-sm font-bold text-[#F9C100]">
-                    {String(other.number).padStart(2, "0")}
-                  </span>
                   <span className="mb-2 text-base font-bold leading-snug text-[#2C466D]">
                     {other.shortTitle}
                   </span>
@@ -427,8 +424,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
         </section>
 
         {/* CTA */}
-        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
-          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:16px_16px] opacity-20" />
+        <section className="relative mx-auto my-12 max-w-7xl overflow-hidden rounded-2xl bg-linear-to-r from-[#2C466D] to-[#1C2C45] px-6 py-16 text-white shadow-2xl lg:px-12">
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-1/3 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-size-[16px_16px] opacity-20" />
           <div className="relative z-10 flex flex-col items-center justify-between gap-8 md:flex-row">
             <div className="space-y-2 text-center md:text-left">
               <h3 className="text-2xl font-extrabold text-white sm:text-3xl">
