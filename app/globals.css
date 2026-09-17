@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 :root {
-  --brand-blue: #2C466D;
-  --brand-yellow: #F9C100;
+  --brand-blue: #2c466d;
+  --brand-yellow: #f9c100;
 }
 
 @layer utilities {
@@ -36,7 +36,19 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Montserrat",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 @keyframes fadeUpSoft {
@@ -57,6 +69,25 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-in {
+    animation: none;
+  }
+}
+
+.hero-reveal {
+  animation: heroRevealUp 0.7s ease-out both;
+}
+@keyframes heroRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
     animation: none;
   }
 }

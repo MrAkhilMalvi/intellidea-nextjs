@@ -27,7 +27,6 @@ export const NAV_ITEMS: MenuItem[] = [
     megaMenu: {
       description:
         "Intellidea helps clients create long-term value for all stakeholders. Enabled by data and technology, our services and solutions provide trust through assurance and help clients transform, grow and operate.",
-      // No /services index page — "Explore" opens straight into the first service page.
       exploreHref: "/services/strategy-business-transformation",
       items: [
         {
@@ -67,10 +66,11 @@ export const NAV_ITEMS: MenuItem[] = [
   },
   {
     name: "Ecosystem",
+    href: "/#offerings",
     megaMenu: {
       description:
         "Our four integrated ecosystem pillars combine strategic insight, on-demand expert networks, capability academies, and executive collaborative communities.",
-      exploreHref: "/intellev8",
+      exploreHref: "/#offerings",
       items: [
         { title: "IntEllev8 (Strategy & Acceleration)", href: "/intellev8" },
         {
@@ -79,8 +79,7 @@ export const NAV_ITEMS: MenuItem[] = [
         },
         {
           title: "IntelliWise (Capability Development)",
-          href: "https://intelliwiseacademy.com/",
-          external: true,
+          href: "/intelliwise",
         },
         {
           title: "IntelliCircle (Executive Community)",
@@ -126,17 +125,22 @@ export const NAV_ITEMS: MenuItem[] = [
       ],
     },
   },
-  { name: "Resources", href: "#resources" },
+  { name: "Resources", href: "/#resources" },
   {
     name: "About Us",
     megaMenu: {
       description:
-        "Learn about our mission, leadership, and collaborative engagement models powering modern enterprises.",
+        "Learn about our purpose, mission, leadership, and collaborative engagement models powering modern enterprises.",
       exploreHref: "/about",
       items: [
-        { title: "WHY INTELLIDEA?", href: "/about#why-intellidea" },
-        { title: "ENGAGEMENT MODELS", href: "/about#engagement-models" },
-        { title: "Leadership", href: "/about#leadership" },
+        { title: "Why Intellidea?", href: "/about/why-intellidea" },
+        { title: "Our Purpose", href: "/#our-mission-vision" },
+        { title: "Our Mission", href: "/#our-mission-vision" },
+        { title: "Our Core Values", href: "/#core-values" },
+        { title: "Our Proposition", href: "/#our-proposition" },
+        { title: "Engagement Models", href: "/about/engagement-models" },
+        { title: "Leadership", href: "/#leadership" },
+        // { title: "Our Clients", href: "/about#our-clients" },
       ],
     },
   },

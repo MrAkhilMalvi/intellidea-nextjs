@@ -1,16 +1,18 @@
-import Header from "./Navbar";
-import Footer from "./Footer";
 import { INDUSTRIES_PAGE } from "../data/industriesData";
 
 export default function IndustriesPageLayout() {
-  const { heroHeadline, heroSubhead, badge, capabilities, ctaLabel, industries } =
-    INDUSTRIES_PAGE;
+  const {
+    heroHeadline,
+    heroSubhead,
+    badge,
+    capabilities,
+    ctaLabel,
+    industries,
+  } = INDUSTRIES_PAGE;
 
   return (
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
-
-
         {/* ------------------------------------------------------------ */}
         {/* 1. HERO                                                      */}
         {/* ------------------------------------------------------------ */}
@@ -18,7 +20,6 @@ export default function IndustriesPageLayout() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-12">
-
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               {heroHeadline}
             </h1>
@@ -42,7 +43,10 @@ export default function IndustriesPageLayout() {
         {/* ------------------------------------------------------------ */}
         {/* 2. INDUSTRY CARDS                                            */}
         {/* ------------------------------------------------------------ */}
-        <section id="industries" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-12">
+        <section
+          id="industries"
+          className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-12"
+        >
           <div className="mb-12 max-w-2xl">
             <span className="mb-2 block border-l-4 border-[#F9C100] pl-3 text-xs font-bold uppercase tracking-widest text-[#2C466D]">
               Sectors We Serve
@@ -68,14 +72,14 @@ export default function IndustriesPageLayout() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C466D]/95 via-[#2C466D]/20 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <h3 className="text-lg font-bold leading-snug text-white">{industry.name}</h3>
+                  <h3 className="text-lg font-bold leading-snug text-white">
+                    {industry.name}
+                  </h3>
                 </div>
               </div>
             ))}
           </div>
         </section>
-
-
 
         {/* ------------------------------------------------------------ */}
         {/* 4. CTA BANNER                                                */}
@@ -88,8 +92,9 @@ export default function IndustriesPageLayout() {
                 Don't see your exact sector listed?
               </h3>
               <p className="max-w-xl text-sm text-slate-200 sm:text-base">
-                Our cross-industry frameworks adapt to adjacent and emerging sectors — talk to an
-                advisor about your specific business environment.
+                Our cross-industry frameworks adapt to adjacent and emerging
+                sectors — talk to an advisor about your specific business
+                environment.
               </p>
             </div>
             <a
@@ -103,8 +108,6 @@ export default function IndustriesPageLayout() {
           </div>
         </section>
       </div>
-
-  
     </div>
   );
 }

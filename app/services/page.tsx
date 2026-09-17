@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
 import { services } from "../data/services";
 
 export const metadata: Metadata = {
@@ -14,8 +12,6 @@ export default function ServicesIndexPage() {
   return (
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
-        <Header />
-
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-20">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
 
@@ -38,8 +34,8 @@ export default function ServicesIndexPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
-              Eight advisory practices, one accountable partner — from strategy and technology to
-              people, risk, finance and managed services.
+              Eight advisory practices, one accountable partner — from strategy
+              and technology to people, risk, finance and managed services.
             </p>
           </div>
         </section>
@@ -92,7 +88,8 @@ export default function ServicesIndexPage() {
                 Not sure which service fits your need?
               </h3>
               <p className="max-w-xl text-sm text-slate-200 sm:text-base">
-                Tell us about your business and we&apos;ll point you to the right team.
+                Tell us about your business and we&apos;ll point you to the
+                right team.
               </p>
             </div>
             <a
@@ -106,8 +103,6 @@ export default function ServicesIndexPage() {
           </div>
         </section>
       </div>
-
-      <Footer />
     </div>
   );
 }

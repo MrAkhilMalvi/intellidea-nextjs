@@ -1,37 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
-
-interface MenuItem {
-  name: string;
-  href: string;
-}
-
-const NAV_ITEMS: MenuItem[] = [
-  { name: "Home", href: "index.html" },
-  { name: "Solutions & Services", href: "index.html#offerings" },
-  { name: "About Us", href: "index.html#aboutus" },
-  { name: "Contact", href: "index.html#contact" },
-  { name: "Resources", href: "index.html#resources" },
-];
-
 export default function TermsAndConditionsPage() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <div className="min-h-screen flex flex-col pt-20">
       {/* Header / Navbar */}
-      <Header />
 
       {/* Main Content Area */}
       <main className="grow">
@@ -48,9 +20,9 @@ export default function TermsAndConditionsPage() {
                 Acceptance
               </h2>
               <p>
-                By using www.intellidea.co.in (“Site”), you agree to these Terms &
-                Conditions. If you do not agree, please refrain from using this
-                Site.
+                By using www.intellidea.co.in (“Site”), you agree to these Terms
+                & Conditions. If you do not agree, please refrain from using
+                this Site.
               </p>
             </div>
 
@@ -79,7 +51,8 @@ export default function TermsAndConditionsPage() {
                 Third-Party Links
               </h2>
               <p>
-                We are not responsible for external websites linked from our Site.
+                We are not responsible for external websites linked from our
+                Site.
               </p>
             </div>
 
@@ -126,8 +99,6 @@ export default function TermsAndConditionsPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

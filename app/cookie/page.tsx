@@ -1,38 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
-
-interface MenuItem {
-  name: string;
-  href: string;
-}
-
-const NAV_ITEMS: MenuItem[] = [
-  { name: "Home", href: "index.html" },
-  { name: "Solutions & Services", href: "index.html#offerings" },
-  { name: "About Us", href: "index.html#aboutus" },
-  { name: "Contact", href: "index.html#contact" },
-  { name: "Resources", href: "index.html#resources" },
-];
-
 export default function CookiePolicyPage() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <div className="min-h-screen flex flex-col pt-20">
-      {/* Reusable Navbar */}
-      <Header />
-
       {/* Main Content Section */}
       <main className="grow">
         <section id="serve" className="bg-white py-12 px-6 md:px-20">
@@ -45,8 +15,8 @@ export default function CookiePolicyPage() {
           <div className="max-w-5xl mx-auto text-gray-800 text-base leading-relaxed space-y-6">
             <p>
               This Cookie Policy applies to all websites, applications, and
-              branded pages on third-party platforms (such as Facebook and YouTube)
-              that are operated by or on behalf of Intellidea. By using
+              branded pages on third-party platforms (such as Facebook and
+              YouTube) that are operated by or on behalf of Intellidea. By using
               Intellidea’s sites, you agree to our use of cookies as outlined in
               this policy. If you do not consent, you can adjust your browser
               settings to disable cookies. However, doing so may affect the
@@ -57,8 +27,8 @@ export default function CookiePolicyPage() {
               What Are Cookies?
             </h2>
             <p>
-              Cookies are small text files stored on your computer, smartphone, or
-              tablet when you visit a website. They typically contain:
+              Cookies are small text files stored on your computer, smartphone,
+              or tablet when you visit a website. They typically contain:
             </p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>The name of the website they originate from</li>
@@ -87,8 +57,8 @@ export default function CookiePolicyPage() {
                 our website and deleted when you close your browser.
               </li>
               <li>
-                <strong>Persistent Cookies</strong> – Stored on your device for a
-                set period to remember preferences and enhance future visits.
+                <strong>Persistent Cookies</strong> – Stored on your device for
+                a set period to remember preferences and enhance future visits.
               </li>
             </ul>
             <p>
@@ -115,10 +85,6 @@ export default function CookiePolicyPage() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-
-      <Footer />
     </div>
   );
 }

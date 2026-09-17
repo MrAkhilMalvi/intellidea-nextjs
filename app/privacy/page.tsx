@@ -1,37 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
-
 interface MenuItem {
   name: string;
   href: string;
 }
 
-const NAV_ITEMS: MenuItem[] = [
-  { name: "Home", href: "index.html" },
-  { name: "Solutions & Services", href: "index.html#offerings" },
-  { name: "About Us", href: "index.html#aboutus" },
-  { name: "Contact", href: "index.html#contact" },
-  { name: "Resources", href: "index.html#resources" },
-];
-
 export default function PrivacyAndCookiePolicy() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <div className="min-h-screen flex flex-col pt-20">
-      <Header />
-
       {/* Main Content Area */}
       <main className="grow">
         <section id="privacy-policy" className="bg-white py-12 px-6 md:px-20">
@@ -230,8 +206,6 @@ export default function PrivacyAndCookiePolicy() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

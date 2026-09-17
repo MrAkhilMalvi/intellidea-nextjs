@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import Header from "./Navbar";
-import Footer from "./Footer";
 import { PillarData } from "../data/ecoSystemData";
 
 interface PillarPageLayoutProps {
@@ -26,8 +24,6 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
   return (
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
-       
-
         {/* ------------------------------------------------------------ */}
         {/* 1. HERO                                                      */}
         {/* ------------------------------------------------------------ */}
@@ -38,13 +34,13 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
               {/* Copy */}
               <div className="space-y-6 lg:col-span-7">
-                
-
                 <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                   {heroHeadline}
                 </h1>
 
-                <p className="text-lg text-slate-200 sm:text-xl">{heroSubhead}</p>
+                <p className="text-lg text-slate-200 sm:text-xl">
+                  {heroSubhead}
+                </p>
 
                 <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                   {data.description}
@@ -56,7 +52,10 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                     className="inline-flex transform items-center gap-2.5 rounded-md bg-[#F9C100] px-8 py-3.5 text-sm font-bold text-[#2C466D] shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#e0ac1e] hover:shadow-xl"
                   >
                     <span>{data.ctaLabel}</span>
-                    <i className="fas fa-arrow-down text-xs" aria-hidden="true" />
+                    <i
+                      className="fas fa-arrow-down text-xs"
+                      aria-hidden="true"
+                    />
                   </a>
 
                   {data.externalLink && (
@@ -92,13 +91,18 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur-md">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2C466D] text-lg font-bold text-[#F9C100]">
-                          <i className="fas fa-layer-group" aria-hidden="true" />
+                          <i
+                            className="fas fa-layer-group"
+                            aria-hidden="true"
+                          />
                         </div>
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                             Pillar Focus
                           </p>
-                          <p className="text-sm font-bold text-[#2C466D]">{data.badge}</p>
+                          <p className="text-sm font-bold text-[#2C466D]">
+                            {data.badge}
+                          </p>
                         </div>
                       </div>
                       <span className="rounded-md bg-[#F9C100]/30 px-2.5 py-1 text-xs font-bold text-[#2C466D]">
@@ -138,7 +142,10 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
         {/* ------------------------------------------------------------ */}
         {/* 3. OVERVIEW                                                  */}
         {/* ------------------------------------------------------------ */}
-        <section id="details" className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12">
+        <section
+          id="details"
+          className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12"
+        >
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-6 lg:col-span-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#2C466D]/5 px-3 py-1">
@@ -153,8 +160,9 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
               </h2>
 
               <p className="text-lg text-justify leading-relaxed text-slate-600">
-                {data.description} Our framework bridges domain expertise with execution
-                capability, ensuring long-term sustainable impact and operational resilience.
+                {data.description} Our framework bridges domain expertise with
+                execution capability, ensuring long-term sustainable impact and
+                operational resilience.
               </p>
 
               {data.engagementModel && (
@@ -178,7 +186,10 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                   className="inline-flex items-center gap-2.5 rounded-md bg-[#2C466D] px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-200 hover:bg-[#1C2C45]"
                 >
                   <span>Schedule Executive Advisory</span>
-                  <i className="fas fa-arrow-right text-xs text-[#F9C100]" aria-hidden="true" />
+                  <i
+                    className="fas fa-arrow-right text-xs text-[#F9C100]"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
             </div>
@@ -217,7 +228,9 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                     key={pillar.title}
                     className="rounded-xl border border-slate-200 bg-[#F8FAFC] p-6 transition-all duration-300 hover:border-[#F9C100] hover:bg-white hover:shadow-xl"
                   >
-                    <h3 className="text-lg font-bold text-[#2C466D]">{pillar.title}</h3>
+                    <h3 className="text-lg font-bold text-[#2C466D]">
+                      {pillar.title}
+                    </h3>
                     <p className="mt-2 text-sm  leading-relaxed text-slate-600">
                       {pillar.description}
                     </p>
@@ -252,8 +265,12 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C466D] font-mono text-base font-bold text-[#F9C100] shadow-sm">
                       0{idx + 1}
                     </div>
-                    <h3 className="text-2xl font-bold text-[#2C466D]">{prop.title}</h3>
-                    <p className="text-lg leading-relaxed text-justify text-slate-600">{prop.description}</p>
+                    <h3 className="text-2xl font-bold text-[#2C466D]">
+                      {prop.title}
+                    </h3>
+                    <p className="text-lg leading-relaxed text-justify text-slate-600">
+                      {prop.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -264,7 +281,10 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
         {/* ------------------------------------------------------------ */}
         {/* 6. CAPABILITIES MATRIX                                       */}
         {/* ------------------------------------------------------------ */}
-        <section id="capabilities" className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12">
+        <section
+          id="capabilities"
+          className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12"
+        >
           <div className="mb-10 flex flex-col gap-6 border-b border-slate-200 pb-6 md:flex-row md:items-end md:justify-between">
             <div>
               <span className="mb-1 block border-l-4 border-[#F9C100] pl-3 text-xs font-bold uppercase tracking-widest text-[#2C466D]">
@@ -322,7 +342,10 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
             </div>
           ) : (
             <div className="rounded-xl border border-dashed border-slate-300 bg-white p-12 text-center">
-              <i className="fas fa-search mb-3 block text-3xl text-slate-300" aria-hidden="true" />
+              <i
+                className="fas fa-search mb-3 block text-3xl text-slate-300"
+                aria-hidden="true"
+              />
               <p className="text-sm font-medium text-slate-600">
                 No domain capability matching &ldquo;{searchQuery}&rdquo;
               </p>
@@ -348,8 +371,8 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                 Ready to transform your enterprise architecture?
               </h3>
               <p className="max-w-xl text-sm text-slate-200 sm:text-base">
-                Partner with Intellidea advisory experts to build tailor-made solutions for
-                sustainable growth.
+                Partner with Intellidea advisory experts to build tailor-made
+                solutions for sustainable growth.
               </p>
             </div>
             <a
@@ -363,8 +386,6 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
           </div>
         </section>
       </div>
-
-  
     </div>
   );
 };

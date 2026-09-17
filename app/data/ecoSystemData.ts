@@ -166,19 +166,20 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
   intelliwise: {
     slug: "intelliwise",
     title: "IntelliWise",
+    heroHeadline: "Build Capability. Empower People. Create Possibility.",
+    heroSubhead: "IntelliWise is Intellidea's learning and capability development ecosystem.",
     tagline: "Learning, Capability & Leadership Development",
     description:
-      "Building future-ready capabilities for organizations and individuals through executive education, AI integration, and diagnostic talent hubs.",
+      "Building future-ready capabilities for organizations and individuals through executive education, AI integration, and targeted skill development programs.",
     badge: "Learning Academy",
     heroImage:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80",
     secondaryImage:
       "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
-    externalLink: "https://intelliwiseacademy.com/",
     stats: [
       { value: "Future-Ready", label: "Generative AI & Tech Skills" },
       { value: "360°", label: "Assessment & Mentorship" },
-      { value: "Dedicated", label: "External Academy Platform" },
+      { value: "Tailored", label: "Corporate & Individual Learning" },
     ],
     valueProps: [
       {
@@ -192,33 +193,34 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
           "Conduct structured interview panel assessments, competency evaluations, and career readiness diagnostics.",
       },
       {
-        title: "Direct Platform Integration",
+        title: "Flexible Learning Models",
         description:
-          "Seamless redirection to intelliwiseacademy.com for structured curriculum enrollment and learning management.",
+          "Delivered via hands-on workshops, masterclasses, certifications, and cohort-based learning environments.",
       },
     ],
     focusAreas: [
-      { name: "Executive Development", icon: "fa-graduation-cap" },
       { name: "Leadership Development", icon: "fa-user-graduate" },
-      { name: "Management Development", icon: "fa-chart-pie" },
       { name: "AI for Business", icon: "fa-brain" },
-      { name: "Generative AI", icon: "fa-wand-magic-sparkles" },
       { name: "AI for Educators", icon: "fa-chalkboard-user" },
-      { name: "Digital Skills", icon: "fa-laptop" },
-      { name: "Cybersecurity Awareness", icon: "fa-lock" },
-      { name: "Financial Literacy", icon: "fa-vault" },
+      { name: "Generative AI", icon: "fa-wand-magic-sparkles" },
+      { name: "Cyber Awareness", icon: "fa-shield-halved" },
+      { name: "Money Skills", icon: "fa-vault" },
       { name: "Career Readiness", icon: "fa-compass" },
-      { name: "Employability Skills", icon: "fa-award" },
-      { name: "Assessment & Testing", icon: "fa-file-signature" },
-      { name: "Competency Development", icon: "fa-layer-group" },
-      { name: "Future Skills", icon: "fa-bolt" },
-      { name: "Corporate Learning", icon: "fa-school" },
-      { name: "Learning Experience Design", icon: "fa-pen-ruler" },
-      { name: "Assessment Centers", icon: "fa-building-columns" },
-      { name: "Interview Panel Assessment", icon: "fa-comments" },
-      { name: "Coaching & Mentoring", icon: "fa-handshake" },
+      { name: "Business Skills", icon: "fa-briefcase" },
+      { name: "Professional Development", icon: "fa-chart-line" },
+      { name: "Executive Learning", icon: "fa-graduation-cap" },
+      { name: "Vedic Mathematics / MathWise", icon: "fa-calculator" },
+      { name: "Customized Corporate Programs", icon: "fa-building-user" },
     ],
-    ctaLabel: "Visit IntelliWise Academy",
+    engagementModel: [
+      "Workshops",
+      "Masterclasses",
+      "Certifications",
+      "Executive Programs",
+      "Cohort Learning",
+      "Customized Learning",
+    ],
+    ctaLabel: "Explore IntelliWise",
   },
 
   intellicircle: {

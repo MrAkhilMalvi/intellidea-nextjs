@@ -2,8 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
 import { ServiceData, services } from "../data/services";
 
 interface ServicePageTemplateProps {
@@ -13,15 +11,25 @@ interface ServicePageTemplateProps {
 const CALENDLY_URL = "https://calendly.com/hello-intellidea/new-meeting";
 const WHATSAPP_URL = "https://wa.me/919082378708";
 
-const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) => {
+const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
+  service,
+}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const paddedNumber = String(service.number).padStart(2, "0");
-  const capabilityCount = service.categories.reduce((sum, cat) => sum + cat.items.length, 0);
+  const capabilityCount = service.categories.reduce(
+    (sum, cat) => sum + cat.items.length,
+    0,
+  );
 
   const currentIndex = services.findIndex((s) => s.slug === service.slug);
-  const previousService = currentIndex > 0 ? services[currentIndex - 1] : services[services.length - 1];
+  const previousService =
+    currentIndex > 0
+      ? services[currentIndex - 1]
+      : services[services.length - 1];
   const nextService =
-    currentIndex < services.length - 1 ? services[currentIndex + 1] : services[0];
+    currentIndex < services.length - 1
+      ? services[currentIndex + 1]
+      : services[0];
   const otherServices = services.filter((s) => s.slug !== service.slug);
 
   const filteredCategories = useMemo(() => {
@@ -33,7 +41,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         ...category,
         items: category.items.filter(
           (item) =>
-            item.toLowerCase().includes(query) || category.name.toLowerCase().includes(query),
+            item.toLowerCase().includes(query) ||
+            category.name.toLowerCase().includes(query),
         ),
       }))
       .filter((category) => category.items.length > 0);
@@ -42,7 +51,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
   return (
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
-
         {/* HERO */}
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-24">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#F9C100_1px,transparent_1px)] bg-[length:20px_20px] opacity-10" />
@@ -50,12 +58,13 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
               <div className="space-y-6 lg:col-span-7">
-
                 <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                   {service.title}
                 </h1>
 
-                <p className="text-lg text-slate-200 sm:text-xl">{service.tagline}</p>
+                <p className="text-lg text-slate-200 sm:text-xl">
+                  {service.tagline}
+                </p>
 
                 <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                   {service.intro}
@@ -67,7 +76,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                     className="inline-flex transform items-center gap-2.5 rounded-md bg-[#F9C100] px-8 py-3.5 text-sm font-bold text-[#2C466D] shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#e0ac1e] hover:shadow-xl"
                   >
                     <span>Explore capabilities</span>
-                    <i className="fas fa-arrow-down text-xs" aria-hidden="true" />
+                    <i
+                      className="fas fa-arrow-down text-xs"
+                      aria-hidden="true"
+                    />
                   </a>
                   <a
                     href={CALENDLY_URL}
@@ -99,7 +111,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                             Practice focus
                           </p>
-                          <p className="text-sm font-bold text-[#2C466D]">{service.shortTitle}</p>
+                          <p className="text-sm font-bold text-[#2C466D]">
+                            {service.shortTitle}
+                          </p>
                         </div>
                       </div>
                       <span className="rounded-md bg-[#F9C100]/30 px-2.5 py-1 text-xs font-bold text-[#2C466D]">
@@ -135,7 +149,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         </section>
 
         {/* OVERVIEW */}
-        <section id="details" className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12">
+        <section
+          id="details"
+          className="mx-auto max-w-7xl scroll-mt-10 px-6 py-20 lg:px-12"
+        >
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-6 lg:col-span-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#2C466D]/5 px-3 py-1">
@@ -149,7 +166,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                 {service.tagline}
               </h2>
 
-              <p className="text-lg leading-relaxed text-slate-600">{service.intro}</p>
+              <p className="text-lg leading-relaxed text-slate-600">
+                {service.intro}
+              </p>
 
               {service.callout && (
                 <blockquote className="border-l-4 border-[#F9C100] bg-[#E6F4F1] px-5 py-4 text-base font-semibold leading-snug text-[#2C466D]">
@@ -176,7 +195,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                   className="inline-flex items-center gap-2.5 rounded-md bg-[#2C466D] px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-200 hover:bg-[#1C2C45]"
                 >
                   <span>Schedule executive advisory</span>
-                  <i className="fas fa-arrow-right text-xs text-[#F9C100]" aria-hidden="true" />
+                  <i
+                    className="fas fa-arrow-right text-xs text-[#F9C100]"
+                    aria-hidden="true"
+                  />
                 </a>
               </div>
             </div>
@@ -216,8 +238,12 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2C466D] font-mono text-base font-bold text-[#F9C100] shadow-sm">
                       0{idx + 1}
                     </div>
-                    <h3 className="text-2xl font-bold text-[#2C466D]">{outcome.title}</h3>
-                    <p className="text-base leading-relaxed text-slate-600">{outcome.description}</p>
+                    <h3 className="text-2xl font-bold text-[#2C466D]">
+                      {outcome.title}
+                    </h3>
+                    <p className="text-base leading-relaxed text-slate-600">
+                      {outcome.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -226,7 +252,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
         </section>
 
         {/* CAPABILITIES */}
-        <section id="capabilities" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-12">
+        <section
+          id="capabilities"
+          className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-12"
+        >
           <div className="mb-10 flex flex-col gap-6 border-b border-slate-200 pb-6 md:flex-row md:items-end md:justify-between">
             <div>
               <span className="mb-1 block border-l-4 border-[#F9C100] pl-3 text-xs font-bold uppercase tracking-widest text-[#2C466D]">
@@ -275,12 +304,18 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                 >
                   <div className="mb-6 flex items-center gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#2C466D] text-[#F9C100]">
-                      <i className={`fas ${category.icon}`} aria-hidden="true" />
+                      <i
+                        className={`fas ${category.icon}`}
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-[#2C466D]">{category.name}</h3>
+                      <h3 className="text-xl font-bold text-[#2C466D]">
+                        {category.name}
+                      </h3>
                       <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-                        {category.items.length} {category.items.length === 1 ? "offering" : "offerings"}
+                        {category.items.length}{" "}
+                        {category.items.length === 1 ? "offering" : "offerings"}
                       </p>
                     </div>
                   </div>
@@ -292,7 +327,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                         className="group flex items-start gap-3 rounded-xl border border-slate-200 bg-[#F8FAFC] p-4 transition-all duration-200 hover:border-[#2C466D] hover:bg-[#2C466D]"
                       >
                         <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white text-[#F9C100] shadow-sm group-hover:bg-[#F9C100] group-hover:text-[#2C466D]">
-                          <i className="fas fa-check text-[10px]" aria-hidden="true" />
+                          <i
+                            className="fas fa-check text-[10px]"
+                            aria-hidden="true"
+                          />
                         </span>
                         <span className="text-sm font-semibold leading-snug text-slate-800 transition-colors group-hover:text-white">
                           {item}
@@ -305,7 +343,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
             </div>
           ) : (
             <div className="rounded-xl border border-dashed border-slate-300 bg-white p-12 text-center">
-              <i className="fas fa-search mb-3 block text-3xl text-slate-300" aria-hidden="true" />
+              <i
+                className="fas fa-search mb-3 block text-3xl text-slate-300"
+                aria-hidden="true"
+              />
               <p className="text-sm font-medium text-slate-600">
                 No capability matching &ldquo;{searchQuery}&rdquo;
               </p>
@@ -351,7 +392,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                   className="inline-flex items-center gap-2 rounded-md bg-[#2C466D] px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1C2C45]"
                 >
                   {nextService.shortTitle}
-                  <i className="fas fa-arrow-right text-xs text-[#F9C100]" aria-hidden="true" />
+                  <i
+                    className="fas fa-arrow-right text-xs text-[#F9C100]"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
             </div>
@@ -371,7 +415,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                   </span>
                   <span className="mt-auto pt-4 text-xs font-bold uppercase tracking-wider text-slate-500 group-hover:text-[#2C466D]">
                     View practice
-                    <i className="fas fa-arrow-right ml-2 text-[10px]" aria-hidden="true" />
+                    <i
+                      className="fas fa-arrow-right ml-2 text-[10px]"
+                      aria-hidden="true"
+                    />
                   </span>
                 </Link>
               ))}
@@ -388,8 +435,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
                 Ready to talk through your {service.shortTitle} needs?
               </h3>
               <p className="max-w-xl text-sm text-slate-200 sm:text-base">
-                Partner with Intellidea advisors for a tailored approach — strategy, delivery, or a
-                managed function.
+                Partner with Intellidea advisors for a tailored approach —
+                strategy, delivery, or a managed function.
               </p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -413,8 +460,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ service }) =>
           </div>
         </section>
       </div>
-
-      <Footer />
     </div>
   );
 };
