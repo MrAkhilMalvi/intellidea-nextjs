@@ -25,7 +25,7 @@ export const AdvisoryBoardSection: React.FC = () => (
               banking technology and statistical analysis.
             </p>
             <a
-              href="./team/4.html"
+              href="/team/dr-rb-barman"
               className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline"
             >
               Read More
@@ -51,7 +51,7 @@ export const AdvisoryBoardSection: React.FC = () => (
               public policy and infrastructure development.
             </p>
             <a
-              href="./team/5.html"
+              href="/team/sanjay-ubale"
               className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline"
             >
               Read More

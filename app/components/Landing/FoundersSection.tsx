@@ -31,7 +31,7 @@ export const FoundersSection: React.FC = () => (
             <p className="font-sans text-[#2C466D] text-sm leading-relaxed opacity-80 mb-4 line-clamp-3">
               A dynamic, versatile &amp; result-oriented growth-preneur with 28+ years of experience...
             </p>
-            <a href="./team/2.html" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
+            <a href="/team/viresh-patel" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
           </div>
         </div>
 
@@ -45,7 +45,7 @@ export const FoundersSection: React.FC = () => (
             <p className="font-sans text-[#2C466D] text-sm leading-relaxed opacity-80 mb-4 line-clamp-3">
               Ms. Jyoti Patel is a passionate educator with over 25 years of experience in diverse roles...
             </p>
-            <a href="./team/3.html" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
+            <a href="/team/jyoti-patel" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
           </div>
         </div>
       </div>

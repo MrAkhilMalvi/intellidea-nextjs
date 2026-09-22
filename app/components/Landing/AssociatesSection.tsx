@@ -1,18 +1,18 @@
 import React from "react";
 
 const associatesData = [
-  { img: "./assets/SB.jpg", name: "Dr. Shashi Bhushan Singh", desc: "Dr. Shashi Bhushan Singh is a distinguished expert with a blend of technical, academic and management skills with over...", link: "./team/6.html" },
-  { img: "./assets/raajesh chalke.jpg", name: "Raajesh Chalke", desc: "Raajesh Chalke is a seasoned financial leader with ~30 years of experience driving strategic growth, governance excellence, and IPO readiness...", link: "./team/19.html" },
-  { img: "./assets/PD ID.png", name: "Prashant Dhume", desc: "Prashant Dhume is a distinguished technology executive with over 30 years of global experience across enterprise risk...", link: "./team/14.html" },
-  { img: "./assets/ab.png", name: "Abraham Paul Vatakencherry", desc: "He is a dynamic global influencer known for building impactful international partnerships that drive sustainable growth....", link: "./team/20.html" },
-  { img: "./assets/hiten_shah.png", name: "CA Hiten Shah", desc: "CA Hiten Shah is a seasoned finance professional with 37 years of experience specialising in Family...", link: "./team/7.html" },
-  { img: "./assets/Dr. Nisarg.png", name: "Dr. Nisarg Pathak", desc: "Dr. Nisarg Pathak is a seasoned professional specialising in technical product engineering, product portfolio...", link: "./team/10.html" },
-  { img: "./assets/Dr.LeenaPimpley.png", name: "Dr. Leena Pimpley", desc: "Dr. Leena Pimpley has over 35 years of experience in education, specializing in Competency-based Learning &...", link: "./team/9.html" },
-  { img: "./assets/ketan_shah1.png", name: "Ketan Shah", desc: "With over 24 years of experience, including 18 years focused on designing and executing management systems...", link: "./team/11.html" },
-  { img: "./assets/mauli_shah.png", name: "Mauli Shah", desc: "Mauli is a dynamic and results-driven IT & Cybersecurity expert with over a decade of specialized experience.", link: "./team/12.html" },
-  { img: "./assets/chaitanya_shah.png", name: "Dr. CA Chaitanya Shah", desc: "Dr. CA Chaitanya Shah is a seasoned financial strategist, author, mentor and speaker with 20+ years of corporate leadership....", link: "./team/8.html" },
-  { img: "./assets/Parikshit_patel.png", name: "Parikshit Patel", desc: "Parikshit is a distinguished technologist in the software industry with over 15 years of experience providing innovative...", link: "./team/13.html" },
-  { img: "./assets/Dr.mahendra.png", name: "Dr. Mahendra Gupta", desc: "Dr. Mahendra Gupta is an accomplished expert in Human Capital Management, specializing in Human Resource Management...", link: "./team/15.html" },
+  { img: "./assets/SB.jpg", name: "Dr. Shashi Bhushan Singh", desc: "Dr. Shashi Bhushan Singh is a distinguished expert with a blend of technical, academic and management skills with over...", link: "/team/dr-shashi-bhushan-singh" },
+  { img: "./assets/raajesh chalke.jpg", name: "Raajesh Chalke", desc: "Raajesh Chalke is a seasoned financial leader with ~30 years of experience driving strategic growth, governance excellence, and IPO readiness...", link: "/team/raajesh-chalke" },
+  { img: "./assets/PD ID.png", name: "Prashant Dhume", desc: "Prashant Dhume is a distinguished technology executive with over 30 years of global experience across enterprise risk...", link: "/team/prashant-dhume" },
+  { img: "./assets/ab.png", name: "Abraham Paul Vatakencherry", desc: "He is a dynamic global influencer known for building impactful international partnerships that drive sustainable growth....", link: "/team/abraham-paul-vatakencherry" },
+  { img: "./assets/hiten_shah.png", name: "CA Hiten Shah", desc: "CA Hiten Shah is a seasoned finance professional with 37 years of experience specialising in Family...", link: "/team/ca-hiten-shah" },
+  { img: "./assets/Dr. Nisarg.png", name: "Dr. Nisarg Pathak", desc: "Dr. Nisarg Pathak is a seasoned professional specialising in technical product engineering, product portfolio...", link: "/team/dr-nisarg-pathak" },
+  { img: "./assets/Dr.LeenaPimpley.png", name: "Dr. Leena Pimpley", desc: "Dr. Leena Pimpley has over 35 years of experience in education, specializing in Competency-based Learning &...", link: "/team/dr-leena-pimpley" },
+  { img: "./assets/ketan_shah1.png", name: "Ketan Shah", desc: "With over 24 years of experience, including 18 years focused on designing and executing management systems...", link: "/team/ketan-shah" },
+  { img: "./assets/mauli_shah.png", name: "Mauli Shah", desc: "Mauli is a dynamic and results-driven IT & Cybersecurity expert with over a decade of specialized experience.", link: "./team/mauli-shah" },
+  { img: "./assets/chaitanya_shah.png", name: "Dr. CA Chaitanya Shah", desc: "Dr. CA Chaitanya Shah is a seasoned financial strategist, author, mentor and speaker with 20+ years of corporate leadership....", link: "/team/dr-ca-chaitanya-shah" },
+  { img: "./assets/Parikshit_patel.png", name: "Parikshit Patel", desc: "Parikshit is a distinguished technologist in the software industry with over 15 years of experience providing innovative...", link: "/team/parikshit-patel" },
+  { img: "./assets/Dr.mahendra.png", name: "Dr. Mahendra Gupta", desc: "Dr. Mahendra Gupta is an accomplished expert in Human Capital Management, specializing in Human Resource Management...", link: "/team/dr-mahendra-gupta" },
 ];
 
 export const AssociatesSection: React.FC = () => (
