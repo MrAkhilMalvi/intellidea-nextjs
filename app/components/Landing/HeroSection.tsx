@@ -45,14 +45,13 @@ export const HeroSection: React.FC = () => {
       {/* Audio Element */}
       <audio ref={audioRef} src="./Corporate RF.mp3" loop preload="auto" />
 
-{/* SOFT LIGHTER OVERLAY */}
-<div className="absolute inset-0 z-1 bg-linear-to-r from-[#0a121e]/80 via-[#0a121e]/50 to-transparent" />
-<div className="absolute inset-0 z-1 bg-linear-to-t from-[#0a121e]/60 via-transparent to-transparent opacity-40" />
+      {/* SOFT LIGHTER OVERLAY */}
+      <div className="absolute inset-0 z-1 bg-linear-to-r from-[#0a121e]/80 via-[#0a121e]/50 to-transparent" />
+      <div className="absolute inset-0 z-1 bg-linear-to-t from-[#0a121e]/60 via-transparent to-transparent opacity-40" />
 
       {/* MAIN CONTENT CONTAINER */}
       <div className="container relative z-10 mx-auto px-4 sm:px-8 lg:px-12 w-full">
         <div className="max-w-4xl text-left">
-          
           {/* HEADLINE */}
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[1.15]">
             Insight{" "}
@@ -86,9 +85,10 @@ export const HeroSection: React.FC = () => {
               Your on-demand business transformation partner.
             </p>
             <p className="text-xl sm:text-base md:text-lg lg:text-xl font-bold text-white/90 leading-relaxed">
-              From strategy and AI to people, technology, finance, risk and global expansion — access the right expertise, solutions and execution support for every stage of your business.
+              From strategy and AI to people, technology, finance, risk and
+              global expansion — access the right expertise, solutions and
+              execution support for every stage of your business.
             </p>
-            
           </div>
 
           {/* BUTTON GROUP - SIDE-BY-SIDE ON MOBILE */}
@@ -165,7 +165,6 @@ export const HeroSection: React.FC = () => {
               <span>{isMuted ? "Unmute" : "Mute"}</span>
             </button>
           </div>
-
         </div>
       </div>
     </section>
