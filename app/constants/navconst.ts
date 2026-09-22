@@ -23,38 +23,38 @@ export interface MenuItem {
 export const NAV_ITEMS: MenuItem[] = [
   { name: "Home", href: "/" },
   {
-    name: "Services",
+    name: "Our Solutions",
     megaMenu: {
       description:
         "Intellidea helps clients create long-term value for all stakeholders. Enabled by data and technology, our services and solutions provide trust through assurance and help clients transform, grow and operate.",
       exploreHref: "/services/strategy-business-transformation",
       items: [
         {
-          title: "Strategy & Business Transformation",
+          title: "Strategy & Transformation",
           href: "/services/strategy-business-transformation",
         },
         {
-          title: "Technology, AI & Digital Transformation",
+          title: "Technology, AI & Digital",
           href: "/services/technology-ai-digital-transformation",
         },
         {
-          title: "People, HR & Workforce",
+          title: "People & Workforce",
           href: "/services/people-hr-workforce",
         },
         {
-          title: "Risk, Cybersecurity & Compliance",
+          title: "Risk & Cybersecurity",
           href: "/services/risk-cybersecurity-compliance",
         },
         {
-          title: "Finance, Governance & Business Advisory",
+          title: "Finance & Governance",
           href: "/services/finance-governance-business-advisory",
         },
         {
-          title: "Transactions, Investment & Growth",
+          title: "Transactions & Investment",
           href: "/services/transactions-investment-growth",
         },
         {
-          title: "Sustainability, ESG & Impact",
+          title: "Sustainability, & ESG",
           href: "/services/sustainability-esg-impact",
         },
         {

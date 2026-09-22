@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef } from "react";
 
 const PILLARS = [
@@ -17,6 +16,7 @@ export const HeroSection: React.FC = () => {
 
   const toggleAudio = () => {
     if (!audioRef.current) return;
+
     if (audioRef.current.paused) {
       audioRef.current
         .play()
@@ -29,8 +29,8 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-start overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20">
-      {/* ── BACKGROUND VIDEO ── */}
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen w-full flex items-start sm:items-center justify-start overflow-hidden pt-28 pb-10 sm:pt-20 sm:pb-16 lg:pt-28 lg:pb-24">
+      {/* BACKGROUND VIDEO */}
       <video
         autoPlay
         muted
@@ -45,118 +45,125 @@ export const HeroSection: React.FC = () => {
       {/* Audio Element */}
       <audio ref={audioRef} src="./Corporate RF.mp3" loop preload="auto" />
 
-      {/* ── GRADIENT OVERLAYS (EXECUTIVE NAVY DEPTH) ── */}
-      <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0a121e]/95 via-[#12203A]/90 to-[#1e3352]/60" />
-      <div className="absolute inset-0 z-0 bg-linear-to-t from-[#0a121e] via-transparent to-transparent opacity-80" />
+{/* SOFT LIGHTER OVERLAY */}
+<div className="absolute inset-0 z-1 bg-linear-to-r from-[#0a121e]/80 via-[#0a121e]/50 to-transparent" />
+<div className="absolute inset-0 z-1 bg-linear-to-t from-[#0a121e]/60 via-transparent to-transparent opacity-40" />
 
-      {/* ── MAIN CONTENT CONTAINER ── */}
-      <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
+      {/* MAIN CONTENT CONTAINER */}
+      <div className="container relative z-10 mx-auto px-4 sm:px-8 lg:px-12 w-full">
         <div className="max-w-4xl text-left">
           
           {/* HEADLINE */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[1.15]">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[1.15]">
             Insight{" "}
-            <span className="text-sm sm:text-lg md:text-xl font-semibold uppercase tracking-widest text-[#f7bf22] align-middle px-1 sm:px-2">
+            <span className="text-xs sm:text-lg md:text-xl font-semibold uppercase tracking-widest ext-white  align-middle px-0.5 sm:px-2">
               to
             </span>{" "}
             Innovate{" "}
-            <span className="text-sm sm:text-lg md:text-xl font-semibold uppercase tracking-widest text-[#f7bf22] align-middle px-1 sm:px-2">
+            <span className="text-xs sm:text-lg md:text-xl font-semibold uppercase tracking-widest text-white  align-middle px-0.5 sm:px-2">
               for
             </span>{" "}
             Impact
           </h1>
 
           {/* PILLARS BAR */}
-          <div className="mt-5 mb-8 flex flex-wrap items-center gap-y-2 text-xs sm:text-sm md:text-base font-medium text-white/85">
+          <div className="mt-10 sm:mt-5 mb-4 sm:mb-6 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[14px] sm:text-sm md:text-base font-medium text-white/85">
             {PILLARS.map((pillar, index) => (
-              <span key={pillar} className="flex items-center">
+              <span key={pillar} className="inline-flex items-center">
                 {index > 0 && (
-                  <span className="mx-2.5 sm:mx-3 text-[#f7bf22]/60 font-light">|</span>
+                  <span className="mr-1.5 sm:mx-2.5 text-[#f7bf22]/60 font-light">
+                    |
+                  </span>
                 )}
                 <span>{pillar}</span>
               </span>
             ))}
           </div>
 
-          {/* ── PROPER BUTTON GROUP (HORIZONTAL, COMPACT, NEVER STRETCHED) ── */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-12">
+          {/* DESCRIPTIVE PARAGRAPH & BOTTOM TAGLINE */}
+          <div className="mb-6 sm:mb-8 max-w-3xl space-y-3">
+            <p className="text-2xl sm:text-sm md:text-base font-bold text-[#f7bf22] tracking-wide">
+              Your on-demand business transformation partner.
+            </p>
+            <p className="text-xl sm:text-base md:text-lg lg:text-xl font-bold text-white/90 leading-relaxed">
+              From strategy and AI to people, technology, finance, risk and global expansion — access the right expertise, solutions and execution support for every stage of your business.
+            </p>
+            
+          </div>
+
+          {/* BUTTON GROUP - SIDE-BY-SIDE ON MOBILE */}
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12">
             {/* Primary Button */}
             <a
-              href="#offerings"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f7bf22] px-6 sm:px-7 py-3 text-sm sm:text-base font-bold text-[#12203A] shadow-md transition-all duration-200 hover:bg-white hover:text-[#12203A] hover:-translate-y-0.5"
+              href="#contact"
+              className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-[#f7bf22] px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-bold text-[#12203A] shadow-md transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
-              Explore Offerings
+              <span>Tell Us Your Challenge</span>
               <svg
-                className="h-4 w-4"
+                className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth="2.5"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
               </svg>
             </a>
 
             {/* Secondary Button */}
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/50 bg-white/5 backdrop-blur-sm px-6 sm:px-7 py-3 text-sm sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#12203A]"
+              href="#offerings"
+              className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-xl border border-white/50 bg-white/10 backdrop-blur-sm px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
-              Get In Touch
+              Explore Solutions
             </a>
 
-            {/* Audio Toggle (Compact Button) */}
+            {/* Audio Toggle */}
             <button
               onClick={toggleAudio}
               aria-label={isMuted ? "Unmute video" : "Mute video"}
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/30 backdrop-blur-sm px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-white/30 bg-black/40 backdrop-blur-sm px-3.5 sm:px-5 py-2.5 sm:py-3.5 text-lg sm:text-sm font-medium text-white transition-all duration-200 hover:bg-white/20 active:scale-95 shrink-0"
             >
               {isMuted ? (
-                <svg className="h-4 w-4 text-[#f7bf22]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                <svg
+                  className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#f7bf22] shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+                  />
                 </svg>
               ) : (
-                <svg className="h-4 w-4 text-[#f7bf22]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                <svg
+                  className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#f7bf22] shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                  />
                 </svg>
               )}
               <span>{isMuted ? "Unmute" : "Mute"}</span>
             </button>
-          </div>
-
-          {/* ── METRICS STRIP (CLEARLY VISIBLE, PROPERLY SIZED) ── */}
-          <div className="flex flex-row items-center gap-6 sm:gap-10 border-t border-white/20 pt-6 max-w-xl">
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                30+<span className="text-[#f7bf22] font-bold"> Yrs</span>
-              </p>
-              <p className="text-xs sm:text-sm text-gray-300 font-medium mt-1">
-                Advisory Heritage
-              </p>
-            </div>
-
-            <div className="h-9 w-px bg-white/20" />
-
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                4+<span className="text-[#f7bf22] font-bold"> Pillars</span>
-              </p>
-              <p className="text-xs sm:text-sm text-gray-300 font-medium mt-1">
-                End-to-End Solutions
-              </p>
-            </div>
-
-            <div className="h-9 w-px bg-white/20" />
-
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                Global
-              </p>
-              <p className="text-xs sm:text-sm text-gray-300 font-medium mt-1">
-                Expert Network
-              </p>
-            </div>
           </div>
 
         </div>
