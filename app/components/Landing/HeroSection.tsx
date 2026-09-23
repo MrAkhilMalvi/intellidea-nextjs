@@ -3,11 +3,12 @@ import React, { useState, useRef } from "react";
 
 const PILLARS = [
   "Business Transformation",
+  "Growth",
   "Technology",
   "People",
   "Strategy",
-  "Risk",
-  "Growth",
+  "Compliance",
+  "Governance",
 ];
 
 export const HeroSection: React.FC = () => {
@@ -81,13 +82,14 @@ export const HeroSection: React.FC = () => {
 
           {/* DESCRIPTIVE PARAGRAPH & BOTTOM TAGLINE */}
           <div className="mb-6 sm:mb-8 max-w-3xl space-y-3">
-            <p className="text-2xl sm:text-sm md:text-base font-bold text-[#f7bf22] tracking-wide">
-              Your on-demand business transformation partner.
+            <p className="text-2xl sm:text-sm md:text-3xl font-bold text-[#f7bf22] tracking-wide">
+              Your on-demand business transformation partner
             </p>
-            <p className="text-xl sm:text-base md:text-lg lg:text-xl font-bold text-white/90 leading-relaxed">
-              From strategy and AI to people, technology, finance, risk and
-              global expansion — access the right expertise, solutions and
-              execution support for every stage of your business.
+            <p className="text-xl sm:text-base md:text-lg lg:text-lg font-bold text-white/90 leading-relaxed">
+              From Transformation to Growth strategy, AI to People, Technology,
+              Finance, Compliance, Governance and Global expansion — access the
+              right expertise, solutions and execution support for every stage
+              of your business.
             </p>
           </div>
 
@@ -99,19 +101,6 @@ export const HeroSection: React.FC = () => {
               className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-[#f7bf22] px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-bold text-[#12203A] shadow-md transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
               <span>Tell Us Your Challenge</span>
-              <svg
-                className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
             </a>
 
             {/* Secondary Button */}

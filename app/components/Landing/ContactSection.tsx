@@ -19,9 +19,9 @@ export const ContactSection: React.FC = () => {
 
     setIsSubmitting(true);
     setStatus({ type: null, message: "" });
-    const SERVICE_ID = "service_f24ywxs";
-    const TEMPLATE_ID = "template_qzgggh6";
-    const PUBLIC_KEY = "OwMbKLlu0_dKWx47l";
+    const SERVICE_ID = "";
+    const TEMPLATE_ID = "";
+    const PUBLIC_KEY = "";
 
     try {
       await emailjs.sendForm(
@@ -50,6 +50,7 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-16 bg-[#2C466D] text-white">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+        {/* LEFT COLUMN: CONTACT DETAILS */}
         <div>
           <h3 className="text-lg text-white font-semibold mb-4">
             Reach out to us or learn more about our services
@@ -73,6 +74,7 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
+        {/* RIGHT COLUMN: FORM */}
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">
             Ready to Take Your Business to the Next Level?
@@ -83,6 +85,7 @@ export const ContactSection: React.FC = () => {
             className="space-y-4"
             onSubmit={handleSubmit}
           >
+            {/* FIRST & LAST NAME */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
@@ -90,7 +93,7 @@ export const ContactSection: React.FC = () => {
                 name="firstName"
                 required
                 placeholder="First name"
-                className="w-full p-2 bg-transparent border border-white rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
+                className="w-full p-2.5 bg-transparent border border-white/60 rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
               />
               <input
                 type="text"
@@ -98,9 +101,11 @@ export const ContactSection: React.FC = () => {
                 name="lastName"
                 required
                 placeholder="Last name"
-                className="w-full p-2 bg-transparent border border-white rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
+                className="w-full p-2.5 bg-transparent border border-white/60 rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
               />
             </div>
+
+            {/* EMAIL & WHATSAPP */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="email"
@@ -108,7 +113,7 @@ export const ContactSection: React.FC = () => {
                 name="email"
                 required
                 placeholder="Email"
-                className="w-full p-2 bg-transparent border border-white rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
+                className="w-full p-2.5 bg-transparent border border-white/60 rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
               />
               <input
                 id="whatsapp"
@@ -116,24 +121,94 @@ export const ContactSection: React.FC = () => {
                 type="tel"
                 required
                 placeholder="WhatsApp Number"
-                className="w-full p-2 bg-transparent border border-white rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
+                className="w-full p-2.5 bg-transparent border border-white/60 rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
               />
             </div>
+
+            {/* DROPDOWN FIELD WITH CLEAR LABEL */}
+            <div className="w-full space-y-1.5">
+              <label
+                htmlFor="serviceNeeded"
+                className="block text-sm font-semibold text-[#F9C100]"
+              >
+                What do you need help with?
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceNeeded"
+                  name="serviceNeeded"
+                  required
+                  defaultValue=""
+                  className="w-full p-2.5 bg-[#1C2A39] border border-white/60 rounded text-white focus:outline-none focus:border-[#F9C100] transition-colors cursor-pointer appearance-none pr-10 font-medium"
+                >
+                  <option value="" disabled className="text-white/60 bg-[#1C2A39]">
+                    Select an option...
+                  </option>
+                  <option value="Grow" className="text-white bg-[#1C2A39] py-2">
+                    Grow
+                  </option>
+                  <option value="Transform" className="text-white bg-[#1C2A39] py-2">
+                    Transform
+                  </option>
+                  <option value="AI" className="text-white bg-[#1C2A39] py-2">
+                    AI
+                  </option>
+                  <option value="People" className="text-white bg-[#1C2A39] py-2">
+                    People
+                  </option>
+                  <option value="Fund" className="text-white bg-[#1C2A39] py-2">
+                    Fund
+                  </option>
+                  <option value="Go Global" className="text-white bg-[#1C2A39] py-2">
+                    Go Global
+                  </option>
+                  <option value="Risk" className="text-white bg-[#1C2A39] py-2">
+                    Risk
+                  </option>
+                  <option value="Technology" className="text-white bg-[#1C2A39] py-2">
+                    Technology
+                  </option>
+                  <option
+                    value="Join as Expert / Associate"
+                    className="text-white bg-[#1C2A39] py-2"
+                  >
+                    Join as Expert / Associate
+                  </option>
+                </select>
+
+                {/* Styled Dropdown Arrow Icon */}
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-[#F9C100]">
+                  <svg
+                    className="w-4 h-4 fill-current"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* MESSAGE TEXTAREA */}
             <textarea
               id="message"
               name="message"
               required
               rows={4}
               placeholder="Message"
-              className="w-full p-2 bg-transparent border border-white rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
+              className="w-full p-2.5 bg-transparent border border-white/60 rounded text-white placeholder-[#F9C100] focus:outline-none focus:border-[#F9C100] transition-colors"
               defaultValue=""
             />
 
+            {/* SUBMIT BUTTON & STATUS */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="border border-[#F9C100] text-[#F9C100] px-6 py-2 rounded-full hover:bg-[#F9C100] hover:text-[#2C466D] transition duration-300 font-bold uppercase tracking-wide cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-32.5"
+                className="border border-[#F9C100] text-[#F9C100] px-6 py-2.5 rounded-full hover:bg-[#F9C100] hover:text-[#2C466D] transition duration-300 font-bold uppercase tracking-wide cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-32.5"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">

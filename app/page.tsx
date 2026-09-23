@@ -15,12 +15,16 @@ import { PartnersEcosystemSection } from "./components/Landing/PartnersEcosystem
 import { ResourcesSection } from "./components/Landing/ResourcesSection";
 import { ContactSection } from "./components/Landing/ContactSection";
 import { WhatsAppFloat } from "./components/Landing/WhatsAppFloat";
+import { AchieveSection } from "./components/Landing/AchieveSection";
+import { OurSolutionsSection } from "./components/Landing/OurSolutions";
 
 export default function IntellideaLanding() {
   return (
     <div className="antialiased text-gray-900 bg-white selection:bg-[#F9C100] selection:text-[#2C466D]">
       <HeroSection />
       <WhatsAppFloat />
+      <AchieveSection />
+      <OurSolutionsSection />
       <OfferingsSection />
       <ValuePropositionSection />
       <OutcomeImpactSection />
