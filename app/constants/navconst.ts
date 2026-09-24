@@ -111,20 +111,7 @@ export const NAV_ITEMS: MenuItem[] = [
       ],
     },
   },
-  {
-    name: "Insights",
-    megaMenu: {
-      description:
-        "Market perspectives, technological whitepapers, and real-world executive intelligence.",
-      exploreHref: "/insights",
-      items: [
-        { title: "Perspectives & Articles", href: "/insights#perspectives" },
-        { title: "Executive Reports", href: "/insights#reports" },
-        { title: "Industry Benchmarks", href: "/insights#benchmarks" },
-        { title: "Global Research", href: "/insights#research" },
-      ],
-    },
-  },
+     { name: "Insights", href: "/insights" },
   { name: "Resources", href: "/#resources" },
   {
     name: "About Us",
