@@ -15,7 +15,7 @@ export const teamMembersData: Record<string, TeamMember> = {
     slug: "rajnickant-patel",
     name: "Rajnickant Patel",
     title: "Founder & Chairman",
-    imageSrc: "/assets/rajnikant (1).png",
+    imageSrc: "/assets/rajnikant.png",
     imageAlt: "Rajnickant Patel",
     imageWrapperClass: "flex md:justify-end h-[90vh] md:h-[100vh]",
     bio: (

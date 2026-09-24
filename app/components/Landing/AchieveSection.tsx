@@ -71,7 +71,7 @@ export const AchieveSection: React.FC = () => {
               </div>
 
               {/* Concise Title matching reference style */}
-              <p className="font-sans text-[#2C466D] text-sm md:text-base font-medium max-w-[200px] leading-snug">
+              <p className="font-sans text-[#2C466D] text-sm md:text-base font-medium max-w-50 leading-snug">
                 {item.title}
               </p>
             </div>
@@ -82,7 +82,7 @@ export const AchieveSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-sm md:text-base font-bold text-[#12203A] shadow transition-all duration-200 hover:bg-[#2C466D] hover:text-white active:scale-95 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-sm md:text-lg font-bold text-[#12203A] shadow transition-all duration-200 hover:bg-[#2C466D] hover:text-white active:scale-95 whitespace-nowrap"
           >
             Find The Right Solution
           </a>
@@ -90,11 +90,11 @@ export const AchieveSection: React.FC = () => {
       </div>
 
       {/* RIGHT SIDE: Visual Image */}
-      <div className="w-full lg:w-1/2 min-h-[350px] lg:min-h-full bg-gray-100 relative order-2 lg:order-2">
+      <div className="w-full lg:w-1/2 min-h-87.5 lg:min-h-full bg-gray-100 relative order-2 lg:order-2">
         <img
           src="./assets/achieve.png"
           alt="What Do You Want To Achieve"
-          className="w-full h-full obejct-cover"
+          className="w-full h-full"
         />
       </div>
     </section>

@@ -1,9 +1,9 @@
 import React from "react";
 
 const teamData = [
-  { img: "./assets/Richard.png", name: "Richard George", title: "Creative Head", desc: "A seasoned visionary with an illustrious career spanning over 30 years, Richard brings unparalleled expertise in creative...", link: "./team/16.html" },
-  { img: "./assets/SA ID.png", name: "Shekhar Agarwal", title: "Compliance & Statutory Auditor", desc: "Shekhar Agarwal is a distinguished Fellow Member of the ICAI...", link: "./team/17.html" },
-  { img: "./assets/Amee.png", name: "Amee Sedani", title: "HR Business Lead", desc: "Dedicated and passionate professional with nearly a decade of rich experience in the dynamic field of Human Resources...", link: "./team/18.html" },
+  { img: "./assets/Richard.png", name: "Richard George", title: "Creative Head", desc: "A seasoned visionary with an illustrious career spanning over 30 years, Richard brings unparalleled expertise in creative...", link: "/team/richard-george" },
+  { img: "./assets/SA ID.png", name: "Shekhar Agarwal", title: "Compliance & Statutory Auditor", desc: "Shekhar Agarwal is a distinguished Fellow Member of the ICAI...", link: "/team/shekhar-agarwal" },
+  { img: "./assets/Amee.png", name: "Amee Sedani", title: "HR Business Lead", desc: "Dedicated and passionate professional with nearly a decade of rich experience in the dynamic field of Human Resources...", link: "/team/amee-sedani" },
 ];
 
 export const TeamSection: React.FC = () => (

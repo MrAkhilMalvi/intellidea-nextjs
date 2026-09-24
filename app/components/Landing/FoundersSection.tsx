@@ -17,7 +17,7 @@ export const FoundersSection: React.FC = () => (
             <p className="font-sans text-[#2C466D] text-sm leading-relaxed opacity-80 mb-4 line-clamp-3">
               Mr. Rajnickant Patel is a distinguished leader in the financial services sector with an illustrious career...
             </p>
-            <a href="/team/rajnikant-patel" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
+            <a href="/team/rajnickant-patel" className="inline-block mt-auto text-[#2C466D] font-bold text-sm hover:underline">Read More</a>
           </div>
         </div>
 
