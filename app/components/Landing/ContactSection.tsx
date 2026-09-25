@@ -69,9 +69,9 @@ export const ContactSection: React.FC = () => {
       icon: "fa-brands fa-linkedin-in",
     },
     {
-      name: "Instagram",
-      href: "https://instagram.com/your-page", // TODO: replace with your Instagram link
-      icon: "fa-brands fa-instagram",
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61577572718155", // TODO: replace with your Instagram link
+      icon: "fa-brands fa-facebook",
     },
   ];
 

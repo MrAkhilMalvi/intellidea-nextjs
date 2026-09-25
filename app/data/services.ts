@@ -192,7 +192,8 @@ export const services: ServiceData[] = [
     slug: "people-hr-workforce",
     title: "People, HR & Workforce",
     shortTitle: "People, HR & Workforce",
-    tagline: "People create performance. We help organizations build the workforce to deliver it.",
+    tagline:
+      "People create performance. We help organizations build the workforce to deliver it.",
     intro:
       "From sourcing and hiring talent to running HR as a managed function, we support organizations across the full employee lifecycle.",
     heroImage:
@@ -389,7 +390,8 @@ export const services: ServiceData[] = [
     slug: "finance-governance-business-advisory",
     title: "Finance, Governance & Business Advisory",
     shortTitle: "Finance & Governance",
-    tagline: "Better decisions begin with better financial and business intelligence.",
+    tagline:
+      "Better decisions begin with better financial and business intelligence.",
     intro:
       "We help leadership teams strengthen financial discipline, reporting and governance so decisions are backed by reliable numbers.",
     heroImage:
@@ -418,7 +420,11 @@ export const services: ServiceData[] = [
           "Prepare governance, valuation partners and investor materials when growth needs capital.",
       },
     ],
-    engagementModel: ["Fractional CFO", "Advisory", "Partner-led regulated work"],
+    engagementModel: [
+      "Fractional CFO",
+      "Advisory",
+      "Partner-led regulated work",
+    ],
     categories: [
       {
         name: "Finance & Business Advisory",
@@ -450,7 +456,8 @@ export const services: ServiceData[] = [
     slug: "transactions-investment-growth",
     title: "Transactions, Investment & Growth",
     shortTitle: "Transactions & Investment",
-    tagline: "Helping businesses make informed decisions about capital, growth and transformation.",
+    tagline:
+      "Helping businesses make informed decisions about capital, growth and transformation.",
     intro:
       "From opportunity identification to execution, we help stakeholders evaluate, structure and realize growth opportunities.",
     heroImage:
@@ -511,7 +518,8 @@ export const services: ServiceData[] = [
     slug: "sustainability-esg-impact",
     title: "Sustainability, ESG & Impact",
     shortTitle: "Sustainability & ESG",
-    tagline: "Building businesses that create value today without compromising tomorrow.",
+    tagline:
+      "Building businesses that create value today without compromising tomorrow.",
     intro:
       "We treat sustainability as a business transformation and value-creation opportunity, not simply a compliance exercise.",
     heroImage:
@@ -600,6 +608,17 @@ export const services: ServiceData[] = [
     ],
     engagementModel: ["Managed delivery", "Outsourcing", "Shared services"],
     categories: [
+      {
+        name: "Sales & Marketing",
+        icon: "fa-bullhorn",
+        items: [
+          "Growth Office as a Service",
+          "Sales Effectiveness & Governance",
+          "Executive Positioning",
+          "Branding & Product Positioning",
+          "Global Outreach",
+        ],
+      },
       {
         name: "People",
         icon: "fa-users-cog",
