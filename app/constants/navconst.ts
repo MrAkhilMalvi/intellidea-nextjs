@@ -65,7 +65,7 @@ export const NAV_ITEMS: MenuItem[] = [
     },
   },
   {
-    name: "Ecosystem",
+    name: "Verticals",
     href: "/#offerings",
     megaMenu: {
       description:
@@ -127,7 +127,7 @@ export const NAV_ITEMS: MenuItem[] = [
         { title: "Our Proposition", href: "/#our-proposition" },
         { title: "Engagement Models", href: "/about/engagement-models" },
         { title: "Leadership", href: "/#leadership" },
-        // { title: "Our Clients", href: "/about#our-clients" },
+        { title: "Our Partner Ecosystem", href: "/#partners" },
       ],
     },
   },

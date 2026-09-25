@@ -81,7 +81,7 @@ export const AchieveSection: React.FC = () => {
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <a
-            href="#contact"
+            href="#our-solutions"
             className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-sm md:text-lg font-bold text-[#12203A] shadow transition-all duration-200 hover:bg-[#2C466D] hover:text-white active:scale-95 whitespace-nowrap"
           >
             Find The Right Solution

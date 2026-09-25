@@ -105,7 +105,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Secondary Button */}
             <a
-              href="#offerings"
+              href="#our-solutions"
               className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-xl border border-white/50 bg-white/10 backdrop-blur-sm px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
               Explore Solutions

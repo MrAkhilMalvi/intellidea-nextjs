@@ -34,25 +34,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-3">
-              <a
-                href="https://wa.me/919082378708"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-                className="w-9 h-9 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-[#F9C100] hover:text-[#2C466D] hover:border-[#F9C100] transition-all duration-300 shadow-sm"
-              >
-                <i className="fa-brands fa-whatsapp text-base" />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white hover:bg-[#F9C100] hover:text-[#2C466D] hover:border-[#F9C100] transition-all duration-300 shadow-sm"
-              >
-                <i className="fa-brands fa-linkedin-in text-sm" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}

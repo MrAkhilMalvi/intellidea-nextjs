@@ -313,10 +313,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
                       <h3 className="text-xl font-bold text-[#2C466D]">
                         {category.name}
                       </h3>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-                        {category.items.length}{" "}
-                        {category.items.length === 1 ? "offering" : "offerings"}
-                      </p>
                     </div>
                   </div>
 

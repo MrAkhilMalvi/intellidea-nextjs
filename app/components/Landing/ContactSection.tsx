@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 export const ContactSection: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [consentChecked, setConsentChecked] = useState(false);
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
     message: string;
@@ -16,6 +17,14 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    if (!consentChecked) {
+      setStatus({
+        type: "error",
+        message: "Please accept the consent checkbox before submitting.",
+      });
+      return;
+    }
 
     setIsSubmitting(true);
     setStatus({ type: null, message: "" });
@@ -36,6 +45,7 @@ export const ContactSection: React.FC = () => {
         message: "Thank you! Your message has been sent successfully.",
       });
       formRef.current.reset();
+      setConsentChecked(false);
     } catch (error) {
       console.error("EmailJS Submission Error:", error);
       setStatus({
@@ -46,6 +56,24 @@ export const ContactSection: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
+  const SOCIAL_LINKS = [
+    {
+      name: "WhatsApp",
+      href: "https://wa.me/919082378708", // TODO: replace with your WhatsApp link
+      icon: "fa-brands fa-whatsapp",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/intellidea", // TODO: replace with your LinkedIn link
+      icon: "fa-brands fa-linkedin-in",
+    },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/your-page", // TODO: replace with your Instagram link
+      icon: "fa-brands fa-instagram",
+    },
+  ];
 
   return (
     <section id="contact" className="relative bg-[#1F3352] text-white py-20 overflow-hidden">
@@ -123,6 +151,28 @@ export const ContactSection: React.FC = () => {
                     hello@intellidea.co.in
                   </a>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="mt-5">
+              <h4 className="font-semibold text-xs text-slate-400 uppercase tracking-wide mb-3">
+                Connect with us
+              </h4>
+              <div className="flex items-center gap-3">
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    title={social.name}
+                    className="w-10 h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-[#F9C100] shadow-sm transition-all duration-200 ease-out hover:bg-[#F9C100] hover:text-[#12203A] hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <i className={`${social.icon} text-base`} />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -282,11 +332,55 @@ export const ContactSection: React.FC = () => {
               />
             </div>
 
+            {/* CONSENT CHECKBOX */}
+            <label
+              htmlFor="consent"
+              className="flex items-start gap-3 pt-1 cursor-pointer select-none group"
+            >
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+                checked={consentChecked}
+                onChange={(e) => {
+                  setConsentChecked(e.target.checked);
+                  if (e.target.checked) setStatus({ type: null, message: "" });
+                }}
+                className="peer sr-only"
+              />
+              <span
+                className="mt-0.5 w-5 h-5 shrink-0 rounded-md border border-white/30 bg-white/5 flex items-center justify-center transition-all duration-200 ease-out peer-checked:bg-[#F9C100] peer-checked:border-[#F9C100] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F9C100] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#253D62] group-hover:border-[#F9C100]/60"
+              >
+                <svg
+                  className={`w-3.5 h-3.5 text-[#12203A] transition-all duration-200 ease-out ${
+                    consentChecked ? "scale-100 opacity-100" : "scale-50 opacity-0"
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 5.29a1 1 0 010 1.415l-7.373 7.374a1 1 0 01-1.414 0L3.296 9.46a1 1 0 111.414-1.414l3.839 3.839 6.667-6.667a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span className="text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+                I agree to be contacted by Intellidea regarding my enquiry and consent to my
+                information being processed in line with the{" "}
+                <a href="/privacy" className="text-[#F9C100] hover:underline">
+                  privacy policy
+                </a>
+                . *
+              </span>
+            </label>
+
             {/* SUBMIT BUTTON & STATUS */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !consentChecked}
                 className="w-full sm:w-auto bg-[#F9C100] text-[#12203A] hover:bg-white hover:text-[#2C466D] px-8 py-3 rounded-lg font-bold text-sm tracking-wide uppercase transition-all duration-200 shadow-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center active:scale-95"
               >
                 {isSubmitting ? (
