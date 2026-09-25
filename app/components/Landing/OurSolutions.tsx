@@ -15,43 +15,43 @@ const SOLUTIONS: SolutionItem[] = [
     id: "strategy",
     title: "Strategy & Transformation",
     iconPath: "./assets/strategy.png",
-    href: "/services/strategy-and-transformation",
+    href: "/services/strategy-business-transformation",
   },
   {
     id: "tech-ai",
     title: "Technology, AI & Digital",
     iconPath: "./assets/ai.png",
-    href: "/services/technology-ai-and-digital",
+    href: "/services/technology-ai-digital-transformation",
   },
   {
     id: "people",
     title: "People & Workforce",
     iconPath: "./assets/people.png",
-    href: "/services/people-and-workforce",
+    href: "/services/people-hr-workforce",
   },
   {
     id: "risk",
     title: "Risk & Cybersecurity",
     iconPath: "./assets/risk.png",
-    href: "/services/risk-and-cybersecurity",
+    href: "/services/risk-cybersecurity-compliance",
   },
   {
     id: "finance",
     title: "Finance & Governance",
     iconPath: "./assets/finance.png",
-    href: "/services/finance-and-governance",
+    href: "/services/finance-governance-business-advisory",
   },
   {
     id: "investment",
     title: "Investment & Scale",
     iconPath: "./assets/investment.png",
-    href: "/services/investment-and-scale",
+    href: "/services/transactions-investment-growth",
   },
   {
     id: "sustainability",
     title: "Sustainability & ESG",
     iconPath: "./assets/sustainability.png",
-    href: "/services/sustainability-and-esg",
+    href: "/services/sustainability-esg-impact",
   },
   {
     id: "managed",
@@ -104,12 +104,12 @@ export const OurSolutionsSection: React.FC = () => {
                   <img
                     src={sol.iconPath}
                     alt={sol.title}
-                    className="w-14 h-14 object-contain transition-transform duration-200 group-hover:scale-110"
+                    className="w-14 h-14 object-contain  transition-transform duration-200 group-hover:scale-110"
                   />
                 </div>
 
                 {/* Clickable Title */}
-                <h3 className="font-display text-sm md:text-lg font-bold text-[#2C466D] group-hover:text-[#12203A] transition-colors leading-snug">
+                <h3 className="font-display text-sm md:text-lg font-bold text-[#2C466D] group-hover:text-[#F9C100] transition-colors leading-snug">
                   {sol.title}
                 </h3>
               </Link>
