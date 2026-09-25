@@ -95,23 +95,54 @@ export const NAV_ITEMS: MenuItem[] = [
         "Tailored expertise and digital solutions engineered specifically for complex industry verticals.",
       exploreHref: "/industries",
       items: [
-        { title: "Banking & Financial Services", href: "/industries#financial-services" },
-        { title: "Insurance", href: "/industries#insurance" },
-        { title: "Healthcare", href: "/industries#healthcare" },
-        { title: "Life Sciences & Pharma", href: "/industries#life-sciences-pharma" },
-        { title: "Technology & IT Services", href: "/industries#tmt" },
-        { title: "Education & EdTech", href: "/industries#education-edtech" },
-        { title: "Manufacturing", href: "/industries#manufacturing" },
-        { title: "Retail & Consumer", href: "/industries#retail" },
-        { title: "Energy & Utilities", href: "/industries#energy" },
-        { title: "Infrastructure", href: "/industries#infrastructure" },
-        { title: "Real Estate", href: "/industries#real-estate" },
-        { title: "Government & Public Sector", href: "/industries#public-sector" },
-        { title: "Startups & Emerging Businesses", href: "/industries#startups" },
+        {
+          title: "Banking & Financial Services",
+          href: "/industries/banking-and-financial-services",
+        },
+        {
+          title: "Healthcare & Life Sciences",
+          href: "/industries/healthcare-and-life-sciences",
+        },
+        {
+          title: "Pharmaceuticals",
+          href: "/industries/pharmaceuticals",
+        },
+        {
+          title: "Technology & IT Services",
+          href: "/industries/technology-and-it-services",
+        },
+        {
+          title: "Education & EdTech",
+          href: "/industries/education-and-edtech",
+        },
+        {
+          title: "Manufacturing",
+          href: "/industries/manufacturing",
+        },
+        {
+          title: "Retail & Consumer",
+          href: "/industries/retail-and-consumer",
+        },
+        {
+          title: "Energy & Utilities",
+          href: "/industries/energy-and-utilities",
+        },
+        {
+          title: "Infrastructure & Real Estate",
+          href: "/industries/infrastructure-and-real-estate",
+        },
+        {
+          title: "Government & Public Sector",
+          href: "/industries/government-and-public-sector",
+        },
+        {
+          title: "Startups & Emerging Businesses",
+          href: "/industries/startups-and-emerging-businesses",
+        },
       ],
     },
   },
-     { name: "Insights", href: "/insights" },
+  { name: "Insights", href: "/insights" },
   { name: "Resources", href: "/#resources" },
   {
     name: "About Us",
