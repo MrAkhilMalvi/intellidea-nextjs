@@ -68,7 +68,7 @@ export const OurSolutionsSection: React.FC = () => {
       className="flex flex-col lg:flex-row w-full bg-white border-t border-slate-100 overflow-hidden"
     >
       {/* LEFT SIDE: Corporate Image */}
-      <div className="w-full lg:w-1/2 min-h-87.5 lg:min-h-full bg-slate-200 relative order-1 lg:order-1">
+      <div className="w-full lg:w-1/2 min-h-[350px] lg:min-h-full bg-slate-200 relative order-1 lg:order-1">
         <img
           src="./assets/solutions.jpg"
           alt="Our Solutions Strategy & Technology"
@@ -81,13 +81,13 @@ export const OurSolutionsSection: React.FC = () => {
         <div>
           {/* Header */}
           <div className="mb-8">
-
             <h2 className="font-display font-bold text-[#2C466D] text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-3">
               Our Solutions
             </h2>
 
             <p className="font-sans text-slate-600 text-sm md:text-base font-normal max-w-xl">
-              Tailored capability tracks designed to scale, transform, and protect your enterprise.
+              Tailored capability tracks designed to scale, transform, and
+              protect your enterprise.
             </p>
           </div>
 
@@ -97,19 +97,19 @@ export const OurSolutionsSection: React.FC = () => {
               <Link
                 key={sol.id}
                 href={sol.href}
-                className="group flex items-center gap-3 p-3.5 cursor-pointer"
+                className="group flex items-center gap-3 p-3.5 cursor-pointer rounded-lg transition-colors duration-150 active:bg-[#2C466D]/10 max-md:hover:bg-[#2C466D]/10 md:hover:bg-transparent"
               >
                 {/* PNG Icon */}
-                <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 flex items-center justify-center shrink-0">
                   <img
                     src={sol.iconPath}
                     alt={sol.title}
-                    className="w-14 h-14 object-contain  transition-transform duration-200 group-hover:scale-110"
+                    className="w-16 h-16 md:w-14 md:h-14 object-contain transition-transform duration-200 md:group-hover:scale-110"
                   />
                 </div>
 
                 {/* Clickable Title */}
-                <h3 className="font-display text-sm md:text-lg font-bold text-[#2C466D] group-hover:text-[#F9C100] transition-colors leading-snug">
+                <h3 className="font-display text-lg md:text-lg font-bold text-[#2C466D] md:group-hover:text-[#F9C100] max-md:group-active:text-[#F9C100] transition-colors leading-snug">
                   {sol.title}
                 </h3>
               </Link>
@@ -118,7 +118,7 @@ export const OurSolutionsSection: React.FC = () => {
         </div>
 
         {/* Action Button */}
-        <div className=" flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <a
             href="#contact"
             className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-lg font-bold text-[#12203A] shadow-sm hover:bg-[#2C466D] hover:text-white transition-all duration-200 active:scale-95 whitespace-nowrap"

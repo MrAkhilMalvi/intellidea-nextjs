@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function IndustriesIndexPage() {
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
+    <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
         {/* HERO SECTION */}
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-20">

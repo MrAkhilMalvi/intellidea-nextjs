@@ -24,8 +24,6 @@ export default function Header() {
     setExpandedAccordion(null);
   }, []);
 
-  // Keep the last opened mega-menu's content mounted while it fades out,
-  // so the closing transition doesn't flash an empty panel.
   useEffect(() => {
     if (openMenu) setDisplayedMenu(openMenu);
   }, [openMenu]);
@@ -71,7 +69,8 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsMobileMenuOpen((prev) => {
       if (prev) {
         setActiveMobileCategory(null);
@@ -91,7 +90,7 @@ export default function Header() {
       ref={navRef}
       className="fixed left-0 top-0 z-50 h-20 w-full bg-[#2C466D] shadow-md"
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container relative z-20 mx-auto px-4 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link
             href="/"
@@ -169,7 +168,7 @@ export default function Header() {
           {/* Mobile trigger */}
           <button
             type="button"
-            className="p-2 text-white focus:outline-none xl:hidden"
+            className="relative z-30 p-2 text-white cursor-pointer focus:outline-none xl:hidden"
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -180,8 +179,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Desktop mega menu — always mounted, animated with opacity/translate so
-          both open and close transitions are smooth (no content flash). */}
+      {/* Desktop mega menu */}
       <div
         id="desktop-mega-menu"
         role="region"
@@ -260,13 +258,12 @@ export default function Header() {
         )}
       </div>
 
-      {/* Mobile drawer — always mounted, slides in/out via transform so closing
-          is animated instead of an instant unmount. */}
+      {/* Mobile drawer */}
       <div
         id="mobile-menu"
         aria-hidden={!isMobileMenuOpen}
-        className={`fixed left-0 top-20 z-50 h-[calc(100vh-5rem)] w-full overflow-y-auto bg-[#1C2C45] text-white transition-transform duration-300 ease-out xl:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "pointer-events-none translate-x-full"
+        className={`fixed left-0 top-20 z-40 h-[calc(100vh-5rem)] w-full overflow-y-auto bg-[#1C2C45] text-white transition-transform duration-300 ease-out xl:hidden ${
+          isMobileMenuOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
         }`}
       >
         {activeMobileCategory === null ? (

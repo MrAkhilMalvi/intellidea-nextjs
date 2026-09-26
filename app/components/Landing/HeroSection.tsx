@@ -82,8 +82,8 @@ export const HeroSection: React.FC = () => {
 
           {/* DESCRIPTIVE PARAGRAPH & BOTTOM TAGLINE */}
           <div className="mb-6 sm:mb-8 max-w-3xl space-y-3">
-            <p className="text-2xl sm:text-sm md:text-3xl font-bold text-[#f7bf22] tracking-wide">
-              Your on-demand business transformation partner
+            <p className="text-2xl sm:text-sm md:text-4xl font-bold text-[#f7bf22] tracking-wide">
+              One ecosystem. Multiple capabilities
             </p>
             <p className="text-xl sm:text-base md:text-lg lg:text-lg font-bold text-white/90 leading-relaxed">
               From Transformation to Growth strategy, AI to People, Technology,

@@ -23,7 +23,7 @@ export const industries: Industry[] = [
     tagline: "Navigating technology, risk, customer experience, and workforce priorities.",
     intro:
       "Helping banks, NBFCs, insurers, fintechs, and financial institutions navigate technology, customer, workforce, risk, and transformation priorities.",
-    heroImage: "/assets/industries/bfsi.jpg",
+    heroImage: "/assets/finance-industries.jpg",
     overview: [
       "A strategy that works in one industry may fail in another. The financial services landscape faces rapid technological change, regulatory pressures, and evolving customer expectations.",
       "Our multidisciplinary ecosystem combines functional expertise with deep sector understanding to help financial institutions maintain security, compliance, and growth.",
@@ -58,7 +58,7 @@ export const industries: Industry[] = [
     tagline: "Addressing technology, workforce, compliance, and operational growth challenges.",
     intro:
       "Helping healthcare organizations and life-sciences businesses address technology, workforce, compliance, operations, and growth challenges.",
-    heroImage: "/assets/industries/healthcare.jpg",
+    heroImage: "/assets/healthcare.jpg",
     overview: [
       "Healthcare institutions need to balance high-quality care delivery with strict compliance and operational efficiency.",
       "We provide actionable capability building, digital health integration, and operational frameworks tailored to modern health systems.",
@@ -88,7 +88,7 @@ export const industries: Industry[] = [
     tagline: "Supporting capability development, digital adoption, and business operations.",
     intro:
       "Supporting pharmaceutical organizations across capability development, digital transformation, AI adoption, workforce, and business operations.",
-    heroImage: "/assets/industries/pharma.jpg",
+    heroImage: "/assets/Pharmaceuticals.jpg",
     overview: [
       "Pharma enterprises require high precision in execution, regulatory oversight, and continuous capability upgrades.",
       "We assist pharma leaders in optimizing supply chains, modernizing operations, and adopting digital tools for sustainable growth.",
@@ -113,7 +113,7 @@ export const industries: Industry[] = [
     tagline: "Helping technology organizations scale people, products, operations, and markets.",
     intro:
       "Helping technology organizations scale people, products, operations, and markets with end-to-end strategic support.",
-    heroImage: "/assets/industries/technology.jpg",
+    heroImage: "/assets/tech-it.jpg",
     overview: [
       "Tech companies face fierce global competition, talent bottlenecks, and fast-moving technological shifts.",
       "Our solutions empower IT businesses to drive growth strategies, execute global expansion, and scale managed services.",
@@ -143,7 +143,7 @@ export const industries: Industry[] = [
     tagline: "Building future-ready learning ecosystems and institutional leadership.",
     intro:
       "Helping institutions and education businesses build future-ready learning ecosystems.",
-    heroImage: "/assets/industries/education.jpg",
+    heroImage: "/assets/education-edtech.jpg",
     overview: [
       "Education models are evolving rapidly through blended learning, digital assessment platforms, and employability focus.",
       "We help universities, schools, and EdTech ventures develop institutional capacity, faculty capabilities, and EdTech strategies.",
@@ -173,7 +173,7 @@ export const industries: Industry[] = [
     tagline: "Improving productivity, technology adoption, and operational resilience.",
     intro:
       "Helping manufacturers improve productivity, technology adoption, workforce capability, and operational resilience.",
-    heroImage: "/assets/industries/manufacturing.jpg",
+    heroImage: "/assets/manufacturing.avif",
     overview: [
       "Industry 4.0 demands smart factory operations, resilient supply chains, and workforce upskilling.",
       "We work alongside manufacturing companies to drive operational productivity, introduce digital automation, and elevate shop-floor capabilities.",
@@ -198,7 +198,7 @@ export const industries: Industry[] = [
     tagline: "Supporting organizations in customer experience, digital growth, and technology.",
     intro:
       "Supporting retail and consumer organizations in customer experience, digital transformation, workforce, growth, and technology.",
-    heroImage: "/assets/industries/retail.jpg",
+    heroImage: "/assets/retail-consumer.jpg",
     overview: [
       "Modern retail requires seamless omnichannel engagement, strong supply chain alignment, and continuous consumer insight.",
       "We help consumer brands build responsive customer journeys and modernize backend technology stack.",
@@ -223,7 +223,7 @@ export const industries: Industry[] = [
     tagline: "Navigating technology, operational resilience, and sustainability.",
     intro:
       "Supporting energy and utility organizations navigating technology, workforce, operational resilience, sustainability, and transformation.",
-    heroImage: "/assets/industries/energy.jpg",
+    heroImage: "/assets/energy.jpg",
     overview: [
       "Energy operators are balancing grid reliability, clean energy transition, and infrastructure modernization.",
       "We assist utility leaders in operational transformation, sustainable resource management, and workforce transition.",
@@ -248,7 +248,7 @@ export const industries: Industry[] = [
     tagline: "Supporting growth, governance, technology, and project capability.",
     intro:
       "Supporting growth, governance, technology, project management, and organizational capability in infrastructure and real estate.",
-    heroImage: "/assets/industries/infrastructure.jpg",
+    heroImage: "/assets/infrastructure.webp",
     overview: [
       "Capital-intensive real estate and infrastructure projects rely heavily on clear governance, accurate timelines, and technology integration.",
       "Our advisory supports real estate leaders with governance frameworks, project capability building, and smart asset technologies.",
@@ -273,7 +273,7 @@ export const industries: Industry[] = [
     tagline: "Building institutional capacity, governance, and citizen-centric initiatives.",
     intro:
       "Supporting public sector institutions with capability building, digital transformation, governance, technology, and citizen-centric initiatives.",
-    heroImage: "/assets/industries/government.jpg",
+    heroImage: "/assets/government.jpg",
     overview: [
       "Public sector bodies require scalable digital governance models to deliver transparent, efficient public services.",
       "We partner with government bodies to implement digital administration tools, upskill civil servants, and optimize public service delivery.",
@@ -298,7 +298,7 @@ export const industries: Industry[] = [
     tagline: "Helping founders move from idea to business model, scale, and sustainable growth.",
     intro:
       "Helping founders move from idea to business model, market entry, scale, and sustainable growth.",
-    heroImage: "/assets/industries/startups.jpg",
+    heroImage: "/assets/startup.jpg",
     overview: [
       "Startups face crucial execution milestones—from defining product-market fit to securing growth capital.",
       "We support founders across business modeling, go-to-market strategies, funding readiness, finance, talent acquisition, and market expansion.",

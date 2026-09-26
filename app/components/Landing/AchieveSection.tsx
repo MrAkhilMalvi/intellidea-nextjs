@@ -66,12 +66,12 @@ export const AchieveSection: React.FC = () => {
                 <img
                   src={item.iconPath}
                   alt={item.title}
-                  className="w-14 h-14 object-contain transition-transform duration-200 group-hover:scale-110"
+                  className="w-20 h-20 md:w-14 md:h-14 object-contain transition-transform duration-200 group-hover:scale-110"
                 />
               </div>
 
               {/* Concise Title matching reference style */}
-              <p className="font-sans text-[#2C466D] text-sm md:text-base font-medium max-w-50 leading-snug">
+              <p className="font-sans text-[#2C466D] text-lg md:text-base font-medium max-w-50 leading-snug">
                 {item.title}
               </p>
             </div>
@@ -82,7 +82,7 @@ export const AchieveSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <a
             href="#our-solutions"
-            className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-sm md:text-lg font-bold text-[#12203A] shadow transition-all duration-200 hover:bg-[#2C466D] hover:text-white active:scale-95 whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-lg bg-[#f7bf22] px-7 py-3 text-lg md:text-lg font-bold text-[#12203A] shadow transition-all duration-200 hover:bg-[#2C466D] hover:text-white active:scale-95 whitespace-nowrap"
           >
             Find The Right Solution
           </a>
