@@ -183,6 +183,7 @@ export const services: ServiceData[] = [
           "Digital Customer Experience",
           "Digital Product Strategy",
           "Technology Implementation Advisory",
+          "Web & Mobile App Development"
         ],
       },
     ],
@@ -347,7 +348,7 @@ export const services: ServiceData[] = [
           "Cyber Risk Assessment",
           "Cybersecurity Strategy",
           "Cybersecurity Governance",
-          "Data Protection",
+          "Data Privacy & Protection",
           "Privacy Advisory",
           "Security Awareness",
           "Incident Response Readiness",
@@ -454,8 +455,8 @@ export const services: ServiceData[] = [
   {
     number: 6,
     slug: "transactions-investment-growth",
-    title: "Transactions, Investment & Growth",
-    shortTitle: "Transactions & Investment",
+    title: "Investments, Funding, IPO and Growth",
+    shortTitle: "Investments, Funding, IPO and Growth",
     tagline:
       "Helping businesses make informed decisions about capital, growth and transformation.",
     intro:
@@ -513,70 +514,12 @@ export const services: ServiceData[] = [
       },
     ],
   },
+
   {
     number: 7,
-    slug: "sustainability-esg-impact",
-    title: "Sustainability, ESG & Impact",
-    shortTitle: "Sustainability & ESG",
-    tagline:
-      "Building businesses that create value today without compromising tomorrow.",
-    intro:
-      "We treat sustainability as a business transformation and value-creation opportunity, not simply a compliance exercise.",
-    heroImage:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
-    secondaryImage:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80",
-    stats: [
-      { value: "ESG", label: "Strategy, governance & reporting" },
-      { value: "Climate", label: "Risk, carbon & supply chain" },
-      { value: "Impact", label: "CSR, social value & capability" },
-    ],
-    outcomes: [
-      {
-        title: "ESG as strategy",
-        description:
-          "Set a sustainability agenda that is material to the business, not a parallel reporting track.",
-      },
-      {
-        title: "Credible disclosure",
-        description:
-          "Build governance, metrics and reporting that stakeholders, lenders and boards can rely on.",
-      },
-      {
-        title: "Capability in the organisation",
-        description:
-          "Train teams and measure impact so sustainability survives beyond a single programme.",
-      },
-    ],
-    engagementModel: ["Strategy", "Reporting", "Capability building"],
-    categories: [
-      {
-        name: "ESG & Impact",
-        icon: "fa-leaf",
-        items: [
-          "ESG Strategy",
-          "Sustainability Strategy",
-          "ESG Readiness Assessment",
-          "ESG Governance",
-          "Sustainability Reporting",
-          "Climate Risk Advisory",
-          "Carbon Management",
-          "Sustainable Supply Chain",
-          "Responsible Business",
-          "Social Impact Strategy",
-          "CSR Strategy",
-          "ESG Training",
-          "Sustainability Capability Building",
-          "Impact Measurement",
-        ],
-      },
-    ],
-  },
-  {
-    number: 8,
     slug: "managed-services",
-    title: "Managed Services",
-    shortTitle: "Managed Services",
+    title: "Sales & Mktg, Managed Services",
+    shortTitle: "Sales & Mktg, Managed Services",
     tagline: "Beyond advisory. We help you run it.",
     intro:
       "Many organizations don't need another consultant. They need an experienced partner who can operate, manage and continuously improve a business function.",
@@ -666,6 +609,65 @@ export const services: ServiceData[] = [
           "Back-office Operations",
           "Project Management Office",
           "Shared Services",
+        ],
+      },
+    ],
+  },
+    {
+    number: 8,
+    slug: "sustainability-esg-impact",
+    title: "Sustainability, ESG & Impact",
+    shortTitle: "Sustainability & ESG",
+    tagline:
+      "Building businesses that create value today without compromising tomorrow.",
+    intro:
+      "We treat sustainability as a business transformation and value-creation opportunity, not simply a compliance exercise.",
+    heroImage:
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
+    secondaryImage:
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1400&q=80",
+    stats: [
+      { value: "ESG", label: "Strategy, governance & reporting" },
+      { value: "Climate", label: "Risk, carbon & supply chain" },
+      { value: "Impact", label: "CSR, social value & capability" },
+    ],
+    outcomes: [
+      {
+        title: "ESG as strategy",
+        description:
+          "Set a sustainability agenda that is material to the business, not a parallel reporting track.",
+      },
+      {
+        title: "Credible disclosure",
+        description:
+          "Build governance, metrics and reporting that stakeholders, lenders and boards can rely on.",
+      },
+      {
+        title: "Capability in the organisation",
+        description:
+          "Train teams and measure impact so sustainability survives beyond a single programme.",
+      },
+    ],
+    engagementModel: ["Strategy", "Reporting", "Capability building"],
+    categories: [
+      {
+        name: "ESG & Impact",
+        icon: "fa-leaf",
+        items: [
+          "ESG Strategy",
+          "Sustainability Strategy",
+          "ESG Readiness Assessment",
+          "ESG Governance",
+          "Sustainability Reporting",
+          "Climate Risk Advisory",
+          "Carbon Management",
+          "Sustainable Supply Chain",
+          "Responsible Business",
+          "Social Impact Strategy",
+          "CSR Strategy",
+          "ESG Training",
+          "Sustainability Capability Building",
+          "Impact Measurement",
         ],
       },
     ],

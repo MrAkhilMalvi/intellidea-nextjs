@@ -56,11 +56,11 @@ export const HeroSection: React.FC = () => {
           {/* HEADLINE */}
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[1.15]">
             Insight{" "}
-            <span className="text-xs sm:text-lg md:text-xl font-semibold uppercase tracking-widest ext-white  align-middle px-0.5 sm:px-2">
+            <span className="text-xs sm:text-lg md:text-xl font-light  uppercase tracking-widest text-white  align-middle px-0.5 sm:px-1">
               to
             </span>{" "}
             Innovate{" "}
-            <span className="text-xs sm:text-lg md:text-xl font-semibold uppercase tracking-widest text-white  align-middle px-0.5 sm:px-2">
+            <span className="text-xs sm:text-lg md:text-xl font-light uppercase tracking-widest text-white  align-middle px-0.5 sm:px-1">
               for
             </span>{" "}
             Impact

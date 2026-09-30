@@ -50,16 +50,16 @@ export const NAV_ITEMS: MenuItem[] = [
           href: "/services/finance-governance-business-advisory",
         },
         {
-          title: "Transactions & Investment",
+          title: "Investments, Funding, IPO and Growth",
           href: "/services/transactions-investment-growth",
         },
         {
-          title: "Sustainability, & ESG",
-          href: "/services/sustainability-esg-impact",
+          title: "Sales & Mktg, Managed Services",
+          href: "/services/managed-services",
         },
         {
-          title: "Managed Services",
-          href: "/services/managed-services",
+          title: "Sustainability & ESG",
+          href: "/services/sustainability-esg-impact",
         },
       ],
     },
@@ -149,11 +149,11 @@ export const NAV_ITEMS: MenuItem[] = [
     megaMenu: {
       description:
         "Learn about our purpose, mission, leadership, and collaborative engagement models powering modern enterprises.",
-      exploreHref: "/about",
+      exploreHref: "/#aboutus",
       items: [
-        { title: "Why Intellidea?", href: "/about/why-intellidea" },
-        { title: "Our Purpose", href: "/#our-mission-vision" },
-        { title: "Our Mission", href: "/#our-mission-vision" },
+        { title: "Who we are", href: "/#aboutus" },
+        { title: "Why Intellidea?", href: "//about/why-intellidea" },
+        { title: "Our Mission, Vision, Mission", href: "/#our-mission-vision" },
         { title: "Our Core Values", href: "/#core-values" },
         { title: "Our Proposition", href: "/#our-proposition" },
         { title: "Engagement Models", href: "/about/engagement-models" },

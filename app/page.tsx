@@ -34,9 +34,9 @@ export default function IntellideaLanding() {
       <CoreValuesSection />
       <FoundersSection />
       <AdvisoryBoardSection />
-      <AssociatesSection />
       <TeamSection />
       <PartnersEcosystemSection />
+      <AssociatesSection />
       <ResourcesSection />
       <ContactSection />
     </div>

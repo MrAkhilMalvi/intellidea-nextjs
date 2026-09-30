@@ -16,8 +16,8 @@ export const ContactSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
 
+    // Pure React Validation for Consent
     if (!consentChecked) {
       setStatus({
         type: "error",
@@ -26,8 +26,11 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
+    if (!formRef.current) return;
+
     setIsSubmitting(true);
     setStatus({ type: null, message: "" });
+
     const SERVICE_ID = "service_f24ywxs";
     const TEMPLATE_ID = "template_qzgggh6";
     const PUBLIC_KEY = "OwMbKLlu0_dKWx47l";
@@ -44,13 +47,15 @@ export const ContactSection: React.FC = () => {
         type: "success",
         message: "Thank you! Your message has been sent successfully.",
       });
+      
+      // Clean reset
       formRef.current.reset();
       setConsentChecked(false);
     } catch (error) {
       console.error("EmailJS Submission Error:", error);
       setStatus({
         type: "error",
-        message: "Failed to send message. Please try again later.",
+        message: "Failed to send message. Please verify your details and try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -60,24 +65,26 @@ export const ContactSection: React.FC = () => {
   const SOCIAL_LINKS = [
     {
       name: "WhatsApp",
-      href: "https://wa.me/919082378708", // TODO: replace with your WhatsApp link
+      href: "https://wa.me/919082378708",
       icon: "fa-brands fa-whatsapp",
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/intellidea", // TODO: replace with your LinkedIn link
+      href: "https://www.linkedin.com/company/intellidea",
       icon: "fa-brands fa-linkedin-in",
     },
     {
       name: "Facebook",
-      href: "https://www.facebook.com/profile.php?id=61577572718155", // TODO: replace with your Instagram link
+      href: "https://www.facebook.com/profile.php?id=61577572718155",
       icon: "fa-brands fa-facebook",
     },
   ];
 
   return (
-    <section id="contact" className="relative bg-[#1F3352] text-white py-20 overflow-hidden">
-      {/* Decorative subtle background gradient blur */}
+    <section
+      id="contact"
+      className="relative bg-[#1F3352] text-white py-20 overflow-hidden"
+    >
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#F9C100]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-start">
@@ -96,7 +103,9 @@ export const ContactSection: React.FC = () => {
             </h2>
 
             <p className="font-sans text-sm md:text-base text-slate-300 mb-8 leading-relaxed">
-              Have a question or want to discuss how Intellidea can support your enterprise? Drop us a line and our sector advisors will get back to you.
+              Have a question or want to discuss how Intellidea can support your
+              enterprise? Drop us a line and our sector advisors will get back
+              to you.
             </p>
 
             <div className="space-y-6">
@@ -110,7 +119,8 @@ export const ContactSection: React.FC = () => {
                     Corporate Office
                   </h4>
                   <p className="text-sm text-slate-200 leading-relaxed">
-                    Innov8, Times Square, A Wing, 4th Floor, Marol, Andheri Kurla Road,
+                    Innov8, Times Square, A Wing, 4th Floor, Marol, Andheri
+                    Kurla Road,
                     <br />
                     Andheri East, Mumbai 400059
                   </p>
@@ -196,7 +206,10 @@ export const ContactSection: React.FC = () => {
             {/* FIRST & LAST NAME */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="firstName" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label
+                  htmlFor="firstName"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
                   First Name *
                 </label>
                 <input
@@ -209,7 +222,10 @@ export const ContactSection: React.FC = () => {
                 />
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label
+                  htmlFor="lastName"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
                   Last Name *
                 </label>
                 <input
@@ -226,7 +242,10 @@ export const ContactSection: React.FC = () => {
             {/* EMAIL & WHATSAPP */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="email" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
                   Email Address *
                 </label>
                 <input
@@ -239,8 +258,11 @@ export const ContactSection: React.FC = () => {
                 />
               </div>
               <div>
-                <label htmlFor="whatsapp" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                  WhatsApp / Phone *
+                <label
+                  htmlFor="whatsapp"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
+                  WhatsApp / Phone With Country Code*
                 </label>
                 <input
                   id="whatsapp"
@@ -248,6 +270,42 @@ export const ContactSection: React.FC = () => {
                   type="tel"
                   required
                   placeholder="+91 98765 43210"
+                  className="w-full px-3.5 py-2.5 bg-white/5 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-[#F9C100] focus:ring-1 focus:ring-[#F9C100] transition-all text-sm"
+                />
+              </div>
+            </div>
+
+            {/* ORGANIZATION & DESIGNATION */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  htmlFor="organization"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
+                  Organization / Institute Name *
+                </label>
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  required
+                  placeholder="e.g. Acme Corp / Stanford"
+                  className="w-full px-3.5 py-2.5 bg-white/5 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-[#F9C100] focus:ring-1 focus:ring-[#F9C100] transition-all text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="designation"
+                  className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+                >
+                  Designation / Job Role *
+                </label>
+                <input
+                  type="text"
+                  id="designation"
+                  name="designation"
+                  required
+                  placeholder="e.g. Director, Manager"
                   className="w-full px-3.5 py-2.5 bg-white/5 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-[#F9C100] focus:ring-1 focus:ring-[#F9C100] transition-all text-sm"
                 />
               </div>
@@ -296,10 +354,7 @@ export const ContactSection: React.FC = () => {
                   <option value="Technology" className="text-white bg-[#1C2A39] py-2">
                     Technology Advisory
                   </option>
-                  <option
-                    value="Join as Expert / Associate"
-                    className="text-white bg-[#1C2A39] py-2"
-                  >
+                  <option value="Join as Expert / Associate" className="text-white bg-[#1C2A39] py-2">
                     Join as Expert / Associate
                   </option>
                 </select>
@@ -318,7 +373,10 @@ export const ContactSection: React.FC = () => {
 
             {/* MESSAGE TEXTAREA */}
             <div>
-              <label htmlFor="message" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label
+                htmlFor="message"
+                className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5"
+              >
                 Message *
               </label>
               <textarea
@@ -341,7 +399,6 @@ export const ContactSection: React.FC = () => {
                 type="checkbox"
                 id="consent"
                 name="consent"
-                required
                 checked={consentChecked}
                 onChange={(e) => {
                   setConsentChecked(e.target.checked);
@@ -349,12 +406,12 @@ export const ContactSection: React.FC = () => {
                 }}
                 className="peer sr-only"
               />
-              <span
-                className="mt-0.5 w-5 h-5 shrink-0 rounded-md border border-white/30 bg-white/5 flex items-center justify-center transition-all duration-200 ease-out peer-checked:bg-[#F9C100] peer-checked:border-[#F9C100] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F9C100] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#253D62] group-hover:border-[#F9C100]/60"
-              >
+              <span className="mt-0.5 w-5 h-5 shrink-0 rounded-md border border-white/30 bg-white/5 flex items-center justify-center transition-all duration-200 ease-out peer-checked:bg-[#F9C100] peer-checked:border-[#F9C100] peer-focus-visible:ring-2 peer-focus-visible:ring-[#F9C100] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#253D62] group-hover:border-[#F9C100]/60">
                 <svg
                   className={`w-3.5 h-3.5 text-[#12203A] transition-all duration-200 ease-out ${
-                    consentChecked ? "scale-100 opacity-100" : "scale-50 opacity-0"
+                    consentChecked
+                      ? "scale-100 opacity-100"
+                      : "scale-50 opacity-0"
                   }`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -367,10 +424,10 @@ export const ContactSection: React.FC = () => {
                 </svg>
               </span>
               <span className="text-xs sm:text-[13px] text-slate-300 leading-relaxed">
-                I agree to be contacted by Intellidea regarding my enquiry and consent to my
-                information being processed in line with the{" "}
+                I agree to be contacted by Intellidea regarding my enquiry and
+                consent to my information being processed in line with the{" "}
                 <a href="/privacy" className="text-[#F9C100] hover:underline">
-                  privacy policy
+                  Privacy Policy
                 </a>
                 . *
               </span>

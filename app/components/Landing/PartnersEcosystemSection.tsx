@@ -26,16 +26,17 @@ const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: "Cybersecurity", iconClass: "fa-solid fa-shield-halved" },
     ],
   },
-  {
-    id: "knowledge",
-    title: "Knowledge Partners",
-    categoryIcon: "fa-solid fa-graduation-cap",
+    {
+    id: "global",
+    title: "Global Partners",
+    categoryIcon: "fa-solid fa-earth-americas",
     tags: [
-      { name: "Universities", iconClass: "fa-solid fa-building-columns" },
-      { name: "Institutions", iconClass: "fa-solid fa-landmark" },
-      { name: "Research", iconClass: "fa-solid fa-flask" },
+      { name: "Market Entry", iconClass: "fa-solid fa-passport" },
+      { name: "International Business", iconClass: "fa-solid fa-globe" },
+      { name: "Investors", iconClass: "fa-solid fa-hand-holding-dollar" },
     ],
   },
+
   {
     id: "business",
     title: "Business Partners",
@@ -47,16 +48,7 @@ const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: "Consulting", iconClass: "fa-solid fa-chart-line" },
     ],
   },
-  {
-    id: "global",
-    title: "Global Partners",
-    categoryIcon: "fa-solid fa-earth-americas",
-    tags: [
-      { name: "Market Entry", iconClass: "fa-solid fa-passport" },
-      { name: "International Business", iconClass: "fa-solid fa-globe" },
-      { name: "Investors", iconClass: "fa-solid fa-hand-holding-dollar" },
-    ],
-  },
+
   {
     id: "community",
     title: "Community Partners",
@@ -65,6 +57,16 @@ const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: "Youth", iconClass: "fa-solid fa-user-graduate" },
       { name: "Entrepreneurship", iconClass: "fa-solid fa-rocket" },
       { name: "Social Impact (Non-Profits)", iconClass: "fa-solid fa-hand-holding-heart" },
+    ],
+  },
+    {
+    id: "knowledge",
+    title: "Knowledge Partners",
+    categoryIcon: "fa-solid fa-graduation-cap",
+    tags: [
+      { name: "Universities", iconClass: "fa-solid fa-building-columns" },
+      { name: "Institutions", iconClass: "fa-solid fa-landmark" },
+      { name: "Research", iconClass: "fa-solid fa-flask" },
     ],
   },
 ];
