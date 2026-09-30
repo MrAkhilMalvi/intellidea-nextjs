@@ -1,11 +1,20 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Intellidea",
+  description: "Read the Terms & Conditions and legal usage guidelines for Intellidea Consultancy Services Pvt Ltd.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms & Conditions | Intellidea",
+    description: "Read the Terms & Conditions and legal usage guidelines for Intellidea Consultancy Services Pvt Ltd.",
+  },
+};
 
 export default function TermsAndConditionsPage() {
   return (
     <div className="min-h-screen flex flex-col pt-20">
-      {/* Header / Navbar */}
-
-      {/* Main Content Area */}
       <main className="grow">
         <section className="py-12 px-6 md:px-20">
           <div className="text-center mb-10">

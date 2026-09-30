@@ -1,9 +1,25 @@
-"use client";
+import type { Metadata } from "next";
 
-interface MenuItem {
-  name: string;
-  href: string;
-}
+export const metadata: Metadata = {
+  title: "Privacy & Cookie Policy | Intellidea",
+  description:
+    "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy & Cookie Policy | Intellidea",
+    description:
+      "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy & Cookie Policy | Intellidea",
+    description:
+      "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
+  },
+};
 
 export default function PrivacyAndCookiePolicy() {
   return (

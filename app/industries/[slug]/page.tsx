@@ -7,7 +7,7 @@ interface IndustryPageProps {
   params: Promise<{ slug: string }>;
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://intellidea.com"; // <- set your real domain
+const SITE_URL = "http://intellidea.co.in"; 
 
 export function generateStaticParams() {
   return industries.map((industry) => ({ slug: industry.slug }));
