@@ -127,10 +127,10 @@ export const NAV_ITEMS: MenuItem[] = [
           title: "Energy & Utilities",
           href: "/industries/energy-and-utilities",
         },
-        {
-          title: "Infrastructure & Real Estate",
-          href: "/industries/infrastructure-and-real-estate",
-        },
+        // {
+        //   title: "Infrastructure & Real Estate",
+        //   href: "/industries/infrastructure-and-real-estate",
+        // },
         {
           title: "Government & Public Sector",
           href: "/industries/government-and-public-sector",
@@ -152,7 +152,7 @@ export const NAV_ITEMS: MenuItem[] = [
       exploreHref: "/#aboutus",
       items: [
         { title: "Who we are", href: "/#aboutus" },
-        { title: "Why Intellidea?", href: "//about/why-intellidea" },
+        { title: "Why Intellidea?", href: "/about/why-intellidea" },
         { title: "Our Mission, Vision, Mission", href: "/#our-mission-vision" },
         { title: "Our Core Values", href: "/#core-values" },
         { title: "Our Proposition", href: "/#our-proposition" },

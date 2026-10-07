@@ -44,9 +44,9 @@ export const services: ServiceData[] = [
     intro:
       "Businesses need more than strategy documents. They need clarity about where to play, how to win and how to execute. We work with promoters, boards, CEOs and leadership teams to define strategies that are practical, measurable and execution-oriented.",
     heroImage:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80",
+      "/assets/Strategy_v1.jpg",
     secondaryImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80",
+      "/assets/Strategy_v2.webp",
     stats: [
       { value: "Boards", label: "Promoters, CEOs & leadership teams" },
       { value: "360°", label: "Strategy through execution" },
@@ -132,7 +132,7 @@ export const services: ServiceData[] = [
     callout:
       "We help organizations move from experimenting with AI to creating measurable business value from AI.",
     heroImage:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+      "/assets/ai_v1.png",
     secondaryImage:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -198,7 +198,7 @@ export const services: ServiceData[] = [
     intro:
       "From sourcing and hiring talent to running HR as a managed function, we support organizations across the full employee lifecycle.",
     heroImage:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
+      "/assets/people_workforse.jpeg",
     secondaryImage:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -396,7 +396,7 @@ export const services: ServiceData[] = [
     intro:
       "We help leadership teams strengthen financial discipline, reporting and governance so decisions are backed by reliable numbers.",
     heroImage:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+      "/assets/finance_v1.jpg",
     secondaryImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -524,7 +524,7 @@ export const services: ServiceData[] = [
     intro:
       "Many organizations don't need another consultant. They need an experienced partner who can operate, manage and continuously improve a business function.",
     heroImage:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80",
+      "/assets/sales_marketing.avif",
     secondaryImage:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
     stats: [

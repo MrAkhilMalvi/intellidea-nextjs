@@ -443,23 +443,23 @@ export const industries: Industry[] = [
       { title: "Operational Resilience & Workforce", description: "Strengthen physical and digital infrastructure reliability while training skilled technicians.", icon: "fa-solid fa-bolt" },
     ],
   },
-  {
-    slug: "infrastructure-and-real-estate",
-    number: 9,
-    title: "Infrastructure & Real Estate",
-    tagline: "Supporting growth, governance, technology, and project capability.",
-    intro:
-      "Supporting growth, governance, technology, project management, and organizational capability in infrastructure and real estate.",
-    heroImage: "/assets/infrastructure.webp",
-    overview: [
-      "Capital-intensive real estate and infrastructure projects rely heavily on clear governance, accurate timelines, and technology integration.",
-      "Our advisory supports real estate leaders with governance frameworks, project capability building, and smart asset technologies.",
-    ],
-    keySolutions: [
-      { title: "Governance & Project Management", description: "Establish robust risk governance frameworks and high-output project execution practices.", icon: "fa-solid fa-building-user" },
-      { title: "Organizational Capability & Tech", description: "Empower asset teams with smart building technologies and streamlined management processes.", icon: "fa-solid fa-city" },
-    ],
-  },
+  // {
+  //   slug: "infrastructure-and-real-estate",
+  //   number: 9,
+  //   title: "Infrastructure & Real Estate",
+  //   tagline: "Supporting growth, governance, technology, and project capability.",
+  //   intro:
+  //     "Supporting growth, governance, technology, project management, and organizational capability in infrastructure and real estate.",
+  //   heroImage: "/assets/infrastructure.webp",
+  //   overview: [
+  //     "Capital-intensive real estate and infrastructure projects rely heavily on clear governance, accurate timelines, and technology integration.",
+  //     "Our advisory supports real estate leaders with governance frameworks, project capability building, and smart asset technologies.",
+  //   ],
+  //   keySolutions: [
+  //     { title: "Governance & Project Management", description: "Establish robust risk governance frameworks and high-output project execution practices.", icon: "fa-solid fa-building-user" },
+  //     { title: "Organizational Capability & Tech", description: "Empower asset teams with smart building technologies and streamlined management processes.", icon: "fa-solid fa-city" },
+  //   ],
+  // },
   {
     slug: "government-and-public-sector",
     number: 10,
