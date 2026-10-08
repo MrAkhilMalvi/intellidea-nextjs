@@ -17,6 +17,7 @@ import { ContactSection } from "./components/Landing/ContactSection";
 import { WhatsAppFloat } from "./components/Landing/WhatsAppFloat";
 import { AchieveSection } from "./components/Landing/AchieveSection";
 import { OurSolutionsSection } from "./components/Landing/OurSolutions";
+import { WhatWeSolve } from "./components/Landing/WhatWeSolve";
 
 export default function IntellideaLanding() {
   return (
@@ -24,6 +25,7 @@ export default function IntellideaLanding() {
       <HeroSection />
       <WhatsAppFloat />
       <AchieveSection />
+      <WhatWeSolve />
       <OurSolutionsSection />
       <OfferingsSection />
       <ValuePropositionSection />

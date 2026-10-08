@@ -51,8 +51,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
     description:
       "Helping organizations, entrepreneurs, and leaders make better strategic decisions, improve performance, and unlock exponential growth through data-driven advisory.",
     badge: "Strategy & Advisory",
-    heroImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80",
+    heroImage: "/assets/Strategy_v2.webp",
     secondaryImage:
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
     stats: [
@@ -78,7 +77,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       },
     ],
     focusAreas: [
-      { name: "Business Strategy", icon: "fa-chess-king" },
+      { name: "Board Advisory", icon: "fa-people-roof" },
       { name: "Growth Strategy", icon: "fa-chart-line" },
       { name: "Digital Transformation", icon: "fa-laptop-code" },
       { name: "Business Transformation", icon: "fa-arrows-spin" },
@@ -90,8 +89,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Performance Improvement", icon: "fa-gauge-high" },
       { name: "Entrepreneurship Advisory", icon: "fa-rocket" },
       { name: "Fractional CXO Advisory", icon: "fa-user-tie" },
-      { name: "CEO Advisory", icon: "fa-user-gear" },
-      { name: "Board Advisory", icon: "fa-people-roof" },
+      { name: "Business Strategy", icon: "fa-chess-king" },
     ],
     ctaLabel: "Explore IntEllev8",
   },
@@ -124,7 +122,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       {
         title: "Adaptive Workforce Models",
         description:
-          "Transition between temporary staffing, contract-to-hire, and end-to-end managed service engagements seamlessly.",
+          "Access contract staffing, employer of record, professional employer organization, and end-to-end managed service engagements.",
       },
       {
         title: "Enterprise Risk & Compliance",
@@ -133,25 +131,25 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       },
     ],
     focusAreas: [
-      { name: "Human Resources Advisory", icon: "fa-users-gear" },
-      { name: "Talent Acquisition", icon: "fa-user-plus" },
-      { name: "Workforce Solutions", icon: "fa-people-group" },
-      { name: "HR Transformation", icon: "fa-arrows-split-up-and-left" },
-      { name: "HR Technology", icon: "fa-microchip" },
-      { name: "Payroll Services", icon: "fa-file-invoice-dollar" },
-      { name: "HRMS / HRIS", icon: "fa-database" },
-      { name: "Contract Staffing", icon: "fa-id-card" },
-      { name: "Temporary Staffing", icon: "fa-clock" },
-      { name: "Contract-to-Hire", icon: "fa-briefcase" },
+      { name: "Capital Funding, IPO & Investments", icon: "fa-chart-line" },
+      { name: "IPO Prep & Post-IPO Support", icon: "fa-file-invoice-dollar" },
+      { name: "Global Alliance Connect", icon: "fa-earth-americas" },
+      { name: "Market Entry Services", icon: "fa-globe" },
+      { name: "Payroll Services & Contract Staffing (C2H, EOR, PEO)", icon: "fa-id-card" },
       { name: "Managed Services", icon: "fa-headset" },
       { name: "Finance & Accounting Advisory", icon: "fa-calculator" },
-      { name: "Technology Advisory", icon: "fa-network-wired" },
+      { name: "Technology, AI, Digital", icon: "fa-network-wired" },
       { name: "Cybersecurity", icon: "fa-shield-halved" },
       { name: "Risk & Compliance", icon: "fa-clipboard-check" },
       { name: "Legal & Regulatory Advisory", icon: "fa-scale-balanced" },
       { name: "ESG & Sustainability", icon: "fa-leaf" },
       { name: "Project & Program Management", icon: "fa-list-check" },
       { name: "Business Process Advisory", icon: "fa-diagram-project" },
+      { name: "Human Resources Advisory", icon: "fa-users-gear" },
+      { name: "HR Technology (HRMS / HRIS)", icon: "fa-microchip" },
+      { name: "Talent Acquisition", icon: "fa-user-plus" },
+      { name: "Workforce Solutions", icon: "fa-people-group" },
+      { name: "HR Transformation", icon: "fa-arrows-split-up-and-left" },
     ],
     engagementModel: [
       "Consulting",
@@ -172,8 +170,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
     description:
       "Building future-ready capabilities for organizations and individuals through executive education, AI integration, and targeted skill development programs.",
     badge: "Learning Academy",
-    heroImage:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80",
+    heroImage: "/assets/education-edtech.jpg",
     secondaryImage:
       "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
     stats: [
@@ -204,13 +201,15 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "AI for Educators", icon: "fa-chalkboard-user" },
       { name: "Generative AI", icon: "fa-wand-magic-sparkles" },
       { name: "Cyber Awareness", icon: "fa-shield-halved" },
-      { name: "Money Skills", icon: "fa-vault" },
-      { name: "Career Readiness", icon: "fa-compass" },
-      { name: "Business Skills", icon: "fa-briefcase" },
-      { name: "Professional Development", icon: "fa-chart-line" },
+      { name: "Financial Literacy", icon: "fa-vault" },
+      { name: "Sales Effectiveness", icon: "fa-briefcase" },
+      { name: "Cross-Cultural & Business Etiquettes", icon: "fa-chart-line" },
       { name: "Executive Learning", icon: "fa-graduation-cap" },
+      { name: "Bespoke Corporate Program", icon: "fa-building-user" },
+      { name: "Board Mastery (Governance, Risk & Compliance)", icon: "fa-scale-balanced" },
+      { name: "Entrepreneurship Development", icon: "fa-lightbulb" },
+      { name: "Career Readiness & Life Skills", icon: "fa-compass" },
       { name: "Vedic Mathematics / MathWise", icon: "fa-calculator" },
-      { name: "Customized Corporate Programs", icon: "fa-building-user" },
     ],
     engagementModel: [
       "Workshops",
@@ -233,8 +232,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
     description:
       "Fostering strategic connections among enterprise leaders, entrepreneurs, and subject experts to drive peer learning and shared growth.",
     badge: "Ecosystem & Network",
-    heroImage:
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80",
+    heroImage: "/assets/team.jpg",
     secondaryImage:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
     stats: [

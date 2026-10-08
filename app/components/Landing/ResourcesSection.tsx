@@ -72,15 +72,33 @@ export const ResourcesSection: React.FC = () => {
             <iframe
               className="w-full h-full border-0"
               src="https://www.youtube.com/embed/dncdU1b3ugM?si=uwHtWtEvg-uubBZR"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               title="Resource Video 2"
             />
           </div>
         </div>
+
+{/* 5th Item: Intro Teaser Video - Centered across both columns */}
+<div className="flex flex-col justify-center items-center w-full md:col-span-2 px-4">
+  <div className="w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-md">
+    <iframe
+      className="w-full h-full border-0"
+      src="https://www.youtube.com/embed/b-tB5PlQrBQ"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+      title="Intellidea - Intro Teaser Video"
+    />
+  </div>
+</div>
       </div>
 
       {isModalOpen && (
-        <div id="formModal" className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div
+          id="formModal"
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+        >
           <div className="bg-white p-6 rounded-xl w-full max-w-md relative shadow-xl text-left">
             <button
               onClick={handleCloseModal}
@@ -99,12 +117,39 @@ export const ResourcesSection: React.FC = () => {
                 handleCloseModal();
               }}
             >
-              <input type="text" name="name" placeholder="Name" required className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]" />
-              <input type="text" name="occupation" placeholder="Occupation" required className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]" />
-              <input type="tel" name="contact" placeholder="Contact Number" required className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]" />
-              <input type="email" name="email" placeholder="Email ID" required className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+                className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]"
+              />
+              <input
+                type="text"
+                name="occupation"
+                placeholder="Occupation"
+                required
+                className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]"
+              />
+              <input
+                type="tel"
+                name="contact"
+                placeholder="Contact Number"
+                required
+                className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email ID"
+                required
+                className="w-full mb-3 p-2 border rounded text-gray-800 focus:outline-none focus:border-[#2C466D]"
+              />
               <input type="hidden" name="brochure" value={brochureType || ""} />
-              <button type="submit" className="bg-[#2C466D] w-full text-white py-2 rounded-xl hover:bg-[#1f3556] transition font-medium">
+              <button
+                type="submit"
+                className="bg-[#2C466D] w-full text-white py-2 rounded-xl hover:bg-[#1f3556] transition font-medium"
+              >
                 Submit &amp; Email
               </button>
             </form>

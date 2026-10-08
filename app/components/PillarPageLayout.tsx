@@ -105,9 +105,7 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                           </p>
                         </div>
                       </div>
-                      <span className="rounded-md bg-[#F9C100]/30 px-2.5 py-1 text-xs font-bold text-[#2C466D]">
-                        {data.focusAreas.length} Modules
-                      </span>
+                     
                     </div>
                   </div>
                 </div>
@@ -291,7 +289,7 @@ export const PillarPageLayout: React.FC<PillarPageLayoutProps> = ({ data }) => {
                 Specialized Practice Areas
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-[#2C466D]">
-                Domain Capabilities ({data.focusAreas.length})
+                Domain Capabilities 
               </h2>
             </div>
 

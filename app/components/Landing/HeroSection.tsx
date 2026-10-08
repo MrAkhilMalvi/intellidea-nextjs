@@ -97,10 +97,10 @@ export const HeroSection: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12">
             {/* Primary Button */}
             <a
-              href="#contact"
+              href="#solutions-overview-image"
               className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-[#f7bf22] px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-bold text-[#12203A] shadow-md transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
-              <span>Tell Us Your Challenge</span>
+              <span>What We Solve</span>
             </a>
 
             {/* Secondary Button */}
@@ -108,7 +108,14 @@ export const HeroSection: React.FC = () => {
               href="#our-solutions"
               className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-xl border border-white/50 bg-white/10 backdrop-blur-sm px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
-              Explore Solutions
+              Explore Our Solutions
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex flex-1 sm:flex-none items-center justify-center rounded-xl border border-white/50 bg-white/10 backdrop-blur-sm px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
+            >
+              Tell Us Your Challenge
             </a>
 
             {/* Audio Toggle */}
