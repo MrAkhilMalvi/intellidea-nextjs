@@ -97,7 +97,7 @@ export const HeroSection: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12">
             {/* Primary Button */}
             <a
-              href="#solutions-overview-image"
+              href="#whatwesolve"
               className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-[#f7bf22] px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-lg sm:text-base font-bold text-[#12203A] shadow-md transition-all duration-200 hover:bg-white hover:text-[#12203A] active:scale-95 text-center whitespace-nowrap"
             >
               <span>What We Solve</span>

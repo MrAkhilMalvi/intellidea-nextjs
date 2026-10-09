@@ -29,20 +29,20 @@ export const WhatWeSolve: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12 lg:px-20">
+    <section id="whatwesolve" className="bg-[#2d466e] py-16 px-6 md:px-12 lg:px-20">
       {/* Top Header Section */}
       <div className="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row justify-between items-start gap-10">
         <div className="md:w-1/2">
-          <span className="text-sm font-sans font-bold tracking-widest text-[#2C466D] uppercase mb-4 block">
+          <span className="text-sm font-sans font-bold tracking-widest text-[#fac005] uppercase mb-4 block">
             What we solve
           </span>
-          <h2 className="font-display font-bold text-[#2C466D] text-[28px] md:text-[32px] lg:text-[36px] leading-tight">
+          <h2 className="font-display font-bold text-white text-[28px] md:text-[32px] lg:text-[36px] leading-tight">
             From complexity <br className="hidden md:block" />
             to a clearer path forward.
           </h2>
         </div>
         <div className="md:w-5/12 lg:w-1/3 pt-2 md:pt-10">
-          <p className="font-sans text-[#2C466D] text-sm md:text-base font-medium">
+          <p className="font-sans text-white opacity-90 text-sm md:text-base font-medium">
             We partner with businesses and leaders at critical inflection points,
             bringing strategic insight, functional expertise and practical execution
             to create sustainable impact.
@@ -53,9 +53,9 @@ export const WhatWeSolve: React.FC = () => {
       {/* Grid Section */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {cards.map((card, index) => (
-          <div key={index} className="flex flex-col h-full bg-white">
+          <div key={index} className="flex flex-col h-full bg-white p-2 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
             {/* Image Box */}
-            <div className="w-full aspect-[4/3] overflow-hidden rounded-xl shadow-sm bg-gray-200 mb-6">
+            <div className="w-full aspect-4/3 overflow-hidden rounded-xl bg-gray-200 mb-6">
               <img
                 src={card.image}
                 alt={card.title}
@@ -65,23 +65,23 @@ export const WhatWeSolve: React.FC = () => {
             
             {/* Text Content */}
             <div className="flex flex-col flex-grow">
-              <h3 className="font-display font-bold text-[#2C466D] text-xl mb-3">
+              <h3 className="font-display font-bold text-[#2d466e] text-xl mb-3">
                 {card.title}
               </h3>
-              <p className="font-sans text-[#2C466D] text-sm md:text-base font-medium mb-6 flex-grow opacity-90">
+              <p className="font-sans text-[#2d466e] text-sm md:text-base font-medium mb-6 flex-grow opacity-90">
                 {card.description}
               </p>
               
               {/* Action Link */}
-<a
-  href={card.link}
-  className="font-sans font-bold text-white bg-[#2C466D] hover:bg-[#1A2A42] px-6 py-2.5 rounded-full inline-flex items-center gap-2 group transition-all duration-300 mt-auto w-fit shadow-sm hover:shadow-md"
->
-  Explore
-  <span className="group-hover:translate-x-1 transition-transform duration-300">
-    →
-  </span>
-</a>
+              <a
+                href={card.link}
+                className="font-sans font-bold text-[#2d466e] bg-[#fac005] hover:brightness-105 px-6 py-2.5 rounded-full inline-flex items-center gap-2 group transition-all duration-300 mt-auto w-fit shadow-sm hover:shadow-md"
+              >
+                Explore
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
+              </a>
             </div>
           </div>
         ))}

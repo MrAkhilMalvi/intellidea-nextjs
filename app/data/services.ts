@@ -542,7 +542,7 @@ export const services: ServiceData[] = [
     heroImage:
       "/assets/sales_marketing.avif",
     secondaryImage:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
+      "/assets/marketingsalesservices.jpg",
     stats: [
       { value: "Operate", label: "HR, tech, finance & operations" },
       { value: "Continuity", label: "Functions that run every month" },

@@ -232,9 +232,9 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
     description:
       "Fostering strategic connections among enterprise leaders, entrepreneurs, and subject experts to drive peer learning and shared growth.",
     badge: "Ecosystem & Network",
-    heroImage: "/assets/team.jpg",
+    heroImage: "/assets/Peer-Learning.webp",
     secondaryImage:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+      "/assets/community.jpeg",
     stats: [
       { value: "Global", label: "Cross-Border Business Connect" },
       { value: "Peer-to-Peer", label: "Advisory Councils & Forums" },
