@@ -64,11 +64,11 @@ export const WhatWeSolve: React.FC = () => {
             </div>
             
             {/* Text Content */}
-            <div className="flex flex-col flex-grow">
+            <div className="flex flex-col grow">
               <h3 className="font-display font-bold text-[#2d466e] text-xl mb-3">
                 {card.title}
               </h3>
-              <p className="font-sans text-[#2d466e] text-sm md:text-base font-medium mb-6 flex-grow opacity-90">
+              <p className="font-sans text-[#2d466e] text-sm md:text-base font-medium mb-6 grow opacity-90">
                 {card.description}
               </p>
               
