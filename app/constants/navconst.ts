@@ -30,20 +30,16 @@ export const NAV_ITEMS: MenuItem[] = [
       exploreHref: "/services/strategy-business-transformation",
       items: [
         {
+          title: "Growth Office as a Service",
+          href: "/services/managed-services",
+        },
+        {
           title: "Strategy & Transformation",
           href: "/services/strategy-business-transformation",
         },
         {
-          title: "Technology, AI & Digital",
-          href: "/services/technology-ai-digital-transformation",
-        },
-        {
           title: "People & Workforce",
           href: "/services/people-hr-workforce",
-        },
-        {
-          title: "Risk & Cybersecurity",
-          href: "/services/risk-cybersecurity-compliance",
         },
         {
           title: "Finance & Governance",
@@ -54,8 +50,12 @@ export const NAV_ITEMS: MenuItem[] = [
           href: "/services/transactions-investment-growth",
         },
         {
-          title: "Sales & Mktg, Managed Services",
-          href: "/services/managed-services",
+          title: "Technology, AI & Digital",
+          href: "/services/technology-ai-digital-transformation",
+        },
+        {
+          title: "Risk & Cybersecurity",
+          href: "/services/risk-cybersecurity-compliance",
         },
         {
           title: "Sustainability & ESG",

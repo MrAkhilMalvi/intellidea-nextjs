@@ -37,7 +37,7 @@ export const services: ServiceData[] = [
   {
     number: 1,
     slug: "strategy-business-transformation",
-    title: "Strategy & Business Transformation",
+    title: "Strategy & Transformation",
     shortTitle: "Strategy & Transformation",
 
     tagline: "From strategic intent to measurable impact.",
@@ -124,7 +124,7 @@ export const services: ServiceData[] = [
   {
     number: 2,
     slug: "technology-ai-digital-transformation",
-    title: "Technology, AI & Digital Transformation",
+    title: "Technology, AI & Digital",
     shortTitle: "Technology, AI & Digital",
     tagline: "Technology is no longer an IT agenda. It is a business agenda.",
     intro:
@@ -191,8 +191,8 @@ export const services: ServiceData[] = [
   {
     number: 3,
     slug: "people-hr-workforce",
-    title: "People, HR & Workforce",
-    shortTitle: "People, HR & Workforce",
+    title: "People & Workforce",
+    shortTitle: "People & Workforce",
     tagline:
       "People create performance. We help organizations build the workforce to deliver it.",
     intro:
@@ -245,7 +245,7 @@ export const services: ServiceData[] = [
         items: [
           "Contract Staffing",
           "Temporary Staffing",
-          "Contract-to-Hire",
+          "Contract-to-Hire (PEO, EOR)",
           "Workforce Management",
           "Project Staffing",
           "Gig / Flexible Workforce",
@@ -322,7 +322,7 @@ export const services: ServiceData[] = [
   {
     number: 4,
     slug: "risk-cybersecurity-compliance",
-    title: "Risk, Cybersecurity & Compliance",
+    title: "Risk & Cybersecurity",
     shortTitle: "Risk & Cybersecurity",
     tagline: "Building trust and resilience in a connected world.",
     intro:
@@ -405,7 +405,7 @@ export const services: ServiceData[] = [
   {
     number: 5,
     slug: "finance-governance-business-advisory",
-    title: "Finance, Governance & Business Advisory",
+    title: "Finance & Governance",
     shortTitle: "Finance & Governance",
     tagline:
       "Better decisions begin with better financial and business intelligence.",
@@ -534,8 +534,8 @@ export const services: ServiceData[] = [
   {
     number: 7,
     slug: "managed-services",
-    title: "Sales & Mktg, Managed Services",
-    shortTitle: "Sales & Mktg, Managed Services",
+    title: "Growth Office as a Service",
+    shortTitle: "Growth Office as a Service",
     tagline: "Beyond advisory. We help you run it.",
     intro:
       "Many organizations don't need another consultant. They need an experienced partner who can operate, manage and continuously improve a business function.",
@@ -571,11 +571,12 @@ export const services: ServiceData[] = [
         name: "Sales & Marketing",
         icon: "fa-bullhorn",
         items: [
-          "Growth Office as a Service",
           "Sales Effectiveness & Governance",
           "Executive Positioning",
           "Branding & Product Positioning",
           "Global Outreach",
+          "Bid Management",
+          "Social media & Digital marketing",
         ],
       },
       {
@@ -632,7 +633,7 @@ export const services: ServiceData[] = [
     {
     number: 8,
     slug: "sustainability-esg-impact",
-    title: "Sustainability, ESG & Impact",
+    title: "Sustainability & ESG",
     shortTitle: "Sustainability & ESG",
     tagline:
       "Building businesses that create value today without compromising tomorrow.",

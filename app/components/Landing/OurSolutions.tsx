@@ -68,7 +68,7 @@ export const OurSolutionsSection: React.FC = () => {
       className="flex flex-col lg:flex-row w-full bg-white border-t border-slate-100 overflow-hidden"
     >
       {/* LEFT SIDE: Corporate Image */}
-      <div className="w-full lg:w-1/2 min-h-[350px] lg:min-h-full bg-slate-200 relative order-1 lg:order-1">
+      <div className="w-full lg:w-1/2 min-h-87.5 lg:min-h-full bg-slate-200 relative order-1 lg:order-1">
         <img
           src="./assets/solutions.jpg"
           alt="Our Solutions Strategy & Technology"

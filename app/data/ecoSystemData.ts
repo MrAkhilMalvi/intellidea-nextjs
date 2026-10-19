@@ -53,7 +53,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
     badge: "Strategy & Advisory",
     heroImage: "/assets/Strategy_v2.webp",
     secondaryImage:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      "/assets/business_growth.jpg",
     stats: [
       { value: "360°", label: "Strategic Transformation" },
       { value: "C-Suite", label: "Board & Fractional Advisory" },
@@ -90,6 +90,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Entrepreneurship Advisory", icon: "fa-rocket" },
       { name: "Fractional CXO Advisory", icon: "fa-user-tie" },
       { name: "Business Strategy", icon: "fa-chess-king" },
+      { name: "Non-profit / NGO Advisory", icon: "fa-handshake-angle" },
     ],
     ctaLabel: "Explore IntEllev8",
   },

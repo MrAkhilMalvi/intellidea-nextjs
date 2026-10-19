@@ -73,7 +73,7 @@ const MODELS: EngagementModel[] = [
       "Performance sign-off and knowledge handover",
     ],
     image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80",
+      "/assets/engagement.jpg",
     alt: "Consultants planning milestone workstreams on digital whiteboard",
   },
   {
@@ -153,7 +153,7 @@ const MODELS: EngagementModel[] = [
       "Aligned incentives and milestone-tied rewards",
     ],
     image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+      "/assets/Strategic.jpg",
     alt: "Strategic partners shaking hands after finalizing joint venture",
   },
 ];
@@ -296,7 +296,7 @@ export default function EngagementModelsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
           <nav
             aria-label="Jump to engagement model"
-            className="flex items-center gap-1 overflow-x-auto py-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-1 overflow-x-auto py-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
           >
             {MODELS.map((model) => (
               <a
