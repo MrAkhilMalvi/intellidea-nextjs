@@ -23,7 +23,7 @@ export const ResourcesSection: React.FC = () => {
         <div className="flex flex-col items-center">
           <div className="w-full aspect-16/10 rounded-xl overflow-hidden shadow-md bg-white">
             <iframe
-              src="https://online.anyflip.com/ryhrt/sskr/index.html"
+              src="https://online.anyflip.com/xfyra/fyfa/mobile/index.html"
               className="w-full h-full border-0"
               scrolling="no"
               allowFullScreen
@@ -41,7 +41,7 @@ export const ResourcesSection: React.FC = () => {
         <div className="flex flex-col items-center">
           <div className="w-full aspect-16/10 rounded-xl overflow-hidden shadow-md bg-white">
             <iframe
-              src="https://online.anyflip.com/ryhrt/xzmo/index.html"
+              src="https://online.anyflip.com/xfyra/ujvn/mobile/index.html"
               className="w-full h-full border-0"
               scrolling="no"
               allowFullScreen
