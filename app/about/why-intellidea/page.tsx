@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
+import { buildMetadata } from "@/app/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: { absolute: "Why Intellidea | Practitioner-Led, Multidisciplinary Advisory" },
+export const metadata: Metadata = buildMetadata({
+  title: "Why Intellidea | Practitioner-Led, Multidisciplinary Advisory",
+  absoluteTitle: true,
   description:
     "Challenge-led, senior hands-on and execution-focused. Discover why forward-thinking leaders choose Intellidea for strategy, technology, finance, people and governance advisory.",
-};
+  path: "/about/why-intellidea",
+});
 
 interface Reason {
   id: string;
@@ -150,6 +154,8 @@ export default function WhyIntellideaPage() {
   ];
 
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "About", path: "/about/why-intellidea" }, { name: "Why Intellidea", path: "/about/why-intellidea" }]} />
     <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white sm:pb-20 lg:pt-32 lg:pb-28">
@@ -389,5 +395,6 @@ export default function WhyIntellideaPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

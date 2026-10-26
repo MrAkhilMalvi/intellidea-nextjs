@@ -1,5 +1,8 @@
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { JsonLd } from "@/app/components/JsonLd";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
 import { getServiceBySlug, services } from "@/app/data/services";
+import { SITE_URL, absoluteUrl, buildMetadata } from "@/app/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -16,18 +19,16 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service Not Found | Intellidea" };
+    return { title: "Service Not Found", robots: { index: false } };
   }
 
-  return {
-    title: `${service.title} | Intellidea`,
+  return buildMetadata({
+    title: service.title,
     description: service.intro,
-    openGraph: {
-      title: `${service.title} | Intellidea`,
-      description: service.intro,
-      images: [{ url: service.heroImage }],
-    },
-  };
+    path: `/services/${service.slug}`,
+    image: service.heroImage,
+    imageAlt: service.title,
+  });
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
@@ -38,5 +39,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
-  return <ServicePageTemplate service={service} />;
+  const url = absoluteUrl(`/services/${service.slug}`);
+
+  return (
+    <>
+      <PageBreadcrumbs
+        trail={[
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": `${url}#service`,
+          name: service.title,
+          description: service.intro,
+          url,
+          image: absoluteUrl(service.heroImage),
+          areaServed: "Worldwide",
+          provider: { "@id": `${SITE_URL}/#organization` },
+        }}
+      />
+      <ServicePageTemplate service={service} />
+    </>
+  );
 }

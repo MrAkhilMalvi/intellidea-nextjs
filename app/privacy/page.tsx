@@ -1,28 +1,18 @@
 import type { Metadata } from "next";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
+import { buildMetadata } from "@/app/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy & Cookie Policy | Intellidea",
+export const metadata: Metadata = buildMetadata({
+  title: "Privacy Policy",
   description:
-    "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
-  alternates: {
-    canonical: "/privacy-policy",
-  },
-  openGraph: {
-    title: "Privacy & Cookie Policy | Intellidea",
-    description:
-      "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Privacy & Cookie Policy | Intellidea",
-    description:
-      "Read the Privacy and Cookie Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
-  },
-};
+    "Read the Privacy Policy for Intellidea. Learn how we collect, protect, and use your personal data securely.",
+  path: "/privacy",
+});
 
-export default function PrivacyAndCookiePolicy() {
+export default function PrivacyPolicy() {
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "Privacy Policy", path: "/privacy" }]} />
     <div className="min-h-screen flex flex-col pt-20">
       {/* Main Content Area */}
       <main className="grow">
@@ -59,18 +49,13 @@ export default function PrivacyAndCookiePolicy() {
               <li>Pages visited, Hostname, Connection speed</li>
               <li>Client information like domain and IP</li>
             </ul>
-            <p>
-              Additionally, we use cookies and similar technologies to enhance
-              user experience and collect anonymous usage statistics.
-            </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
               2. Use of Collected Information
             </h2>
             <p>
               We use your data to improve our services, diagnose server issues,
-              identify users, and conduct internal analytics. Cookies help with
-              session management and personalizing your experience.
+              identify users, and conduct internal analytics.
             </p>
 
             <h2 className="text-xl font-semibold text-[#2C466D]">
@@ -155,73 +140,10 @@ export default function PrivacyAndCookiePolicy() {
               Disputes related to this policy will be governed by the laws of
               India.
             </p>
-
-            {/* Cookie Policy Section */}
-            <h2 className="text-2xl md:text-3xl font-bold text-[#2C466D] pt-10 border-t border-gray-200">
-              Cookie Policy
-            </h2>
-            <p>
-              This Cookie Policy applies to all websites, apps, and branded
-              pages managed by Intellidea. By continuing to use our sites, you
-              agree to our use of cookies.
-            </p>
-
-            <h3 className="text-xl font-semibold text-[#2C466D]">
-              What Are Cookies?
-            </h3>
-            <p>
-              Cookies are small text files stored on your device. They typically
-              contain:
-            </p>
-            <ul className="list-disc list-inside ml-4 space-y-1">
-              <li>Origin website name</li>
-              <li>Duration on your device</li>
-              <li>A unique identifier</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-[#2C466D]">
-              Why We Use Cookies
-            </h3>
-            <ul className="list-disc list-inside ml-4 space-y-1">
-              <li>Enhance functionality and user experience</li>
-              <li>Personalize content</li>
-              <li>Analyze traffic and performance</li>
-              <li>Enable social media features</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-[#2C466D]">
-              Types of Cookies
-            </h3>
-            <ul className="list-disc list-inside ml-4 space-y-1">
-              <li>
-                <strong>Session Cookies:</strong> Active only during a browsing
-                session.
-              </li>
-              <li>
-                <strong>Persistent Cookies:</strong> Stored for a longer period
-                to remember preferences.
-              </li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-[#2C466D]">
-              Analytics Tools
-            </h3>
-            <p>
-              We use Google Analytics for anonymized tracking and performance
-              insights. Visit{" "}
-              <a
-                href="https://www.google.com/privacy_policy.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#F9C100] underline hover:text-[#e6b800]"
-              >
-                Google's Privacy Policy
-              </a>{" "}
-              for more details.
-            </p>
           </div>
         </section>
       </main>
     </div>
+    </>
   );
 }

@@ -1,49 +1,36 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { BioLayout } from "@/app/components/BioLayout";
+import { JsonLd } from "@/app/components/JsonLd";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
 import { teamMembersData } from "@/app/data/teamMembers";
+import { SITE_URL, absoluteUrl, buildMetadata } from "@/app/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Dynamic SEO Metadata Generator
+/**
+ * SEO is kept ONLY for the Founder / Co-founder profiles.
+ * Advisors, associates and the rest of the team have no metadata and
+ * no JSON-LD (and are left out of the sitemap).
+ */
+const isFounder = (title: string) => /founder/i.test(title);
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const member = teamMembersData[slug];
 
-  if (!member) {
-    return {
-      title: "Member Not Found | Intellidea",
-    };
-  }
-
-  const title = `${member.name} - ${member.title} | Intellidea`;
-  const description = `Learn more about ${member.name}, ${member.title} at Intellidea.`;
+  if (!member || !isFounder(member.title)) return {};
 
   return {
-    title,
-    description,
-    alternates: {
-      canonical: `/team/${slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      type: "profile",
-      images: [
-        {
-          url: member.imageSrc,
-          alt: member.imageAlt || member.name,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [member.imageSrc],
-    },
+    ...buildMetadata({
+      title: `${member.name} - ${member.title}`,
+      description: `Learn more about ${member.name}, ${member.title} at Intellidea.`,
+      path: `/team/${slug}`,
+      image: member.imageSrc,
+      imageAlt: member.imageAlt || member.name,
+    }),
   };
 }
 
@@ -62,28 +49,34 @@ export default async function TeamMemberPage({ params }: PageProps) {
     notFound(); // Triggers Next.js 404 page if slug is invalid
   }
 
-  // Optional: JSON-LD ProfilePage Schema for rich Google search snippets
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    mainEntity: {
-      "@type": "Person",
-      name: member.name,
-      jobTitle: member.title,
-      image: member.imageSrc,
-      worksFor: {
-        "@type": "Organization",
-        name: "Intellidea",
-      },
-    },
-  };
+  const founder = isFounder(member.title);
+  const url = absoluteUrl(`/team/${slug}`);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {founder && (
+        <>
+          <PageBreadcrumbs
+            trail={[{ name: member.name, path: `/team/${slug}` }]}
+          />
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              url,
+              mainEntity: {
+                "@type": "Person",
+                "@id": `${url}#person`,
+                name: member.name,
+                jobTitle: member.title,
+                image: absoluteUrl(member.imageSrc),
+                url,
+                worksFor: { "@id": `${SITE_URL}/#organization` },
+              },
+            }}
+          />
+        </>
+      )}
       <BioLayout
         name={member.name}
         title={member.title}

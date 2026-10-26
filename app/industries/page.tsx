@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
+import { buildMetadata } from "@/app/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { getSolutionCount, industries } from "../data/industries";
 
-export const metadata: Metadata = {
-  title: { absolute: "Industries We Serve | Sector Consulting & Transformation | Intellidea" },
+export const metadata: Metadata = buildMetadata({
+  title: "Industries We Serve | Sector Consulting & Transformation | Intellidea",
+  absoluteTitle: true,
   description:
     "Intellidea combines strategy, AI, technology, workforce, risk and finance expertise to solve sector-specific challenges across banking, healthcare, technology, education, manufacturing, retail and more.",
-  alternates: { canonical: "/industries" },
-  openGraph: {
-    type: "website",
-    url: "/industries",
-    siteName: "Intellidea",
-    title: "Industries We Serve | Intellidea",
-    description:
-      "Tailored advisory and transformation capabilities engineered across key global industries.",
-  },
-};
+  path: "/industries",
+  ogTitle: "Industries We Serve | Intellidea",
+  ogDescription:
+    "Tailored advisory and transformation capabilities engineered across key global industries.",
+});
 
 const CALENDLY_URL = "https://calendly.com/hello-intellidea/new-meeting";
 const WHATSAPP_URL = "https://wa.me/919082378708";
@@ -52,6 +50,8 @@ export default function IndustriesIndexPage() {
   ];
 
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "Industries", path: "/industries" }]} />
     <div className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white sm:pb-20 lg:pt-32 lg:pb-28">
@@ -247,5 +247,6 @@ export default function IndustriesIndexPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

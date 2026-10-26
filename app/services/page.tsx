@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "../data/services";
+import { PageBreadcrumbs } from "../components/PageBreadcrumbs";
+import { buildMetadata } from "../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Services | Intellidea",
+export const metadata: Metadata = buildMetadata({
+  title: "Our Services",
   description:
     "Strategy, technology, people, risk, finance, transactions, sustainability and managed services advisory from Intellidea.",
-};
+  path: "/services",
+});
 
 export default function ServicesIndexPage() {
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "Services", path: "/services" }]} />
     <div className="flex min-h-screen flex-col justify-between bg-[#F8FAFC] font-sans text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       <div>
         <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white lg:pt-32 lg:pb-20">
@@ -104,5 +109,6 @@ export default function ServicesIndexPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

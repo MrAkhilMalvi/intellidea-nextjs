@@ -43,8 +43,10 @@ export const services: ServiceData[] = [
     tagline: "From strategic intent to measurable impact.",
     intro:
       "Businesses need more than strategy documents. They need clarity about where to play, how to win and how to execute. We work with promoters, boards, CEOs and leadership teams to define strategies that are practical, measurable and execution-oriented.",
-    heroImage: "/assets/Strategy_v1.jpg",
-    secondaryImage: "/assets/Strategy_v2.webp",
+    heroImage:
+      "/assets/Strategy_v1.jpg",
+    secondaryImage:
+      "/assets/Strategy_v2.webp",
     stats: [
       { value: "Boards", label: "Promoters, CEOs & leadership teams" },
       { value: "360°", label: "Strategy through execution" },
@@ -129,7 +131,8 @@ export const services: ServiceData[] = [
       "We help organizations use technology, data and AI to improve customer experience, productivity, decision-making and business performance.",
     callout:
       "We help organizations move from experimenting with AI to creating measurable business value from AI.",
-    heroImage: "/assets/ai_v1.png",
+    heroImage:
+      "/assets/ai_v1.png",
     secondaryImage:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -207,7 +210,8 @@ export const services: ServiceData[] = [
       "People create performance. We help organizations build the workforce to deliver it.",
     intro:
       "From sourcing and hiring talent to running HR as a managed function, we support organizations across the full employee lifecycle.",
-    heroImage: "/assets/people_workforse.jpeg",
+    heroImage:
+      "/assets/people_workforse.jpeg",
     secondaryImage:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -318,6 +322,7 @@ export const services: ServiceData[] = [
         name: "HR Technology",
         icon: "fa-laptop",
         items: [
+       
           "Employee Experience Platforms (HRMS / HRIS / LMS)",
           "HR Technology Selection",
           "HR Digital Transformation",
@@ -419,7 +424,8 @@ export const services: ServiceData[] = [
       "Better decisions begin with better financial and business intelligence.",
     intro:
       "We help leadership teams strengthen financial discipline, reporting and governance so decisions are backed by reliable numbers.",
-    heroImage: "/assets/finance_v1.jpg",
+    heroImage:
+      "/assets/finance_v1.jpg",
     secondaryImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     stats: [
@@ -546,8 +552,10 @@ export const services: ServiceData[] = [
     tagline: "Beyond advisory. We help you run it.",
     intro:
       "Many organizations don't need another consultant. They need an experienced partner who can operate, manage and continuously improve a business function.",
-    heroImage: "/assets/sales_marketing.avif",
-    secondaryImage: "/assets/marketingsalesservices.jpg",
+    heroImage:
+      "/assets/sales_marketing.avif",
+    secondaryImage:
+      "/assets/marketingsalesservices.jpg",
     stats: [
       { value: "Operate", label: "HR, tech, finance & operations" },
       { value: "Continuity", label: "Functions that run every month" },
@@ -635,7 +643,7 @@ export const services: ServiceData[] = [
       },
     ],
   },
-  {
+    {
     number: 8,
     slug: "sustainability-esg-impact",
     title: "Sustainability & ESG",

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
+import { buildMetadata } from "@/app/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: { absolute: "Engagement Models | Flexible Advisory & Delivery | Intellidea" },
+export const metadata: Metadata = buildMetadata({
+  title: "Engagement Models | Flexible Advisory & Delivery | Intellidea",
+  absoluteTitle: true,
   description:
     "From board-level advisory and strategic retainers to fractional leadership, managed services and Build–Operate–Transfer, Intellidea structures collaboration around your pace, risk preference and strategic horizon.",
-};
+  path: "/about/engagement-models",
+});
 
 interface EngagementModel {
   id: string;
@@ -193,6 +197,8 @@ export default function EngagementModelsPage() {
   ];
 
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "About", path: "/about/why-intellidea" }, { name: "Engagement Models", path: "/about/engagement-models" }]} />
     <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white sm:pb-20 lg:pt-32 lg:pb-28">
@@ -456,5 +462,6 @@ export default function EngagementModelsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

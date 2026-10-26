@@ -3,16 +3,24 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import type { Metadata } from "next";
-
-const siteUrl =  "https://intellidea.co.in";
+import { OrganizationJsonLd } from "next-seo";
+import { JsonLd } from "./components/JsonLd";
+import {
+  CONTACT_PHONE,
+  DEFAULT_OG_IMAGE,
+  LINKEDIN_URL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "./lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Intellidea - Innovation & Enterprise Solutions",
     template: "%s | Intellidea",
   },
-  description: "Transforming ideas into scalable digital and enterprise business solutions.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Intellidea",
     "People & Workforce",
@@ -21,24 +29,28 @@ export const metadata: Metadata = {
     "Strategy & Transformation",
     "Technology, AI & Digital",
     "Risk & Cybersecurity",
-    "Sustainability & ESG"
+    "Sustainability & ESG",
   ],
   authors: [{ name: "Intellidea Team" }],
   creator: "Intellidea",
   publisher: "Intellidea",
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Intellidea - Innovation & Enterprise Solutions",
-    description: "Transforming ideas into scalable digital and enterprise business solutions.",
-    url: siteUrl,
-    siteName: "Intellidea",
-    locale: "en_US",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_IN",
     type: "website",
+    images: [{ url: DEFAULT_OG_IMAGE, alt: "Intellidea" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Intellidea - Innovation & Enterprise Solutions",
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -53,19 +65,16 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Structured Data for Organization / Business
-const jsonLd = {
+// Site-wide WebSite schema (Organization schema is rendered with next-seo below)
+const websiteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Intellidea",
-  url: siteUrl,
-  logo: `${siteUrl}/favicon.ico`,
-  description: "Transforming ideas into scalable digital and enterprise business solutions.",
-  sameAs: [
-    // Add your social links here if available
-    "https://github.com",
-    "https://linkedin.com",
-  ],
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: "en",
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function RootLayout({
@@ -80,11 +89,25 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
-        {/* Inject JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        {/* Site-wide structured data */}
+        <OrganizationJsonLd
+          useAppDir={true}
+          type="Organization"
+          id={`${SITE_URL}/#organization`}
+          name={SITE_NAME}
+          url={SITE_URL}
+          logo={`${SITE_URL}${DEFAULT_OG_IMAGE}`}
+          sameAs={[LINKEDIN_URL]}
+          contactPoint={[
+            {
+              telephone: CONTACT_PHONE,
+              contactType: "customer service",
+              areaServed: "Worldwide",
+              availableLanguage: ["English"],
+            },
+          ]}
         />
+        <JsonLd data={websiteJsonLd} />
       </head>
       <body className="antialiased flex flex-col min-h-screen bg-white text-gray-900 font-sans">
         <Navbar />

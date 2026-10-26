@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
+import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
+import { buildMetadata } from "@/app/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | Intellidea",
-  description: "Read the Terms & Conditions and legal usage guidelines for Intellidea Consultancy Services Pvt Ltd.",
-  alternates: {
-    canonical: "/terms",
-  },
-  openGraph: {
-    title: "Terms & Conditions | Intellidea",
-    description: "Read the Terms & Conditions and legal usage guidelines for Intellidea Consultancy Services Pvt Ltd.",
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Terms & Conditions",
+  description:
+    "Read the Terms & Conditions and legal usage guidelines for Intellidea Consultancy Services Pvt Ltd.",
+  path: "/terms",
+});
 
 export default function TermsAndConditionsPage() {
   return (
+    <>
+      <PageBreadcrumbs trail={[{ name: "Terms & Conditions", path: "/terms" }]} />
     <div className="min-h-screen flex flex-col pt-20">
       <main className="grow">
         <section className="py-12 px-6 md:px-20">
@@ -109,5 +108,6 @@ export default function TermsAndConditionsPage() {
         </section>
       </main>
     </div>
+    </>
   );
 }

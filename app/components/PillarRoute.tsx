@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 
 import { ECOSYSTEM_PAGES } from "../data/ecoSystemData";
 import PillarPageLayout from "./PillarPageLayout";
+import { PageBreadcrumbs } from "./PageBreadcrumbs";
+import { buildMetadata } from "../lib/seo";
 
 /**
  * Builds the <head> metadata for a single ecosystem pillar page.
@@ -12,15 +14,13 @@ export function buildPillarMetadata(slug: string): Metadata {
   const pillar = ECOSYSTEM_PAGES[slug];
   if (!pillar) return {};
 
-  return {
-    title: `${pillar.title} | Intellidea`,
+  return buildMetadata({
+    title: pillar.title,
     description: pillar.description,
-    openGraph: {
-      title: `${pillar.title} | Intellidea`,
-      description: pillar.description,
-      images: [{ url: pillar.heroImage }],
-    },
-  };
+    path: `/${slug}`,
+    image: pillar.heroImage,
+    imageAlt: pillar.title,
+  });
 }
 
 /**
@@ -34,5 +34,10 @@ export function PillarRoute({ slug }: { slug: string }) {
     notFound();
   }
 
-  return <PillarPageLayout data={pillar} />;
+  return (
+    <>
+      <PageBreadcrumbs trail={[{ name: pillar.title, path: `/${slug}` }]} />
+      <PillarPageLayout data={pillar} />
+    </>
+  );
 }
