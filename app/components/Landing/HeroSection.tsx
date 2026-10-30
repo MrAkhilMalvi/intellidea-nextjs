@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 
 const PILLARS = [
   "Business Transformation",
@@ -15,16 +15,58 @@ export const HeroSection: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const toggleAudio = () => {
-    if (!audioRef.current) return;
+  const playAudio = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-    if (audioRef.current.paused) {
-      audioRef.current
-        .play()
-        .then(() => setIsMuted(false))
-        .catch(() => setIsMuted(true));
+    try {
+      await audio.play();
+      setIsMuted(false);
+    } catch {
+      // Browsers may block autoplay with sound until the user interacts.
+      setIsMuted(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Attempt autoplay on page load. This may be blocked by browser policy.
+    void playAudio();
+
+    const startAudioAfterInteraction = (event: Event) => {
+      const target = event.target;
+      // Let the audio button handle its own click to avoid play/pause racing.
+      if (
+        target instanceof Element &&
+        target.closest("[data-audio-toggle]")
+      ) {
+        return;
+      }
+
+      document.removeEventListener("pointerdown", startAudioAfterInteraction);
+      document.removeEventListener("keydown", startAudioAfterInteraction);
+      void playAudio();
+    };
+
+    document.addEventListener("pointerdown", startAudioAfterInteraction);
+    document.addEventListener("keydown", startAudioAfterInteraction);
+
+    return () => {
+      document.removeEventListener("pointerdown", startAudioAfterInteraction);
+      document.removeEventListener("keydown", startAudioAfterInteraction);
+    };
+  }, [playAudio]);
+
+  const toggleAudio = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      await playAudio();
     } else {
-      audioRef.current.pause();
+      audio.pause();
       setIsMuted(true);
     }
   };
@@ -120,6 +162,8 @@ export const HeroSection: React.FC = () => {
 
             {/* Audio Toggle */}
             <button
+              type="button"
+              data-audio-toggle
               onClick={toggleAudio}
               aria-label={isMuted ? "Unmute video" : "Mute video"}
               className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-white/30 bg-black/40 backdrop-blur-sm px-3.5 sm:px-5 py-2.5 sm:py-3.5 text-lg sm:text-sm font-medium text-white transition-all duration-200 hover:bg-white/20 active:scale-95 shrink-0"
