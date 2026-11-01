@@ -91,6 +91,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Fractional CXO Advisory", icon: "fa-user-tie" },
       { name: "Business Strategy", icon: "fa-chess-king" },
       { name: "Non-profit / NGO Advisory", icon: "fa-handshake-angle" },
+      { name: "Import-Export Trade Advisory", icon: "fa-compass" }
     ],
     ctaLabel: "Explore IntEllev8",
   },
@@ -151,6 +152,7 @@ export const ECOSYSTEM_PAGES: Record<string, PillarData> = {
       { name: "Talent Acquisition", icon: "fa-user-plus" },
       { name: "Workforce Solutions", icon: "fa-people-group" },
       { name: "HR Transformation", icon: "fa-arrows-split-up-and-left" },
+      { name: "Import-Export Trade Services Support", icon: "fa-ship" },
     ],
     engagementModel: [
       "Consulting",

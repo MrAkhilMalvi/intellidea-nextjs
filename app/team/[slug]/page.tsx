@@ -10,26 +10,45 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-/**
- * SEO is kept ONLY for the Founder / Co-founder profiles.
- * Advisors, associates and the rest of the team have no metadata and
- * no JSON-LD (and are left out of the sitemap).
- */
-const isFounder = (title: string) => /founder/i.test(title);
+const priorityProfileMetadata: Record<
+  string,
+  { title: string; description: string }
+> = {
+  "viresh-patel": {
+    title: "Viresh Patel - Founder & CEO at Intellidea | Leadership",
+    description:
+      "Viresh Patel is Founder and CEO of Intellidea, with more than 28 years of experience across IT, BFSI, education, online assessments and US healthcare.",
+  },
+  "rajnickant-patel": {
+    title: "Rajnickant Patel - Founder & Chairman | Intellidea",
+    description:
+      "Rajnickant Patel is Founder and Chairman of Intellidea and a financial services leader with more than four decades of experience, including leadership roles at BSE and ICEX.",
+  },
+  "jyoti-patel": {
+    title: "Jyoti Patel - Founder & Director | Intellidea",
+    description:
+      "Jyoti Patel is Founder and Director of Intellidea, bringing more than 25 years of experience in education, student development and social-impact initiatives.",
+  },
+};
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const member = teamMembersData[slug];
 
-  if (!member || !isFounder(member.title)) return {};
+  if (!member) return { title: "Profile Not Found", robots: { index: false } };
+
+  const priorityMetadata = priorityProfileMetadata[slug];
 
   return {
     ...buildMetadata({
-      title: `${member.name} - ${member.title}`,
-      description: `Learn more about ${member.name}, ${member.title} at Intellidea.`,
+      title: priorityMetadata?.title ?? `${member.name} - ${member.title}`,
+      description:
+        priorityMetadata?.description ??
+        `${member.name} is ${member.title} at Intellidea. Learn about their experience, expertise and work with the team.`,
       path: `/team/${slug}`,
       image: member.imageSrc,
       imageAlt: member.imageAlt || member.name,
+      absoluteTitle: Boolean(priorityMetadata),
     }),
   };
 }
@@ -49,34 +68,33 @@ export default async function TeamMemberPage({ params }: PageProps) {
     notFound(); // Triggers Next.js 404 page if slug is invalid
   }
 
-  const founder = isFounder(member.title);
   const url = absoluteUrl(`/team/${slug}`);
+  const description =
+    priorityProfileMetadata[slug]?.description ??
+    `${member.name} is ${member.title} at Intellidea. Learn about their experience, expertise and work with the team.`;
 
   return (
     <>
-      {founder && (
-        <>
-          <PageBreadcrumbs
-            trail={[{ name: member.name, path: `/team/${slug}` }]}
-          />
-          <JsonLd
-            data={{
-              "@context": "https://schema.org",
-              "@type": "ProfilePage",
-              url,
-              mainEntity: {
-                "@type": "Person",
-                "@id": `${url}#person`,
-                name: member.name,
-                jobTitle: member.title,
-                image: absoluteUrl(member.imageSrc),
-                url,
-                worksFor: { "@id": `${SITE_URL}/#organization` },
-              },
-            }}
-          />
-        </>
-      )}
+      <PageBreadcrumbs
+        trail={[{ name: member.name, path: `/team/${slug}` }]}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          url,
+          mainEntity: {
+            "@type": "Person",
+            "@id": `${url}#person`,
+            name: member.name,
+            jobTitle: member.title,
+            description,
+            image: absoluteUrl(member.imageSrc),
+            url,
+            worksFor: { "@id": `${SITE_URL}/#organization` },
+          },
+        }}
+      />
       <BioLayout
         name={member.name}
         title={member.title}

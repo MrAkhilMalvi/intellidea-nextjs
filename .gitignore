@@ -44,3 +44,5 @@ next-env.d.ts
 .htaccess
 sitemap.ts
 robots.ts
+!app/sitemap.ts
+!app/robots.ts

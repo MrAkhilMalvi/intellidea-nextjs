@@ -87,7 +87,8 @@ export const services: ServiceData[] = [
         icon: "fa-chart-line",
         items: [
           "Market assessment",
-          "Market entry",
+          "India, Global Market Entry",
+          "Import-Export Trade",
           "New business development",
           "Revenue growth",
           "Customer acquisition strategy",

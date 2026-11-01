@@ -1,0 +1,27 @@
+# Intellidea
+
+> Intellidea provides strategy, technology, people, finance, risk, sustainability and business transformation services for organizations.
+
+The website's canonical domain is https://intellidea.co.in. Use the linked pages as the source of truth for current service, industry, and leadership information.
+
+## Main pages
+
+- [Home](https://intellidea.co.in/)
+- [Services](https://intellidea.co.in/services)
+- [Industries](https://intellidea.co.in/industries)
+- [Insights](https://intellidea.co.in/insights)
+- [About Intellidea](https://intellidea.co.in/about/why-intellidea)
+- [Engagement models](https://intellidea.co.in/about/engagement-models)
+
+## Leadership
+
+- [Viresh Patel, Founder & CEO](https://intellidea.co.in/team/viresh-patel)
+- [Rajnickant Patel, Founder & Chairman](https://intellidea.co.in/team/rajnickant-patel)
+- [Jyoti Patel, Founder & Director](https://intellidea.co.in/team/jyoti-patel)
+
+## Service ecosystems
+
+- [IntEllev8](https://intellidea.co.in/intellev8)
+- [IntelliCircle](https://intellidea.co.in/intellicircle)
+- [IntelliWise](https://intellidea.co.in/intelliwise)
+- [IntellXperia](https://intellidea.co.in/intellxperia)
