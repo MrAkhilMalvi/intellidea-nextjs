@@ -155,7 +155,7 @@ export default function WhyIntellideaPage() {
 
   return (
     <>
-      <PageBreadcrumbs trail={[{ name: "About", path: "/about/why-intellidea" }, { name: "Why Intellidea", path: "/about/why-intellidea" }]} />
+      <PageBreadcrumbs trail={[{ name: "About", path: "/about/why-intellidea" }]} />
     <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-[#F9C100] selection:text-[#2C466D]">
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-[#2C466D] pt-24 pb-16 text-white sm:pb-20 lg:pt-32 lg:pb-28">
@@ -259,7 +259,7 @@ export default function WhyIntellideaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
           <nav
             aria-label="Jump to reason"
-            className="flex items-center gap-1 overflow-x-auto py-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-1 overflow-x-auto py-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
           >
             {REASONS.map((reason) => (
               <a

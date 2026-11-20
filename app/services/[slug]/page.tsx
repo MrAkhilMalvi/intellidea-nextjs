@@ -28,6 +28,11 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     path: `/services/${service.slug}`,
     image: service.heroImage,
     imageAlt: service.title,
+    keywords: [
+      service.title,
+      ...service.categories.map((c) => c.name),
+      ...service.categories.flatMap((c) => c.items).slice(0, 12),
+    ],
   });
 }
 
@@ -59,6 +64,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
           url,
           image: absoluteUrl(service.heroImage),
           areaServed: "Worldwide",
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: `${service.title} services`,
+            itemListElement: service.categories.map((category) => ({
+              "@type": "OfferCatalog",
+              name: category.name,
+              itemListElement: category.items.map((item) => ({
+                "@type": "Offer",
+                itemOffered: { "@type": "Service", name: item },
+              })),
+            })),
+          },
           provider: { "@id": `${SITE_URL}/#organization` },
         }}
       />

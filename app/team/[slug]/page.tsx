@@ -4,32 +4,22 @@ import { BioLayout } from "@/app/components/BioLayout";
 import { JsonLd } from "@/app/components/JsonLd";
 import { PageBreadcrumbs } from "@/app/components/PageBreadcrumbs";
 import { teamMembersData } from "@/app/data/teamMembers";
-import { SITE_URL, absoluteUrl, buildMetadata } from "@/app/lib/seo";
+import {
+  FOUNDER_IMAGE,
+  FOUNDER_SAME_AS,
+  SITE_URL,
+  absoluteUrl,
+  buildMetadata,
+  isIndexedTeamSlug,
+} from "@/app/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const priorityProfileMetadata: Record<
-  string,
-  { title: string; description: string }
-> = {
-  "viresh-patel": {
-    title: "Viresh Patel - Founder & CEO at Intellidea | Leadership",
-    description:
-      "Viresh Patel is Founder and CEO of Intellidea, with more than 28 years of experience across IT, BFSI, education, online assessments and US healthcare.",
-  },
-  "rajnickant-patel": {
-    title: "Rajnickant Patel - Founder & Chairman | Intellidea",
-    description:
-      "Rajnickant Patel is Founder and Chairman of Intellidea and a financial services leader with more than four decades of experience, including leadership roles at BSE and ICEX.",
-  },
-  "jyoti-patel": {
-    title: "Jyoti Patel - Founder & Director | Intellidea",
-    description:
-      "Jyoti Patel is Founder and Director of Intellidea, bringing more than 25 years of experience in education, student development and social-impact initiatives.",
-  },
-};
+const VIRESH_TITLE = "Viresh Patel - Founder & CEO | Intellidea";
+const VIRESH_DESCRIPTION =
+  "Viresh Patel is Founder and CEO of Intellidea, with more than 28 years of experience across IT, BFSI, education, online assessments and US healthcare.";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -37,19 +27,41 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!member) return { title: "Profile Not Found", robots: { index: false } };
 
-  const priorityMetadata = priorityProfileMetadata[slug];
+  // Every profile except Viresh Patel stays out of Google.
+  if (!isIndexedTeamSlug(slug)) {
+    return {
+      title: member.name,
+      robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
+    };
+  }
 
   return {
     ...buildMetadata({
-      title: priorityMetadata?.title ?? `${member.name} - ${member.title}`,
-      description:
-        priorityMetadata?.description ??
-        `${member.name} is ${member.title} at Intellidea. Learn about their experience, expertise and work with the team.`,
+      title: VIRESH_TITLE,
+      description: VIRESH_DESCRIPTION,
       path: `/team/${slug}`,
-      image: member.imageSrc,
-      imageAlt: member.imageAlt || member.name,
-      absoluteTitle: Boolean(priorityMetadata),
+      image: FOUNDER_IMAGE,
+      imageAlt: "Viresh Patel - Founder & CEO of Intellidea",
+      absoluteTitle: true,
+      keywords: [
+        "Viresh Patel",
+        "Viresh Patel Intellidea",
+        "Viresh Patel Founder & CEO",
+        "Intellidea founder",
+      ],
     }),
+    // The site default hides image previews; this one profile is allowed a large photo.
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
   };
 }
 
@@ -69,32 +81,35 @@ export default async function TeamMemberPage({ params }: PageProps) {
   }
 
   const url = absoluteUrl(`/team/${slug}`);
-  const description =
-    priorityProfileMetadata[slug]?.description ??
-    `${member.name} is ${member.title} at Intellidea. Learn about their experience, expertise and work with the team.`;
+  const indexed = isIndexedTeamSlug(slug);
 
   return (
     <>
-      <PageBreadcrumbs
-        trail={[{ name: member.name, path: `/team/${slug}` }]}
-      />
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "ProfilePage",
-          url,
-          mainEntity: {
-            "@type": "Person",
-            "@id": `${url}#person`,
-            name: member.name,
-            jobTitle: member.title,
-            description,
-            image: absoluteUrl(member.imageSrc),
-            url,
-            worksFor: { "@id": `${SITE_URL}/#organization` },
-          },
-        }}
-      />
+      {indexed && (
+        <>
+          <PageBreadcrumbs trail={[{ name: member.name, path: `/team/${slug}` }]} />
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "ProfilePage",
+              url,
+              name: VIRESH_TITLE,
+              mainEntity: {
+                "@type": "Person",
+                "@id": `${url}#person`,
+                name: member.name,
+                alternateName: "Viresh Patel Intellidea",
+                jobTitle: member.title,
+                description: VIRESH_DESCRIPTION,
+                image: absoluteUrl(FOUNDER_IMAGE),
+                url,
+                ...(FOUNDER_SAME_AS.length > 0 ? { sameAs: FOUNDER_SAME_AS } : {}),
+                worksFor: { "@id": `${SITE_URL}/#organization` },
+              },
+            }}
+          />
+        </>
+      )}
       <BioLayout
         name={member.name}
         title={member.title}

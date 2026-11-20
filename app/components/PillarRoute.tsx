@@ -20,6 +20,7 @@ export function buildPillarMetadata(slug: string): Metadata {
     path: `/${slug}`,
     image: pillar.heroImage,
     imageAlt: pillar.title,
+    keywords: [pillar.title, ...pillar.focusAreas.map((f) => f.name)],
   });
 }
 

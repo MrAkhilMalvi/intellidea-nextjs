@@ -9,6 +9,7 @@ import {
   CONTACT_PHONE,
   DEFAULT_OG_IMAGE,
   LINKEDIN_URL,
+  LOGO_IMAGE,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
@@ -30,6 +31,10 @@ export const metadata: Metadata = {
     "Technology, AI & Digital",
     "Risk & Cybersecurity",
     "Sustainability & ESG",
+    "Import-Export Trade Advisory",
+    "India Global Market Entry",
+    "Viresh Patel",
+    "Viresh Patel Intellidea",
   ],
   authors: [{ name: "Intellidea Team" }],
   creator: "Intellidea",
@@ -59,7 +64,7 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-video-preview": -1,
-      "max-image-preview": "large",
+      "max-image-preview": "none",
       "max-snippet": -1,
     },
   },
@@ -71,10 +76,28 @@ const websiteJsonLd = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
+  alternateName: "Intellidea Innovation & Enterprise Solutions",
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: "en",
   publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
+// Links the organisation to its founder profile (the only team page indexed in Google).
+const organizationFounderJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  alternateName: "Intellidea Innovation & Enterprise Solutions",
+  description: SITE_DESCRIPTION,
+  founder: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/team/viresh-patel#person`,
+    name: "Viresh Patel",
+    jobTitle: "Founder & CEO",
+    url: `${SITE_URL}/team/viresh-patel`,
+  },
 };
 
 export default function RootLayout({
@@ -96,7 +119,7 @@ export default function RootLayout({
           id={`${SITE_URL}/#organization`}
           name={SITE_NAME}
           url={SITE_URL}
-          logo={`${SITE_URL}${DEFAULT_OG_IMAGE}`}
+          logo={`${SITE_URL}${LOGO_IMAGE}`}
           sameAs={[LINKEDIN_URL]}
           contactPoint={[
             {
@@ -108,6 +131,7 @@ export default function RootLayout({
           ]}
         />
         <JsonLd data={websiteJsonLd} />
+        <JsonLd data={organizationFounderJsonLd} />
       </head>
       <body className="antialiased flex flex-col min-h-screen bg-white text-gray-900 font-sans">
         <Navbar />
